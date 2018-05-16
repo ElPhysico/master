@@ -1,0 +1,8 @@
+
+#PBS -l walltime=120:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -m e
+#PBS -j oe 
+#
+cd ${PBS_O_WORKDIR} # change dir to the directory from which qsub is launched
+../main -p=$p -nRuns=$N -sysL=$L -detecR=$D -alpha=$alpha
