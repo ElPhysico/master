@@ -1,0 +1,8 @@
+#System variables:
+#Boundary type: 2	Alpha = 0.400000
+#System Length: 200
+#Detection Radius: 1
+#Fixed steps: 1000000
+
+#p	Wall-Frequency	rel.-WF
+0.600000	5351	0.005351

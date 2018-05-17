@@ -18,20 +18,20 @@ void setupGSL()
 
 void ReadCommandLine(int argc, char const *argv[],
 	 		double &p,
-			int &nRuns,
-			int &sysL,
-                        int &detecR,
+			int &N,
+			int &L,
+                        int &D,
                         double &alpha)
 {
 	for (int i = 1; i < argc; i++) {
 		if (strstr(argv[i], "-p="))
 			p = atof(argv[i] + 3);
-		if (strstr(argv[i], "-nRuns="))
-			nRuns = atoi(argv[i] + 7);
-		if (strstr(argv[i], "-sysL="))
-			sysL = atoi(argv[i] + 6);
-                if (strstr(argv[i], "-detecR="))
-                        detecR = atoi(argv[i] + 8);
+		if (strstr(argv[i], "-N="))
+			N = atoi(argv[i] + 3);
+		if (strstr(argv[i], "-L="))
+			L = atoi(argv[i] + 3);
+                if (strstr(argv[i], "-D="))
+                        D = atoi(argv[i] + 3);
                 if (strstr(argv[i], "-alpha="))
                         alpha = atof(argv[i] + 7);
 	}
@@ -50,8 +50,8 @@ void initTarget()
         case 0: /* No boundaries */
                 break;
         case 1: /* Periodic boundaries */
-                svar.tarPos.x = svar.sysL / 2;
-                svar.tarPos.y = svar.sysL / 2;
+                svar.tarPos.x = svar.L / 2;
+                svar.tarPos.y = svar.L / 2;
                 break;
         case 2: /* Absorbing boundaries /wo lateral move */
                 // svar.tarPos.x = gsl_rng_uniform_int(gen, svar.sysL);
@@ -60,8 +60,8 @@ void initTarget()
                 //         initTarget();
                 // else if (svar.tarPos.y == svar.sysL - 1 || svar.tarPos.y == 0)
                 //         initTarget();
-                svar.tarPos.x = svar.sysL / 2;
-                svar.tarPos.y = svar.sysL / 2;
+                svar.tarPos.x = svar.L / 2;
+                svar.tarPos.y = svar.L / 2;
                 break;
         case 3: /* Absorbing boundaries /w lateral move */
                 break;

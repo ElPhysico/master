@@ -26,8 +26,8 @@ void Walker::setup(double newpf)
 
 void Walker::init()
 {
-        pos.x = gsl_rng_uniform_int(gen, svar.sysL);
-        pos.y = gsl_rng_uniform_int(gen, svar.sysL);
+        pos.x = gsl_rng_uniform_int(gen, svar.L);
+        pos.y = gsl_rng_uniform_int(gen, svar.L);
         pos.dir = gsl_rng_uniform_int(gen, 4) + 1;
 
         oldpos = pos;
@@ -36,10 +36,10 @@ void Walker::init()
                 init();
         if (svar.bc == 2) {
                 if (pos.x == 0) {
-                        if (pos.y == 0 || pos.y == svar.sysL - 1)
+                        if (pos.y == 0 || pos.y == svar.L - 1)
                                 init();
-                } else if (pos.x == svar.sysL - 1) {
-                        if (pos.y == 0 || pos.y == svar.sysL - 1)
+                } else if (pos.x == svar.L - 1) {
+                        if (pos.y == 0 || pos.y == svar.L - 1)
                                 init();
                 }
         }
@@ -88,9 +88,9 @@ int Walker::getDirection()
 
 bool Walker::outOfBound()
 {
-        if (pos.x < 0 || pos.x >= svar.sysL)
+        if (pos.x < 0 || pos.x >= svar.L)
                 return true;
-        else if (pos.y < 0 || pos.y >= svar.sysL)
+        else if (pos.y < 0 || pos.y >= svar.L)
                 return true;
         else
                 return false;
@@ -103,13 +103,13 @@ void Walker::correctPos()
                 break;
         case 1: /* Periodic boundaries */
                 if (pos.x < 0)
-                        pos.x += svar.sysL;
-                else if (pos.x >= svar.sysL)
-                        pos.x -= svar.sysL;
+                        pos.x += svar.L;
+                else if (pos.x >= svar.L)
+                        pos.x -= svar.L;
                 if (pos.y < 0)
-                        pos.y += svar.sysL;
-                else if (pos.y >= svar.sysL)
-                        pos.y -= svar.sysL;
+                        pos.y += svar.L;
+                else if (pos.y >= svar.L)
+                        pos.y -= svar.L;
                 break;
         case 2: /* Absorbing boundaries /wo lateral move */
                 break;
@@ -151,39 +151,37 @@ void Walker::step()
                 break;
         case 2: /* Absorbing boundaries /wo lateral move */
                 bool tmp = gsl_rng_uniform(gen) <= svar.alpha;
+                absorbCounter++;
                 if (pos.x == 0) {
                         if (tmp) {
                                 pos.x += stepL;
                                 pos.dir = 1;
-                                wallFreq++;
-                        } else {
-                                absorbCounter++;
+                                wallHits++;
+                                absorbCounter--;
                         }
-                } else if (pos.x == svar.sysL - 1) {
+                } else if (pos.x == svar.L - 1) {
                         if (tmp) {
                                 pos.x -= stepL;
                                 pos.dir = 3;
-                                wallFreq++;
-                        } else {
-                                absorbCounter++;
+                                wallHits++;
+                                absorbCounter--;
                         }
                 } else if (pos.y == 0) {
                         if (tmp) {
                                 pos.y += stepL;
                                 pos.dir = 2;
-                                wallFreq++;
-                        } else {
-                                absorbCounter++;
+                                wallHits++;
+                                absorbCounter--;
                         }
-                } else if (pos.y == svar.sysL - 1) {
+                } else if (pos.y == svar.L - 1) {
                         if (tmp) {
                                 pos.y -= stepL;
                                 pos.dir = 4;
-                                wallFreq++;
-                        } else {
-                                absorbCounter++;
+                                wallHits++;
+                                absorbCounter--;
                         }
                 } else {
+                        absorbCounter--;
                         innerStep();
                 }
                 break;
@@ -196,7 +194,7 @@ bool Walker::targetFound()
         dx = fabs(pos.x - svar.tarPos.x);
         dy = fabs(pos.y - svar.tarPos.y);
 
-        if (dx + dy <= svar.detecR)
+        if (dx + dy <= svar.D)
                 return true;
         else
                 return false;

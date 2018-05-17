@@ -16,7 +16,9 @@ struct position {
 };
 
 struct sysVar {
-        int nRuns;
+        int N;			/* Number of simulation runs */
+        int L;			/* System length */
+        int D;			/* Detection radius */
         int bc;                 /*
 	 			 * Boundary Condition Type
 				 * 0 - No boundaries
@@ -25,9 +27,7 @@ struct sysVar {
                                  * 3 - Absorbing boundaries /w lateral move
 				 */
         double alpha;            /* Release probability in abs bound */
-        int sysL;
         position tarPos;
-        int detecR;
 };
 
 
@@ -39,9 +39,9 @@ extern gsl_rng *gen;
 /* Functions */
 void ReadCommandLine(int argc, char const *argv[],
 	 		double &p,
-			int &nRuns,
-			int &sysL,
-                        int &detecR,
+			int &N,
+			int &L,
+                        int &D,
                         double &alpha);
 void setupEnv();
 void initTarget();

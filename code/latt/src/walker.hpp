@@ -17,7 +17,7 @@ public:
         int stepL;
         position pos;
         position oldpos;
-        int absorbCounter, wallFreq;
+        int absorbCounter, wallHits;
 
         void setup(double newp);
         void init();

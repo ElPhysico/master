@@ -1,0 +1,1317 @@
+\input{praeambel.tex}
+
+\begin{document}
+\pagenumbering{Roman} % Seitenummerierung mit großen römischen Zahlen 
+\pagestyle{empty} % kein Kopf- oder Fußzeilen auf den ersten Seiten
+
+% Titelseite
+\clearscrheadings\clearscrplain
+\begin{center}
+
+\begin{bfseries}
+\begin{Huge}
+Cooperative effects in motor-driven cargo transport\\
+\end{Huge}
+\end{bfseries}
+\vspace{4cm}
+\textbf{Bachelorarbeit}\\
+\vspace{0.4cm}
+zur Erlangung des akademischen Grades\\ 
+Bachelor of Science  \\
+im Studiengang Physik \\
+der Naturwissenschaftlich-Technischen Fakultät II \\
+- Physik und Mechatronik -  \\
+der Universität des Saarlandes \\
+\vspace{4 cm}
+von\\
+\vspace{0.5cm}
+\begin{Large}
+Kevin Klein \\
+\end{Large}
+\vspace{1.5cm}
+Saarbrücken, 2016
+
+
+\end{center}
+\clearpage
+% Titelseite - Ende
+
+\newpage 
+\thispagestyle{empty}
+\quad  %\addtocounter{page}{-1}
+\newpage
+
+% Erklärung
+\null\vfill
+\begin{center}
+Ich versichere hiermit, dass ich die vorliegende Arbeit \\
+selbständig verfasst und keine anderen als die \\
+angegebenen Quellen und Hilfsmittel benutzt habe.\\
+
+
+\vspace{4cm}
+Saarbrücken, den 21.09.2016 \hspace{4cm} Kevin Klein\\
+\end{center}
+\vfill
+% Erklärung - Ende
+
+\newpage
+\pagestyle{useheadings} % normale Kopf- und Fußzeilen für den Rest
+
+\tableofcontents % erstelle hier das Inhaltsverzeichnis
+\listoffigures % erstelle hier das Abbildungsverzeichnis
+\listoftables % erstelle hier das Tabellenverzeichnis
+
+
+% Ab jetzt richtiger Inhalt
+\chapter{Introduction}
+\pagenumbering{arabic}
+As all living beings, and especially humans, are made of cells \cite{alberts}, studying them and their underlying mechanisms is a priority in the never ending endeavor of understanding life. \\
+Eucaryotic cells consist among others of their \textit{nucleus}, \textit{cytoskeleton} and several different \textit{organelles}, which are surrounded by the \textit{cytoplasm} and enclosed by the 
+\textit{plasma membrane} \cite{alberts}. In order to function properly and as a response to different circumstances, the cell needs to be able to move \textit{cargos}, e.g. nutrients and
+organelles, in its interior \cite{alberts}. Therefore, it depends on \textit{filaments} that make up the cytoskeleton and along which motor-driven transport can occur \cite{alberts}.
+For this work, the so-called \textit{microtubules}, which are one kind of filament, are of importance. Transport along these microtubules is carried out by \textit{kinesin}
+and \textit{dynein}, two different types of \textit{molecular motors} that vary not only in their preference to run in opposite directions \cite{alberts}. \\
+Experiments and theoretical studies have shown, that unidirectional \cite{larson, bieling, jcb174}, as well as bidirectional \cite{cb14, pnas105} transport with differing properties can arise as a result of the
+mutual acting of more than one of those molecular motors on the same cargo. There are a lot of attempts to describe the underlying transport processes in theoretical works \cite{pnas105, li, sklein}. In
+this work, the main focus lies on transport of cargos by two \textit{teams} of different kinesins with different stepping velocities along the microtubule. Therefore, these teams
+will be referred to as \textit{slow} and \textit{fast} teams, respectively. \\
+The work done by Li \textit{et al.} \cite{li}, which deals with the transport carried out by slow and fast teams of kinesin motors, is one attempt to explain the processes during
+unidirectional transport. They introduce a \textit{mean-field model}, with which they are able to obtain three distinct motility regimes, that are then used to explain the experimental results
+found by Larson \textit{et al.} \cite{larson}, Bieling \textit{et al.} \cite{bieling} and Pan \textit{et al.} \cite{jcb174}. \\
+Within this work, an \textit{explicit model}, which does not use the mean-field assumptions made in \cite{li}, will be introduced, in order to examine the results and motility regimes found by Li
+\textit{et al.} \cite{li}. In the course of this, the focus will lie on the so-called \textit{bimodal} motility regime. Furthermore, this model will be used to explain and analyze the underlying
+processes of unidirectional transport by slow and fast kinesins. Lastly, the model will be modified, in order to obtain results for bidirectional transport, which will then be compared to
+the work of Klein \textit{et al.} \cite{sklein}.
+
+At first, however, the biological essentials need to be explained, what will be done in chapter two. In Chapter three, the introduction of the mean-field model and the results of the
+work of Li \textit{et al.} \cite{li} will follow. In chapter four, the \textit{explicit model} as well as the simulation process will be introduced. Afterwards, the comparison of the obtained results to
+\cite{li} and \cite{sklein}, as well as an analysis of the transport processes will be presented in chapter five. In the end, a brief summary and an outlook will be given in chapter six.
+
+
+
+
+
+\chapter{Biological background}\label{c.bio-background}
+Eucaryotic cells are complex constructs that fulfill many different functions and need to have certain properties in order to function properly. These include the ability to interact with their
+environment or to rearrange internal components. For this purpose the cell is mainly dependent on its cytoskeleton, which is composed of three different types of filaments. Firstly the 
+\textit{intermediate filaments} that give mechanical stability to the cell. Secondly the \textit{actin filaments}, which determine the shape of the cell surface and are responsible for the cell
+motion. Thirdly the microtubules (MTs) which play an important role for this work and hence are explained in more detail in the following subsection \cite{alberts}.
+
+\section{Microtubules}\label{s.microtubuli}
+Microtubules (MTs) are responsible for the positioning of organelles within the cell, as well as for the intracellular transport processes \cite{alberts}, on which this work focuses.
+
+MTs are made up of 13 so-called \textit{protofilaments}, which themselves consist of protein subunits of \textit{tubulin}. These subunits are heterodimers, formed from the proteins $\alpha$- and
+$\beta$-tubulin. Many of those subunits, all pointing in the same direction, are then assembled to form a protofilament, which leads to a structural polarity of the protofilaments. Furthermore, all
+13 protofilaments have the same orientation and are aligned parallel to form a hollow tubular cylinder (the MT) with a diameter of approximately \SI{25}{\nano\meter}. The ends of the MT itself will
+therefore be referred to as \textit{plus-} (open $\beta$-tubulin) and \textit{minus-} (open $\alpha$-tubulin) ends, respectively (see Figure \ref{img.mt-diagram} and \cite{alberts} for more details).
+
+\bildr{mt-diagram}{20}{Diagram showing the construction of a microtubule from the subunits $\alpha$- and $\beta$-tubulin and the protofilaments (figure of \cite{alberts}).}{Construction of microtubule}
+
+MTs are connected to the \textit{microtubule organizing center}, which is the origin of all MTs, located close to the nucleus, and from there, grow radially to the cell membrane by polymerizing
+additional tubulin subunits. During its life time, the length of a MT is dynamic, meaning it can shrink and grow at its plus end \cite{alberts, cmls58}.
+
+Most importantly for this work, MTs serve as road tracks for molecular motors, which will be introduced in the next section.
+
+\section{Molecular motors}\label{s.mol-motors}
+Molecular motors or \textit{motor proteins} are proteins that bind to the polarized filaments of the cytoskeleton and walk along these by converting \textit{adenosine triphosphate (ATP)}. One of their tasks
+is, to transport cargos, nutrients and organelles for instance, to their desired location within the cell, by binding to the cargo and walking along the filaments. There are lots of different kinds of
+motor proteins, that differ by their molecular protein structure, which gives them the ability to attach to different kinds of filaments and cargos. Furthermore, some motor proteins prefer to walk towards
+the plus end, while others prefer the minus end \cite{alberts}.
+
+Responsible for the bond to the filament, as well as the hydrolysis of the ATP, is the so-called domain of the motor, while the tail connects with the different kinds of cargos. The domain is
+therefore determining the kind of filament and the direction of transport, whereas the tail determines the kind of cargo, that is transported \cite{alberts}.
+
+Motor proteins are roughly divided into three groups: myosin, kinesin and dynein. The first one attaches to actin filaments and not to MTs and will thus not be further explained in the following of
+this work \cite{alberts}.
+
+\subsection{Kinesin}\label{ss.kinesin}
+Kinesins are motor proteins that attach to and walk along MTs. Most kinds of kinesins walk towards the plus end, however there are some that walk towards the minus end, e.g. the so-called
+kinesin-14 \cite{alberts}.
+
+There are at least 14 different families in the group of kinesins. Thereby, the different kinds of kinesins differ in many properties like the velocity, with which they walk along the MT, the 
+resistance to load and their assigned tasks \cite{alberts}.
+
+The responsibilities of many kinesins, such as kinesin-1, include the transport of organelles through the cell. Other kinesins, like kinesin-5 for instance, are able to attach to two MTs at the
+same time and thus to slide them against each other \cite{alberts}. Henceforth, kinesin will always refer to kinesin-1, if not declared else, as it is the most important kinesin in the course of
+this work.
+
+\bildr{kin-dyn}{12}{Diagram showing basic construction of kinesin and dynein (figure of \cite{thecell}). The heavy chains (dark blue tail for dynein, orange/beige tail for kinesin) are not marked.}{Diagram of kinesin and dynein}
+
+The kinesin motor proteins typically have two heads (motor domain) and two heavy and two light chains which build the tail (see Figure \ref{img.kin-dyn} and \cite{alberts} for more details).
+
+\subsection{Dynein}\label{ss.dynein}
+Dyneins are minus end directed motor proteins that also attach and walk along MTs, just like kinesins \cite{alberts}.
+
+There are two major and one minor branch within the dynein family. The major branch, associated with vesicle trafficking, contains the cytoplasmic dyneins, which are the important ones for this
+work. Dyneins are also the largest of the known motor proteins \cite{alberts}.
+
+% \begin{wrapfigure}[27]{R}{0.5\textwidth}
+%  \centering
+%  \vspace{1ex}
+%  \includegraphics[width=0.45\textwidth]{images/motor-step}
+%  \caption[Stepping of kinesin]{\label{img.motor-step} Stepping of a kinesin motor protein on a microtubule (Source: \cite{alberts}).}
+%  \vspace{1ex}
+% \end{wrapfigure}
+
+The dynein motor proteins have two heads, which differ from the heads of kinesin and are more complicated. The tail is built by two or three heavy chains, as well as a variable number of
+intermediate and light chains (see Figure \ref{img.kin-dyn} and \cite{alberts} for more details).
+
+\subsection{Movement and transport}\label{ss.move-and-transport}
+As mentioned before, the motor proteins can attach to the MT with their motor domain and to a cargo with their tail. Once attached, the trailing head of the motorprotein can take a step, that
+means detach from its tubulin binding site and pass the leading head, and rebind to the next free tubulin site, by converting ATP into \textit{adenosine diphosphate (ADP)} and releasing
+\textit{orthophosphate (P)}. By repeatedly using this process, the motor can take many steps and carry its cargo along the MT track (see Figure \ref{img.kinesin-stepping}) \cite{alberts}.
+
+\bild{kinesin-stepping}{15cm}{Stepping of a kinesin motor protein on a microtubule (figure of \cite{alberts}).}{Stepping of kinesin}
+
+Especially large cargos are usually transported by more than one motor \cite{nature422}. The way several motors, acting on one cargo, interact with each other or
+influence transport properties, is subject to much research. It has been shown that complex movement patterns, like differing run-lengths \cite{pnas102} or even bidirectional transport
+\cite{cb14, pnas105}, can result from the mutual acting of many (different) motors on the same cargo.
+
+In this work, the properties of unidirectional cargo transport that is carried out by two different teams of kinesins will be investigated. However, there will be a brief treatment of
+bidirectional transport as well.
+
+
+
+\chapter{The mean-field model: cooperative transport by slow and fast kinesins}\label{c.coop-transp-kinesin}
+In the previous chapter it was explained that the mutual acting of different motor proteins on the same cargo is subject to much research. In this chapter, the research of Li et al. \cite{li}
+that tinkers with the transport carried out by two teams of different types of kinesins will be presented and summarized. The kinesins of both teams walk towards the plus end of the microtubule,
+however, with different velocities. Henceforth, they will be referred to as slow and fast motors, respectively.
+
+
+\section{Motivation}\label{s.motivation}
+The previously described cargo transport is often carried out by groups of motor proteins \cite{pnas102, physica42}. These groups can contain different types of motors with the same directionality \cite{ncb6} or
+with different directionality \cite{cb14, pnas94, mbc17}. Li \textit{et al.} \cite{li} studied the effects of having two teams of motor proteins, walking in the same direction at different
+velocities, involved into transport, in a theoretical work. They compared the results, which they obtained, to the experimental works of Pan \textit{et al.} \cite{jcb174}, Larson \cite{larson}
+\textit{et al.} and Bieling \textit{et al.} \cite{bieling}.
+
+In order to examine the cooperative transport processes, Pan \textit{et al.} \cite{jcb174}, Larson \textit{et al.} \cite{larson} and Bieling \textit{et al.} \cite{bieling} used in vitro microtubule
+gliding assays. In those assays, the tails of the motor proteins are immobilized on a glass surface, while the heads can attach to a MT filament (see Figure \ref{img.mt-motor-scheme}; for further
+information about the MT gliding assay and the preparation of such an assay, see Arpag \textit{et al.} \cite{arpag}). In this arrangement the motor proteins move the MT along the glass surface and
+therefore the velocity of the MT can be measured.
+
+\bilda{mt-motor-scheme}{Outline of a MT, that is moved by slow and fast motor proteins attached to a glass surface, the resulting forces $F$ and MT velocity $V_{mt}$ (figure of \cite{larson}).}{Microtubule gliding assay}
+
+The three research teams used their assays, to measure the microtubule velocity for different surface concentrations of slow and fast motors, with a fixed total motor surface density. The result was
+a nonlinear dependence of the gliding velocity on the surface concentration of fast motors. Furthermore, the velocity varied between the speed of a single slow and single fast motor in all three
+experiments. However, there were also different qualitative results in the three studies: Larson \textit{et al.} \cite{larson} found a switch-like, abrupt transition from slow to fast motion with
+increasing fast motor concentration, while the other two found a smooth transition of the slow and fast motion state (see Figure \ref{img.li-mt-velocity} below). 
+
+To figure out why the different kinds of kinesins, that were used in the assays, show these velocity transitions and how single motor properties affect the transport characteristics, one needs
+theoretical models. The model used by Li \textit{et al.} \cite{li} will be introduced in the next section.
+
+
+\section{The transition-rate model}\label{s.transition-rates-model}
+The underlying theoretical model, that was used by Li \textit{et al.} \cite{li} is the so-called \textit{transition-rate model}. Within this model there is a fixed number \mbox{$N = N_s + N_f$} of
+motor proteins available for attachment, where $N_s$ and $N_f$ are the numbers of available slow and fast motors, respectively. Each motor is characterized by six parameters (subscripts $s$ and $f$
+for slow and fast motors respectively): when unbound, motors can bind to the MT with \textit{binding rates} $\pi_{0s}$ and $\pi_{0f}$; when bound, they can unbind with the force dependent 
+\textit{unbinding rates} $\epsilon_s\left(F\right)$ and $\epsilon_f\left(F\right)$. The unbinding rates thereby increase exponentially under load, with the force scales given by the 
+\textit{detachment forces} $F_{ds}$ and $F_{df}$, as shown by equation \eqref{e.unbinding-rate},
+\begin{equation}\label{e.unbinding-rate}
+ \epsilon_{s/f}\left(F\right) = \epsilon_{0s/0f} exp\left({\frac{F}{F_{ds/df}}}\right),
+\end{equation}
+where $\epsilon_{0s}$ and $\epsilon_{0f}$ are the \textit{force free unbinding rates}.\\
+Motors that are attached to the MT move with the \textit{force free velocities} $v_s$ and $v_f$. However, fast motors always experience resisting load forces \mbox{$F \geq 0$} from slow motors,
+whereas slow motors experience assisting forces \mbox{$F \leq 0$} from fast motors. Both types of motor underlay a linear decreasing force-velocity relation which scales with the 
+\textit{stall forces} $F_{ss}$ and $F_{sf}$. The underlying force-velocity relation is given by equation \eqref{e.linear-velocity}:
+\begin{equation}\label{e.linear-velocity}
+\begin{aligned}
+ V_s\left(F\right) &= v_s \left(1 - F/F_{ss}\right) \qquad \phantom{_{ff}} \text{for} \quad F \leq 0 < F_{ss} \\
+ V_f\left(F\right) &= v_f \left(1 - F/F_{sf}\right) \qquad \phantom{_{ss}} \text{for} \quad 0 \leq F < F_{sf},
+\end{aligned}
+\end{equation}
+where a motor that is pulled backwards by a force exceeding the stall force stops moving, resulting in \mbox{$V\left(F\right) = 0$}.
+
+The state of the cargo-motor system is dynamic during transport, since motors can always bind and unbind from the filament. It is therefore determined by the numbers $n_s$ and $n_f$ of motors that
+are attached to the filament and actually involved in the transport. Those numbers are stochastically fluctuating between \mbox{$0 \leq n_s \leq N_s$} and \mbox{$0 \leq n_f \leq N_f$}.
+
+For their purpose Li \textit{et al.} \cite{li} used additional conditions and assumptions. Those will be shown in the next sections.
+
+
+\section{Master equation approach}\label{s.master-equation-approach}
+As it was said before, the state of the cargo-motor system depends on the pair \mbox{$\left(n_f, n_s\right)$} of attached motor numbers. The probability to find the system in the state with $n_s$
+slow and $n_f$ fast motors attached at time $t$ is $p\left(n_f, n_s, t\right)$ and therefore the master equation that describes the stochastic properties of the system, reads:
+\begin{equation}\label{e.master-equation}
+\begin{aligned}
+ \frac{\partial}{\partial t} p\left(n_f, n_s, t\right) &= \epsilon_f\left(n_f + 1, n_s\right)p\left(n_f + 1, n_s, t\right) + \epsilon_s\left(n_f, n_s + 1\right)p\left(n_f, n_s + 1, t\right) \\
+ &\phantom{=}+ \pi_f\left(n_f - 1, n_s\right)p\left(n_f - 1, n_s, t\right) + \pi_s\left(n_f, n_s - 1\right)p\left(n_f, n_s - 1, t\right) \\
+ &\phantom{=}- \left[\pi_f\left(n_f, n_s\right) + \pi_s\left(n_f, n_s\right) + \epsilon_f\left(n_f, n_s\right) + \epsilon_s\left(n_f, n_s\right)\right]p\left(n_f, n_s, t\right).
+\end{aligned}
+\end{equation}
+Here, the four \textit{effective} binding and unbinding rates \mbox{$\pi_s\text{, } \pi_f\text{, } \epsilon_s \text{ and } \epsilon_f$} depend on the state \mbox{$\left(n_f, n_s\right)$} of the cargo-motor
+system. For the binding rates it is assumed, that \mbox{$\pi_0 \equiv \pi_{0s} = \pi_{0f}$}, while the exponential relations from equation \eqref{e.unbinding-rate} are used
+for the single motor unbinding rates. The actual binding and unbinding rates in a given state \mbox{$\left(n_f, n_s\right)$} can be calculated using the two assumptions of
+\begin{compactenum}[(i)]
+ \item force balance and equal force sharing
+ \item equal velocities of all motors
+\end{compactenum}
+and by presuming, that the motor stepping happens at a time scale, which is smaller than the time scale for the binding and unbinding of motors, so that conditions (i) and (ii) can be used with fixed motor
+numbers $n_s$ and $n_f$. Condition (i) then leads to
+\begin{equation}\label{e.force-balance}
+ n_fF_+ = -n_sF_- \equiv F\left(n_f, n_s\right),
+\end{equation}
+since it is assumed, that the absolute value of the total force \mbox{$F\left(n_f, n_s\right) > 0$}, acting on each team, is equally shared among the motors of one team. Frictional forces,
+arising from the viscosity of the surrounding liquid, can be neglected, as it is shown in Li \textit{et al.} \cite{li}.
+
+The effective unbinding rates used in equation \eqref{e.master-equation} are
+\begin{equation}\label{e.effective-unbinding-rates}
+\begin{aligned}
+ \epsilon_s\left(n_f, n_s\right) &= n_s\epsilon_{0s}exp\left[F\left(n_f, n_s\right)/\left(n_sF_{ds}\right)\right] \\
+ \epsilon_f\left(n_f, n_s\right) &= n_f\epsilon_{0f}exp\left[F\left(n_f, n_s\right)/\left(n_fF_{df}\right)\right],
+\end{aligned}
+\end{equation}
+while the effective binding rates are
+\begin{equation}\label{e.effective-binding-rates}
+\begin{aligned}
+ \pi_s\left(n_f, n_s\right) &= \left(N_s - n_s\right)\pi_{0s} \\
+ \pi_f\left(n_f, n_s\right) &= \left(N_f - n_f\right)\pi_{0f}.
+\end{aligned}
+\end{equation}
+
+The second condition (ii) of equal velocities leads to
+\begin{equation}\label{e.equal-velocities}
+ V_s\left(F_-\right) = V_f\left(F_+\right) = v_m\left(n_f, n_s\right),
+\end{equation}
+with the slow and fast velocities of a single motor $V_s$ and $V_f$, as given in equation \eqref{e.linear-velocity}, and the microtubule velocity $v_m$. 
+
+By using equations \eqref{e.force-balance} and \eqref{e.equal-velocities}, the forces $F_+$ and $F_-$ can be eliminated, which leads to the stationary microtubule velocity for given numbers $n_s$
+and $n_f$,
+\begin{equation}\label{e.mt-velocity}
+ v_m\left(n_f, n_s\right) = \frac{v_sv_f}{\left(1 - \dfrac{n_f}{n}\right)v_f + \dfrac{n_f}{n}v_s},
+\end{equation}
+with the total number of bound motors \mbox{$n \equiv n_s + n_f$}.
+
+In order to calculate the effective unbinding rates from equation \eqref{e.effective-unbinding-rates}, the total force $F\left(n_f, n_s\right)$, acting on each motor group, is needed,
+\begin{equation}\label{e.total-force-on-motor-group}
+ F\left(n_f, n_s\right) = \frac{1 - \dfrac{v_s}{v_f}}{1 + \dfrac{n_f}{n_s}\dfrac{v_s}{v_f}}n_fF_s,
+\end{equation}
+where, for simplicity reasons, it is assumed, that \mbox{$F_s \equiv F_{ss} = F_{sf}$}, even though they could be different.
+
+Using the obtained effective binding and unbinding rates from equations \eqref{e.effective-unbinding-rates} and \eqref{e.effective-binding-rates}, the stationary probability distribution
+$p\left(n_f, n_s\right)$ can be calculated numerically. With $p\left(n_f, n_s\right)$, other steady-state transport properties can be described.\\
+The average microtubule velocity, that has been measured by all three experimental groups in Larson \textit{et al.} \cite{larson}, Bieling \textit{et al.} \cite{bieling} and Pan \textit{et al.}
+\cite{jcb174} can be calculated by
+\begin{equation}\label{e.average-mt-velocity}
+ \left\langle v_m \right\rangle = \sum^{N_f}_{n_f = 0}\sum^{N_s}_{n_s = 0} v_m\left(n_f, n_s\right)p\left(n_f, n_s\right).
+\end{equation}
+
+Using equation \eqref{e.average-mt-velocity} with numerical solutions of the stationary state master equation for the probability distribution $p\left(n_f, n_s\right)$ for given numbers $N_s$ and
+$N_f$, allows one to compare the theoretical model to the experimentally found results by \cite{larson, bieling, jcb174}.
+
+\begin{table}[htbp]
+\centering
+\caption[Parameters used for simulations by Li \textit{et al.}]{Parameters used by Li \textit{et al.} \cite{li} in order to simulate the average microtubule velocity (* values are deduced from the
+simulation itself) and derived dimensionless parameters, that will be used later in the text.}
+\label{t.li-parameter}
+\begin{tabular}{L{0.3\textwidth}ccc} \hline \\[-10pt]
+	\multirow{4}{*}{} & \begin{tabular}{@{}c@{}}Larson\\ \textit{et al.} \cite{larson}\end{tabular} & \begin{tabular}{@{}c@{}}Pan\\ \textit{et al.} \cite{jcb174}\end{tabular} & \begin{tabular}{@{}c@{}}Bieling\\ \textit{et al.} \cite{bieling}\end{tabular} \\[2pt] \cline{2-4} \\[-10pt]
+					& \multicolumn{3}{c}{Fast motors} \\[2pt] \cline{2-4} \\[-10pt]
+					& \begin{tabular}{@{}c@{}}Wild\\kinesin-I\end{tabular} & \begin{tabular}{@{}c@{}} \\OSM-3\end{tabular} & \begin{tabular}{@{}c@{}} \\Xklp1\end{tabular} \\[2pt] \cline{2-4} \\[-10pt]
+					& \multicolumn{3}{c}{Slow motors} \\[2pt] \cline{2-4} \\[-10pt]
+	\begin{tabular}{@{}c@{}}\\Parameter\end{tabular}		  & \begin{tabular}{@{}c@{}}Mutant\\kinesin-I\end{tabular} & \begin{tabular}{@{}c@{}}\\Kinesin-II\end{tabular} & \begin{tabular}{@{}c@{}}\\Xkid\end{tabular} \\[2pt] \hline \\[-10pt]
+	Binding rate, fast $\pi_{0f}$ & \SI{5}{\per\second} & \SI{5}{\per\second} & \SI{5}{\per\second} \\
+	Binding rate, slow $\pi_{0s}$ & \SI{5}{\per\second} & \SI{5}{\per\second} & \SI{5}{\per\second} \\
+	Unbinding rate, fast $\epsilon_{0f}$ & \SI{1}{\per\second} & \SI{1}{\per\second} & \SI{1}{\per\second} \\	
+	Unbinding rate, slow $\epsilon_{0s}$ & \SI{1}{\per\second} & \SI{1}{\per\second} & \SI{1}{\per\second} \\	
+	Detachment force, fast $F_{df}$ & \SI{3}{\pico\newton} & \SI{6}{\pico\newton}$^{*}$ & \SI{6}{\pico\newton}$^{*}$ \\
+	Detachment force ratio $\eta \equiv \frac{F_{ds}}{F_{df}}$ & 0.45 & 3.3$^{*}$ & 1.9$^{*}$ \\
+	Stall force, fast $F_{sf}$ & \SI{6}{\pico\newton} & \SI{6}{\pico\newton} & \SI{6}{\pico\newton} \\
+	Stall force, slow $F_{ss}$ & \SI{6}{\pico\newton} & \SI{6}{\pico\newton} & \SI{6}{\pico\newton} \\
+	Zero load velocity, fast $v_{f}$ & \SI{0,522}{\micro\meter\per\second} & \SI{1,09}{\micro\meter\per\second} & \SI{1,0}{\micro\meter\per\second} \\
+	Zero load velocity, slow $v_{s}$ & \SI{0,034}{\micro\meter\per\second} & \SI{0,34}{\micro\meter\per\second} & \SI{0,1}{\micro\meter\per\second} \\
+	$\hat{\pi} \equiv \frac{\pi_{0f}}{\epsilon_{0f}} = \frac{\pi_{0s}}{\epsilon_{0s}}$ & 5 & 5 & 5 \\
+	$\hat{F} \equiv \frac{F_{s}}{F_{df}}$ & 2 & 1 & 1 \\
+	$\hat{v} \equiv \frac{v_{s}}{v_{f}}$ & 0.065 & 0.31 & 0.1 \\ \hline
+\end{tabular}
+\end{table}
+
+By using a value of \mbox{$N = 10$} for the total number of available motors, different fractions $N_f/N$ and the values shown in Table \ref{t.li-parameter}, Li \textit{et al.} \cite{li} obtained
+the solid curves in Figure \ref{img.li-mt-velocity}. For the comparison with \cite{larson} all parameters were known, whereas for the other two parameter sets it is assumed that the motors have
+the same binding and unbinding rates and stall forces as kinesin-1. By using the available experimental data, the detachment forces of slow and fast motors were then used as fitting parameters,
+which led to the marked values in Table \ref{t.li-parameter}.
+
+\bild{li-mt-velocity}{15cm}{Comparison of the theoretical simulations done by Li \textit{et al.} \cite{li} with the experimental data obtained by (A) Larson \textit{et al.} \cite{larson}, (B) Pan \textit{et al.} \cite{jcb174} and (C) Bieleing \textit{et al.} \cite{bieling}, showing the microtubule transport velocity as a function of the fraction of fast motors $N_f/N$ (figure of \cite{li}).}{Comparison of simulations by Li \textit{et al.} with experimental data}
+
+To gain further insight, Li \textit{et al.} \cite{li} analyzed the probability distribution $p\left(n_f, n_s\right)$ further and by doing so, they obtain three distinct motility states:
+
+\begin{enumerate}
+ \item Fast transport dominated by fast motors and with a large velocity (single maximum at motor numbers \mbox{$n_f > n_s$}).
+ \item Slow transport dominated by slow motors and with a small velocity (single maximum at motor numbers \mbox{$n_s > n_f$}).
+ \item Bistable transport that is switching between a fast and a slow velocity (two maxima at \mbox{$n_f > n_s$} and \mbox{$n_s > n_f$}).
+\end{enumerate}
+
+The probability distribution for the transport velocity $p\left(v\right)$ can directly be obtained from the probability distribution $p\left(n_f, n_s\right)$,
+\begin{equation}\label{e.velocity-distribution}
+ p\left(v\right) = \sum^{N_f}_{n_f = 0}\sum^{N_s}_{n_s = 0}\delta\left[v - v_m\left(n_f, n_s\right)\right]p\left(n_f, n_s\right).
+\end{equation}
+Analyzing the velocity distribution $p\left(v\right)$ shows the same three motility states as mentioned above. As it is shown in Figure \ref{img.li-velocity-distribution}, a single maximum in
+the probability distribution $p\left(n_f, n_s\right)$ leads to an unimodal velocity distribution, as well as the two maxima for the bistable transport lead to a bimodal velocity distribution
+(the larger peak width of the velocity distribution from the Brownian dynamics simulations originate from additional fluctuations in the numbers $N_s$ and $N_f$ of available motors \cite{li},
+which have been neglected in the master equation approach).
+
+\bild{li-velocity-distribution}{15cm}{Velocity distribution for the microtubule velocity from the master equation approach (green) and from microscopic Brownian dynamics simulations (red). Fast, slow and bistable transport are shown from left to right. Simulation was done for the parameters from the experiment done by Larson \textit{et al.} (see Table \ref{t.li-parameter}) with fast motor density of \mbox{$N_f/N = 0.4$} (fast), \mbox{$N_f/N = 0.2$} (slow) and \mbox{$N_f/N = 0.2$} (bistable) and detachment force ratio \mbox{$\eta = 0.45$} (fast), \mbox{$\eta = 4$} (slow) and \mbox{$\eta = 0.45$} (bistable) (figure of \cite{li}).}{Velocity distribution found by Li \textit{et al.}}
+
+The three experimental results \cite{larson, bieling, jcb174} can be explained with the existence of the three mentioned motility states. All three experiments start with small fractions of fast
+motors, which are then increased to large fractions. So, at first, the system is in the state of slow transport with a single peak in the velocity distribution at low velocities and reaches the
+regime of fast transport with a peak at high velocities in the end. For the smooth transition, as it has been observed by \cite{bieling, jcb174}, the single peak just shifts from low to high
+velocities without changing its unimodal state. On the other hand, for the switch-like transition observed by \cite{larson}, the velocity distribution first reaches an intermediate bistable state,
+where a second peak appears at high velocities, while the peak at low velocities still exists. Then, once the first peak at low velocities vanishes, the system reaches the regime of fast transport.
+
+In order to understand this different behavior in the transitions of the velocity distributions, Li \textit{et al.} \cite{li} took a closer look at the different single motor parameters, that are 
+involved in the experiments.
+
+
+\section{Mean-field approach}\label{s.mean-field-approach}
+Having a look at the motor parameters used by \cite{larson}, Li \textit{et al.} \cite{li} take notice of the small ratio of detachment to stall force for slow (\mbox{$F_{ds}/F_s = 0.225$}), as
+well as fast motors (\mbox{$F_{df}/F_s = 0.5$}). This means that motors do not stop walking once their load force reaches their detachment force and even higher values. Therefore, they are
+likely to unbind from the microtubule under typical load forces, which are about as large as the stall force. However, since the force on one team is shared equally among all motors of that team,
+this means that the remaining motors now have to carry an even bigger load and are even more likely to unbind, which leads to subsequent unbinding events, until all motors of that team are unbound
+from the microtubule. Such a process is called an \textit{unbinding cascade}. This also explains the switch-like behavior of the transport velocity: if all slow motors are unbound, the transport
+velocity switches to a value around the velocity of fast motors and the opposite way around, for an unbinding cascade of fast motors.
+
+Inspecting the detachment to stall force ratios in the other two experiments (\mbox{$F_{ds}/F_s > 1$} and \mbox{$F_{df}/F_s = 1$}) shows that the motors in these experiments stop walking
+before/once they reach load forces of the order of their detachment force. Therefore, motors are more likely to stay bound to the microtubule and the numbers of attached motors only change smoothly,
+without any unbinding cascade. For this reason the transport velocity only changes slowly.
+
+These observations suggest that a small detachment to stall force ratio is needed for switch-like velocity changes and bistable transport. In order to check this assumption, a more detailed 
+analysis of motor parameters is needed. Since solving the full master equation analytically or identifying the parameters that determine the behavior of the transitions for different solutions,
+is difficult, Li \textit{et al.} \cite{li} introduce a mean-field approximation, in order to derive dynamic equations for the mean numbers
+\begin{equation}\label{e.mean-numbers-of-motors}
+ \left\langle n_f \right\rangle = \sum_{n_f, n_s} n_f p\left(n_f, n_s\right) \text{ and } \left\langle n_s \right\rangle = \sum_{n_f, n_s} n_s p\left(n_f, n_s\right)
+\end{equation}
+of bound fast and slow motors, respectively. By rescaling these averages of bound motors with the total number of available fast and slow motors,
+\mbox{$\hat n_f \equiv \frac{\left\langle n_f \right\rangle}{N_f}$} and \mbox{$\hat n_s \equiv \frac{\left\langle n_s \right\rangle}{N_s}$}, and using mean-field approximations of the type
+(analogously for slow motors)
+\begin{equation}\label{e.mean-field-approximation}
+ \left\langle n_f exp\left[\frac{F\left(n_f, n_s\right)}{n_f F_{df}}\right]\right\rangle \approx \left\langle n_f \right\rangle exp\left[\frac{F\left(\left\langle n_f \right\rangle, \left\langle n_s \right\rangle\right)}{\left\langle n_f \right\rangle F_{df}}\right],
+\end{equation}
+which become exact only for sharply peaked distributions $p\left(n_f, n_s\right)$, they obtain the mean field equations
+\begin{equation}\label{e.mean-field-equations-for-motor-numbers}
+\begin{aligned}
+ \frac{\partial}{\partial t} \hat n_f &= -\epsilon_0 \hat n_f exp\left[\frac{F\left(\left\langle n_f \right\rangle, \left\langle n_s \right\rangle\right)}{\left\langle n_f \right\rangle F_{df}}\right] + \pi_0\left(1 - \hat n_f\right), \\
+  \frac{\partial}{\partial t} \hat n_s &= -\epsilon_0 \hat n_s exp\left[\frac{F\left(\left\langle n_f \right\rangle, \left\langle n_s \right\rangle\right)}{\left\langle n_s \right\rangle F_{ds}}\right] + \pi_0\left(1 - \hat n_s\right).
+\end{aligned}
+\end{equation}
+
+Using equation \eqref{e.total-force-on-motor-group} for the force terms in the exponential factors, equations \eqref{e.mean-field-equations-for-motor-numbers} can be rearranged for the case of
+stationary state \mbox{$\partial_t \hat n_f = \partial_t \hat n_s = 0$}, which leads to the mean field equation
+\begin{equation}\label{e.mean-field-equation}
+ f_{MF}\left(\hat n\right) \equiv \frac{\hat v}{\hat N}\frac{exp\left[\dfrac{\hat F \left(1 - \hat v\right)}{\eta \hat v}\dfrac{\hat n}{1 + \hat n}\right] + \hat \pi}{exp\left[\dfrac{\hat F \left(1 - \hat v\right)}{1 + \hat n}\right] + \hat \pi} = \hat n
+\end{equation}
+for the new parameter \mbox{$\hat n \equiv \frac{\left\langle n_f \right\rangle}{\left\langle n_s \right\rangle}\frac{v_s}{v_f}$}. In equation \eqref{e.mean-field-equation} a set of five
+dimensionless parameters (see Table \ref{t.li-parameter} as well) 
+\begin{equation}\label{e.dimensionless-paramaters}
+ \eta \equiv \frac{F_{ds}}{F_{df}} \text{, } \hat F \equiv \frac{F_s}{F_{df}}\text{, } \hat v \equiv \frac{v_s}{v_f}\text{, } \hat \pi \equiv \frac{\pi_0}{\epsilon_0}\text{, } \text{ and } \hat N \equiv \frac{N_s}{N_f}
+\end{equation}
+had been introduced that served as control parameters for simulations performed by \cite{li}. The parameter, the easiest to access in experiments, is the fraction of available fast motors 
+\mbox{$N_f / N = \left(1 + \hat N\right)^{-1}$}, whereas the most important motor parameters are $\eta$, $\hat F$ and $\hat v$, since they are part of the exponential factors of equation 
+\eqref{e.mean-field-equation}.
+
+\bildr{li-bifurcation-diagram}{17}{Bifurcation diagram for the parameters used for the experiment of Larson \textit{et al.} \cite{larson} showing the solutions of the mean field equation for $\left\langle n_f\right\rangle / \left(\left\langle n_f\right\rangle + \left\langle n_s\right\rangle\right)$ in dependence on the detachment force ratio $\eta$ for fixed $N_f/N = 0.5$. The solid diamonds are stable solutions, while the open circles show unstable solutions (figure of \cite{li}).}{Bifurcation diagram for detachment force ratio $\eta$ by Li \textit{et al.}}
+
+Solving equation \eqref{e.mean-field-equation} numerically gives one, two or three different solutions. Parameters, for which bistable transport occurs, are thereby characterized by the existence
+of three stationary solutions, while the existence of one stationary solution is connected to transport with an unimodal velocity distribution. Li \textit{et al.} \cite{li} solve
+\mbox{$f_{MF}\left(\hat n\right) = \hat n$} together with \mbox{$f\prime_{MF}\left(\hat n\right) = 1$} for a given fraction of fast motors $N_f/N$, which leads to the boundaries of the bistable
+transport regime. As one can see in Figure \ref{img.li-bifurcation-diagram}, for the parameter $\eta$, a given fraction of fast motors $N_f/N$ and given parameters from equation
+\eqref{e.dimensionless-paramaters}, the mean field solution bifurcates. For parameters \mbox{$\eta < \eta_l$} and \mbox{$\eta > \eta_u$} there is only one stationary solution, which corresponds to
+a single solution for the average microtubule transport velocity, while for parameters \mbox{$\eta_l < \eta < \eta_u$} there are two metastable solutions, that correspond to slow and fast
+transport in the bimodal state.
+
+Calculating the solutions of the mean field equation \eqref{e.mean-field-equation} and identifying the critical values for different values of the fraction of fast motors $N_f/N$, leads to motility
+diagrams that show the different regimes of slow, fast and bistable transport. Further, there exists a limiting critical point $\eta_c$ for the existence of bistable transport, which is marked as
+a star in the
+motility diagrams in Figure \ref{img.li-eta-gegen-fast-ratio}. Furthermore, in the limits of small and large $\hat n$, approximations (for detailed information see Li et al. \cite{li}) can be
+used for equation \eqref{e.mean-field-equation}, which lead to analytical solutions for the upper and lower branch of critical values $\eta_u$ and $\eta_l$. For the lower branch the analytical
+approximation shows a \mbox{$\eta_l \propto \frac{1}{\hat N}$ - dependence}, while the upper branch shows the logarithmic dependence \mbox{$\eta_u \propto \frac{1}{ln \hat N}$}. Both analytically
+obtained branches are shown in Figure \ref{img.li-eta-gegen-fast-ratio} as blue and green curves.
+
+The obtained motility diagrams explain the different results for the behavior of the transition of the velocity for the three different experiments. The green dashed horizontal lines in Figure
+\ref{img.li-eta-gegen-fast-ratio} show the parameter sets, for which the experiments were realized. For (A) Larson \textit{et al.} \cite{larson} the experiment clearly starts in the bistable regime
+and meets the transition to the fast regime at a ratio of fast motors of approximately \mbox{$N_f/N \simeq 0.31$}, which is in agreement with the abrupt transition from slow to fast transport, that
+was shown in Figure \ref{img.li-mt-velocity}.\\
+For (B) Pan \textit{et al.} \cite{jcb174}, the experiment was realized for a detachment force ratio of \mbox{$\eta \simeq 3.3$}, that is larger than the critical value \mbox{$\eta_c = 0.44$}, and
+thus never meets a transition from bistable to slow or fast transport. That is the reason why no abrupt transition, but rather a smooth transition is found in the experiment, as it was shown in
+Figure \ref{img.li-mt-velocity}.\\
+The same explanation holds for (C) Bieling \textit{et al.} \cite{bieling}, where the realized experimental detachment force ratio was \mbox{$\eta \simeq 1.9$}, which is larger than the critical
+value of \mbox{$\eta_c = 1.81$}.
+
+\bild{li-eta-gegen-fast-ratio}{15cm}{Motility diagrams for the \mbox{$(N_f/N, \eta)$ plane} for the experiments done by (A) Larson \textit{et al.} \cite{larson}, (B) Pan \textit{et al.} \cite{jcb174} and (C) Bieling \textit{et al.} \cite{bieling} (figure of \cite{li}). The open red circles show the numerical solutions for upper and lower critical values $\eta_u$ and $\eta_l$, while the green and blue lines show the corresponding analytical approximations. The different motility regimes slow, fast and bistable are also marked in the diagram, where the region, enclosed by the open red circles, is the bistable parameter regime. The insets in figure (A) show exemplary velocity distributions for the different motility regimes. The vertical dashed black line in figure (A) corresponds to the parameter regime, for which the bifurcation behavior is shown in Figure \ref{img.li-bifurcation-diagram}. The vertical green lines show the values, for which the experiments were actually realized.}{Motility diagrams for detachment force ratio $\eta$ by Li \textit{et al.}}
+
+For the parameters $\hat F$ and $\hat v$, the mean field equation \eqref{e.mean-field-equation} got one, two or three solutions, as it was the case for the parameter $\eta$. Therefore, similar motility diagrams, as in Figure
+\ref{img.li-eta-gegen-fast-ratio}, can be obtained for the parameter planes \mbox{$\left(N_f/N, \hat F\right)$} and \mbox{$\left(N_f/N, \hat v\right)$}, which can be found in the supporting
+material of Li \textit{et al.} \cite{li}. Those diagrams exhibit a similar topology with enclosed bistable regions, that terminate in critical points.
+
+
+\section{Mean-field discussion}\label{s.mean-field-discussion}
+The assumptions of equal force sharing and equal velocities for all motors that have been made in the master equation approach in section \ref{s.master-equation-approach}, as well as the
+mean field approximations in section \ref{s.mean-field-approach}, cannot be taken for granted. In fact, there is some discussion about whether a model using these assumptions can actually describe
+the biological situation correctly \cite{sklein}. In order to understand the doubts behind this, one needs to take a closer look at the consequences of those assumptions.
+
+The motor proteins involved in cargo transport are attached to the microtubule with their head and to the cargo with their tail. At this, their stalks have a certain length and once they start
+walking, this stalk will become stretched. However, in order to have equal forces acting on all motor proteins of one team, they need to have their stalks stretched equally, which means, that they
+need to walk simultaneously. Equal forces thus result in equal positions for all attached motor proteins of one team.\\
+Furthermore, the detachment rates, as well as the microtubule velocity, depend on the forces acting on the motors. The assumption of force balance between the two motor teams leads to a microtubule
+velocity, that is only dependent on the numbers of attached motors, as it was shown in equation \eqref{e.mt-velocity} and is therefore always equal for a given number of slow and fast motors $n_s$
+and $n_f$.
+
+Klein et al. \cite{sklein} have shown that certain results, obtained by a mean-field model for bidirectional transport in Müller \textit{et al.} \cite{pnas105}, cannot be reproduced by an explicit
+model that takes the individual motor positions into account. Therefore, the question arises, whether the results found by Li \textit{et al.} \cite{li} can be reproduced by such an explicit model.
+
+
+
+
+
+\chapter{Explicit motor positions model}\label{c.explicit-model}
+In order to check the results found by Li \textit{et al.} \cite{li}, in this chapter a model will be introduced, which takes the explicit motor positions into account. The model is based on the
+model used by Klein \textit{et al.} \cite{sklein} and has got similar features as the model used by Li \textit{et al.} \cite{li}.\\
+After the model itself has been introduced, additionally, there will follow a brief explanation of the Monte Carlo simulation used to propagate the cargo-motor system.
+
+
+\section{Model description}\label{s.model-description}
+In contrast to the gliding assays used in the previously described experiments \cite{larson, bieling, jcb174}, where the movement of the microtubule was observed, this model will describe the
+transport of a cargo along a microtubule filament. Therefore, the microtubule is modeled as a one dimensional infinite track.\\
+Positions on the microtubule will be referred to with the \mbox{$x$-coordinate}, whereas the plus direction of the microtubule is in the direction of increasing \mbox{$x$-values.} The position of
+the center of mass of the transported cargo is $x_C\left(t\right)$, while the position of the i-th motor is $x_i\left(t\right)$.\\
+The motors are permanently attached to the center of mass of the cargo, so that the difference \mbox{$x_i\left(t\right) - x_{C}\left(t\right)$} is the actual distance of the i-th motor from
+the cargo. Further, there are again $N_s$ slow and $N_f$ fast motors available for attachment and the numbers $n_s$ and $n_f$ count the number of attached slow and fast motors, respectively.
+A sketch can be seen in Figure \ref{img.cargo-transport}.
+
+\bild{cargo-transport}{10cm}{Schematic drawing of the microtubule, cargo and motor system with four slow motors (green) and four fast motors (red). The motors are always attached to the cargo and can un-/bind to/from the microtubule at anytime.}{Schematic drawing of cargo and motors}
+
+Furthermore, as in the model of Li \textit{et al.} \cite{li}, the motors are characterized by their parameters: detachment \mbox{($F_{ds}$, $F_{df}$)} and stall forces \mbox{($F_{ss}$, $F_{sf}$)},
+binding (\textit{attachment}) \mbox{($\kappa_a$)} and unbinding (\textit{detachment}) rates \mbox{($\kappa_d\left(F\right)$)} and their respective velocity \mbox{($v_s$, $v_f$)}. The detachment rate for the i-th motor
+\begin{equation}\label{e.unbinding-rate-kappa_d}
+ \kappa_d\left(F_i\right) = \kappa_d^0 exp\left(\frac{\vert F_i\vert}{F_d}\right)
+\end{equation}
+follows the same dependence to load force, as shown in equation \eqref{e.unbinding-rate}, with the force free detachment rate $\kappa_d^0$ and the detachment force $F_d$ for either slow or fast
+motors.
+
+The stalks of the motors are modeled as cable-like Hookean springs that are slack up to a length $L_0$ and follow a linear force relation beyond that length. The force exerted by the i-th motor
+on the cargo is
+\begin{equation}\label{e.motor-spring-relation}
+ F_i =
+ \begin{cases}
+  \alpha \left(x_i\left(t\right) - x_{C}\left(t\right) + L_0\right), \qquad & \qquad \phantom{\vert}x_i\left(t\right) - x_{C}\left(t\right) \phantom{\vert} < -L_0, \\
+  0,	& \qquad \vert x_i\left(t\right) - x_{C}\left(t\right) \vert < \phantom{-}L_0, \\
+  \alpha \left(x_i\left(t\right) - x_{C}\left(t\right) - L_0\right), \qquad & \qquad \phantom{\vert}x_i\left(t\right) - x_{C}\left(t\right) \phantom{\vert} > \phantom{-}L_0,
+ \end{cases}
+\end{equation}
+with the stiffness constant $\alpha$. As a consequence of the stalk length, motors that are positioned within \mbox{$\left[x_{C}\left(t\right) - L_0, x_{C}\left(t\right) + L_0\right]$} do
+not exert or experience any force. The same is true for motors that are not attached to the microtubule.\\
+Unbound motors can attach to the microtubule with the attachment rate $\kappa_a$ at anytime within the force free area mentioned above.
+
+Since the motors are modeled explicitly, each one is able to take steps along the microtubule with its own rate, which is dependent on the force acting on it. With the stepsize $d$ the stepping
+rate
+\begin{equation}\label{e.motor-stepping-rate}
+ s_s\left(F_i\right) =
+ \begin{dcases}
+  \dfrac{v_s}{d}, \qquad & \qquad F_i < 0, \\
+  \dfrac{v_s}{d}\left[1 - \frac{F_i}{F_{ss}}\right], \qquad & \qquad 0 \leq F_i \leq F_{ss}, \\
+  \dfrac{v_s^B}{d}, \qquad & \qquad F_i > F_{ss}
+ \end{dcases}
+\end{equation}
+for the $i$-th slow motor, and analogously $s_f$ for fast motors, is defined. \mbox{$v_s^B \ll v_s$} is the slow backward velocity, that is applied once the load force exceeds the stall force, thus
+giving motors the possibility to take backward steps under high load forces. Equation \eqref{e.motor-stepping-rate} is comparable to equation \eqref{e.linear-velocity} used in the model of Li
+\textit{et al.} \cite{li}.
+
+As a consequence of the ability of one motor to take a step, while the other motors remain in their positions, different motors of one team experience different load forces, depending on their
+positions relative to the cargo. This, in general, leads to different stepping rates for each motor and thus, motors and cargo do not move with the same velocity and the average microtubule velocity
+is not uniquely determined by the numbers $n_s$ and $n_f$ of attached slow and fast motors. These are significant differences to the model that was used by Li \textit{et al.} \cite{li}. \\
+In the next section, it will be explained how this model was implemented to propagate the cargo-motor system.
+
+\section{Implementation of the model and simulation process}\label{s.implementation}
+For the initial state of the system at time \mbox{$t = 0$} the cargo is placed at position \mbox{$x_{C}\left(0\right) = 0$} and all $N_s$ and $N_f$ slow and fast motors are attached and
+randomly distributed within the force free area \mbox{$\left[-L_0, L_0\right]$}. Then, in order to figure out how the system evolves, a Gillespie algorithm (first reaction method, see
+\cite{gillespie} for more details) is used.
+
+The idea behind using the Gillespie algorithm is, to obtain many realizations of all the possible trajectories, as opposed to solving the master equation, which is often impossible to do
+analytically. In order to find such a realization of a trajectory, in each simulation step the algorithm uses the rates of all possible motor events (stepping $s\left(F_i\right)$ and detaching
+$\kappa_d\left(F_i\right)$ for bound, attaching $\kappa_a$ for unbound motors) and the evenly distributed random number \mbox{$y \in \left[0, 1\right]$} to calculate the time
+\begin{equation}\label{e.event-time}
+ \delta t = \frac{-log\left(y\right)}{\kappa_d\left(F_i\right)}
+\end{equation}
+that passes until the event would occur (here exemplary for a detachment event). Then it chooses the event and the corresponding motor with the lowest event time $\delta t$ to execute this
+particular event: for an attachment event, the chosen motor attaches randomly within the force free area \mbox{$\left[x_C\left(t\right) - L_0, x_C\left(t\right) + L_0\right]$}, for a
+detachment event, the motor is simply removed from the microtubule and does not participate in the transport anymore, until it attaches again, and for a stepping event, the motor moves in the
+direction according to the conditions given by equation \eqref{e.motor-stepping-rate}, taking a step of the stepsize $d$. Also the global system time $t$ is updated to be \mbox{$t + \delta t$}.
+
+Since the arrangement of the cargo-motor system has changed, it is necessary to check for a new cargo position. Crucial for the determination of the new position, is the total force
+\begin{equation}\label{e.total-acting-force-on-cargo}
+ F = \sum_{i = 1}^{n_s + n_f} F_i
+\end{equation}
+acting on the cargo. In order to find the equilibrium position of the cargo, the total force needs to fulfill the condition \mbox{$F = 0$}. Since this condition is hard to fulfill sometimes, when
+working with float values, within the simulation program, the total force only needs to be lower than a limiting value \mbox{$F \leq F_c =$ \SI{10}{\atto\newton}} to meet the equilibrium position
+criteria. Further, the different possible motor events have different impacts on the force. Stepping, detaching or attaching within the force free area 
+\mbox{$\left[x_C\left(t\right) - L_0, x_C\left(t\right) + L_0\right]$} obviously does not affect the total force $F$ and thus, the cargo remains in its old position. However, motors that
+detach under load or take a step outside the force free area, alter the total force $F$ and bring an adjustment of the cargo's position. Motors that start at the boundary of the force free area
+and step out of it, change the total force as well and thus, the cargo position needs to be recalculated.
+
+If a recalculation of the cargo's position is necessary, a bisection method is used to find a position \mbox{$x_C\left(t + \delta t\right)$}, that meets the equilibrium position criteria described
+above. Since the bisection method is not distinct though (it is often the case that there is a whole interval of positions where the total acting force vanishes), the cargo position is then moved
+piecewise in the direction of the old cargo position, until the next piecewise step would not meet the equilibrium criteria anymore. This last position that still meets the condition
+\mbox{$F \leq F_c$} is finally the new cargo position and the cargo is moved there instantaneously.
+
+Then the algorithm goes back to choosing the next motor event and the whole procedure is repeated. This process is continued, until the global time reaches the endtime of the simulation
+\mbox{$t \geq t_{end}$}.
+
+In the end, the whole simulation process gives one realization of a trajectory that can result from the initial situation described in the beginning. The discrete coordinates
+\mbox{$\left(t, x_C\left(t\right)\right)$} of that trajectory can then be used to calculate the cargo velocity, while the coordinates \mbox{$\left(t, x_i\left(t\right)\right)$} or the
+states of the motors (detached/attached) can be used to gather information about motor behavior. Therefore, the cargo velocity is measured as
+\begin{equation}\label{e.cargo-vel-measurement}
+ \dfrac{x_C\left(t + \Delta t\right) - x_C\left(t\right)}{\Delta t},
+\end{equation}
+with the velocity measurement interval $\Delta t$, which needs to be chosen carefully, as too many or too few events within one measurement interval can lead to misleading results.
+
+
+
+
+
+\chapter{Results}\label{c.results}
+The model introduced in chapter \ref{c.explicit-model} is now used to check and discuss the results that were found by Li \textit{et al.} \cite{li}, which were shown in chapter
+\ref{c.coop-transp-kinesin}. Afterwards there will be an analysis of different motor parameters and their influence on the cargo transport in the case of parameters that lead to bimodal
+velocity distribution. In the end of the chapter, the explicit model will be modified in order to simulate bidirectional transport. The results from the bidirectional simulations will then be
+briefly compared to the results obtained by Klein \textit{et al.} \cite{sklein} and Müller \textit{et al.} \cite{pnas105}.
+
+\section{Comparison with Li \textit{et al.}}\label{s.comparison-with-li-et-al}
+At first, the model will be used in an attempt to reproduce the results found by Li \textit{et al.} \cite{li}. Since the bistable motility states were most interesting, reproducing them is the most
+important criteria in order to check their results. Table \ref{t.comparison-li-parameter} shows the parameters that were used in the simulation, which are taken from the experiment of Larson
+\textit{et al.} \cite{larson} (also shown in Table \ref{t.li-parameter}).
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h]
+\centering
+\caption[Simulation parameters used to check for the bistable regime found by Li \textit{et al.}]{Parameters used for simulation of the bistable motility regime taken from the experiment done by Larson \textit{et al.} \cite{larson} for which Li \textit{et al.} \cite{li} found a bimodal velocity distribution. Parameters that are new in this model are marked with a star.}
+\label{t.comparison-li-parameter}
+\begin{tabular}{|l||c|c|} \hline
+\multicolumn{3}{|c|}{\textbf{System parameters}} \\ \hline \hline
+Simulation time $t_{end}$ & \multicolumn{2}{c|}{\SI{100000}{\second}} \\ \hline
+Velocity measurement interval $\Delta t$ & \multicolumn{2}{c|}{\SI{0.1}{\second}}\\ \hline \hline
+
+\multicolumn{3}{|c|}{\textbf{Motor parameters}} \\
+Parameter & Slow & Fast \\ \hline \hline
+Number of available motors $N$ & 8 & 2 \\ \hline
+Stalk length $L_0$ (*) & \SI{10}{\nano\metre} & \SI{10}{\nano\metre} \\ \hline
+Stepsize $d$ (*) & \SI{8}{\nano\metre} & \SI{8}{\nano\metre} \\ \hline
+Stiffness constant $\alpha$ (*) & \SI[per-mode=fraction]{e-4}{\kilogram\per\square\second} & \SI[per-mode=fraction]{e-4}{\kilogram\per\square\second} \\ \hline
+Detachment force $F_d$ & \SI{1.35}{\pico\newton} & \SI{3}{\pico\newton} \\ \hline
+Stall force $F_s$ & \SI{6}{\pico\newton} & \SI{6}{\pico\newton} \\ \hline
+Force free detachment rate $\kappa_d^0$ & \SI{1}{\per\second} & \SI{1}{\per\second} \\ \hline
+Attachment rate $\kappa_a$ & \SI{5}{\per\second} & \SI{5}{\per\second} \\ \hline
+Velocity forward $v^F$ & \SI[per-mode=fraction]{34}{\nano\metre\per\second} & \SI[per-mode=fraction]{522}{\nano\metre\per\second} \\ \hline
+Velocity backward $v^B$ (*) & \SI[per-mode=fraction]{6}{\nano\metre\per\second} & \SI[per-mode=fraction]{6}{\nano\metre\per\second} \\ \hline
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+The simulation time was set to be \mbox{$t_{end} =$ \SI{100000}{\second}} and the time steps for which the velocity was calculated was \mbox{$\Delta t =$ \SI{0.1}{\second}}, resulting in one 
+million measured velocities for each simulation.
+
+To check for the slow and fast transport regime as well, two other simulations with the corresponding parameters given by Li \textit{et al.} \cite{li} have been done. For the fast regime
+simulation the numbers of available motors have been changed to be \mbox{$N_s = 6$} and \mbox{$N_f = 4$}, while all other parameters stayed the same as in the bistable simulation. For the slow
+regime only the detachment force of slow motors has been adjusted to be \mbox{$F_{ds} =$ \SI{12}{\pico\newton}}, in order to have a detachment force ratio parameter of \mbox{$\eta = 4$}. \\
+
+\newpage
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}
+\centering
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/vel-distri-slow-params-li.eps}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/vel-distri-fast-params-li.eps}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/vel-distri-bistable-params-li.eps}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/am-slow-params-li}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/am-fast-params-li}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/am-bistable-params-li}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/muf-slow-params-li}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/muf-fast-params-li}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}[a]{0.3\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/muf-bistable-params-li}
+%  \label{}
+\end{subfigure}
+\caption[Simulation results for velocity and motor distributions for the parameters of Larson \textit{et al.} and the three motility regimes found by Li \textit{et al.}]{Diagram showing the explicit model simulation results
+for the three different motility regimes examined by Li \textit{et al.} \cite{li} for the experimental parameters of Larson \textit{et al.} \cite{larson}. The left column (A, D, and G) shows the slow, the middle
+column (B, E, and H) the fast and the right column (C, F, and I) the bistable parameter regime, as declared by Li \textit{et al.} \cite{li}. (A-C) To Figure \ref{img.li-velocity-distribution} comparable
+segment of the velocity distribution of the cargo's transport velocity, calculated from the simulated trajectory. Velocity of slow motors (vertical dashed green line) and fast motors (vertical dashed blue line) are marked. (D-I)
+Distribution of attached motors that is comparable to the stationary probability \mbox{$p\left(n_f, n_s\right)$}. (D-F) All attached motors included. (G-I) Only motors that have non vanishing
+load forces are included.}
+\label{img.sim-velocity/motor-distribution-for-larson-param}
+\end{figure}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+
+Comparing the velocity distributions shown in Figure \ref{img.sim-velocity/motor-distribution-for-larson-param} (A-C) to those presented in Figure \ref{img.li-velocity-distribution} reveals significant
+differences. First of all, the velocity distributions obtained by the explicit model are not as sharply peaked as in the mean-field model. This is not surprising, since in the mean-field
+model the microtubule velocity is uniquely determined by the numbers $n_s$ and $n_f$ of attached slow and fast motors as given by equation \eqref{e.mt-velocity}, which was a result of the assumption
+that all motors are stepping synchronously and thus exert the same force on the microtubule. However, in the explicit model the cargo can have varying velocities for given numbers $n_s$ and $n_f$
+according to the relative motor positions, which result in different acting forces for each motor. Also some of the attached motors may not even participate in the cargo transport, since they could
+be located in the force free area. Further on, the explicit model gives rise to the assumption that the cargo often stops moving (\mbox{$v_{cargo} \approx$ \SI{0}{\nano\metre\per\second}}) at all or
+even takes backward steps, whereas the microtubule is always moving forward in the mean-field model. Negative velocities in the explicit model can be explained by detachment events of motors that have
+pulled ahead. Once one of those motors detaches, the forward pulling force decreases by a large amount and thus the new equilibrium position of the cargo will be smaller than the old position,
+resulting in a negative velocity. Since motor stepping within the force free area, as well as attachment events, do not affect the cargo's position, these events have a velocity of zero, which does
+not happen in the mean field model, except for the case of having no motors attached at all.
+
+Most importantly, though, for the given parameters in the explicit model there are no different motility regimes obtained, as described by Li \textit{et al.} \cite{li}. For the slow parameter regime in Figure
+\ref{img.sim-velocity/motor-distribution-for-larson-param} (A) cargo transport is happening at an average velocity of \mbox{$\langle v_{cargo}\rangle \approx$ \SI{43}{\nano\metre\per\second}} (this
+includes the whole distribution and not only the shown segment in Figure \ref{img.sim-velocity/motor-distribution-for-larson-param}), which is close to the velocity of slow motors
+\mbox{$v_s =$ \SI{34}{\nano\metre\per\second}} and therefore corresponds to the slow regime. However fast (B) and bistable (C) distributions do not correspond to their predicted regimes. For the 
+fast parameter regime the distribution is wider but not as high as in the slow regime and transport happens at an average cargo velocity of \mbox{$\langle v_{cargo}\rangle \approx$
+\SI{301}{\nano\metre\per\second}}, which is somewhere in between the fast and slow transport regime. Finally, for the bistable parameter regime the distribution does not show a second peak at all
+and with an average cargo velocity of \mbox{$\langle v_{cargo}\rangle \approx$ \SI{100}{\nano\metre\per\second}} this set of parameters belongs to the slow regime as well.
+
+The comparison of the distributions of attached motors with the distributions that only count attached motors under forces in Figure
+\ref{img.sim-velocity/motor-distribution-for-larson-param} (D-I) reveals, that even with a small parameter $L_0$, as it was chosen in Table \ref{t.comparison-li-parameter}, which results in a small
+force free area, there are still enough motors, that do not experience any load, in order to alter the motor distributions substantially. Increasing the value $L_0$ even increases the differences
+between the distributions, since motors spend more time in the force free area until they reach its boundaries. Setting $L_0 = 0$, which brings the explicit model closer to the mean field model,
+since now all attached motors that do not have the exact same position as the cargo experience load, does not give substantially different results either. At that, the velocity peak for the slow
+parameter regime becomes sharper and the mean velocity moves closer to the velocity of slow motors. However, the fast and bistable parameter sets still remain in the slow transport regime.
+Nevertheless, the motor distributions that count all motors under force become almost identical in shape with the distributions that count all attached motors in the case of \mbox{$L_0 = 0$}, which
+is not surprising.
+
+Li \textit{et al.} \cite{li} presented motor distributions that are shown in Figure \ref{img.li-motor-distribution} and also show significant differences to both kinds of distributions presented in Figure
+\ref{img.sim-velocity/motor-distribution-for-larson-param} (D-I). The results found by the explicit model are not as sharply peaked as the results by Li \textit{et al.} \cite{li} and do not show the
+same qualitative properties. Fast and bistable transport show sharp peaks for states, where all fast motors are attached and all slow motors detached. In the explicit model, the probability to
+find such a state is vanishing. In contrast, states with motors of both kinds attached are the most probable in the explicit model. The only two distributions that look quite similar are diagrams
+\ref{img.li-motor-distribution} (B) and \ref{img.sim-velocity/motor-distribution-for-larson-param} (D) for the slow parameter regime and all attached motors. This also corresponds to the only
+velocity distribution that showed the predicted behavior.
+
+\bild{li-motor-distribution}{15cm}{Diagram showing the three motor distributions that were found by Li \textit{et al.} \cite{li} for the three motility regimes fast (A), slow (B) and bistable (C) transport (figure of \cite{li}). Simulation parameters were the same as for the distributions that were found in Figure \ref{img.sim-velocity/motor-distribution-for-larson-param}.}{Motor distributions found by Li \textit{et al.} for Larson \textit{et al.} parameters}
+
+Another aspect that helps comparing the two models is the alignment of motors within their group. That means how large is the distance of each attached motor of one group to its next neighbors.
+For the mean-field model there is no need to perform any simulations, since the model itself implies that all attached motors of one team are at the same location and thus have no distance to their
+nearest neighbors. However, the results of the simulations using the explicit model (Figure \ref{img.motor-alignment-li-params}) reveal that the situation of having no distance to the next
+neighbors is not even the most probable for all three parameter regimes. Especially the fast motors in the bistable and slow parameter regime tend to be more distant to their nearest neighbors
+with distances up to \SI{40}{\nano\metre} that are about as probable as having zero distance. However, in the fast parameter regime the fast motors are almost as aligned as the slow motors, which
+exhibit a higher affinity to alignment in all three regimes. \\
+One idea to retain the mean-field results is producing configurations within the explicit model, where motors are pretty well aligned. As a consequence of well aligned motors with small
+next-neighbors distances, unbinding cascades could be obtained, which corresponded to bimodal velocity distributions in the mean-field model.
+
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}
+\centering
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.49\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/align-distri-slow-params-li.eps}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/align-distri-fast-params-li.eps}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/align-distri-bistable-params-li.eps}
+%  \label{}
+\end{subfigure}
+\caption[Alignment of motors for the parameters of Larson \textit{et al.} and the three motility regimes found by Li \textit{et al.} ]{Alignment diagram for the three different parameter regimes (A) slow, (B) fast, and (C) bistable showing the distribution of nearest neighbors distances for slow and fast motors individually on a logarithmic scale.}
+\label{img.motor-alignment-li-params}
+\end{figure}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+
+Recapitulating it can be said that the explicit model does not reproduce the three different transport regimes and especially not the bimodal velocity distribution for the parameters that were
+examined by Li \textit{et al.} \cite{li}. But the question remains, if those motility states and transport with a bimodal velocity distribution can be obtained by this model at all.
+
+\section{Analysis of the transport process and bimodal velocity distributions}\label{s.analysing-the-transport-process}
+In the preceding section, the question arose, whether the explicit model, introduced in chapter \ref{c.explicit-model}, can produce transport with bimodal velocity distributions. Indeed, such
+parameter regimes could be found by performing simulations with differing sets of parameters. The ones, for which bimodal velocity distributions were obtained, are given in Table
+\ref{t.bimodal-parameters}. \\
+To begin with, the transport properties are investigated and explained, following this will be an analysis of some transport parameters.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h]
+\centering
+\caption[Simulation parameters for bimodal velocity distribution obtained by the explicit model]{Parameters used to obtain a bimodal velocity distribution. The ones, that are not given here, did not have their values changed from the values given in Table \ref{t.comparison-li-parameter}.}
+\label{t.bimodal-parameters}
+\begin{tabular}{|l||c|c|} \hline
+\multicolumn{3}{|c|}{\textbf{Motor parameters}} \\
+Parameter & Slow & Fast \\ \hline \hline
+Number of available motors $N$ & 5 & 5 \\ \hline
+Detachment force $F_d$ & \SI{1}{\pico\newton} & \SI{1}{\pico\newton} \\ \hline
+Stall force $F_s$ & \SI{5}{\pico\newton} & \SI{5}{\pico\newton} \\ \hline
+Velocity forward $v^F$ & \SI[per-mode=fraction]{100}{\nano\metre\per\second} & \SI[per-mode=fraction]{2000}{\nano\metre\per\second} \\ \hline
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+Figure \ref{img.results/first-bimodal-vel-distribution} shows the bimodal velocity distribution that has been found. The peak at low velocities is in good agreement with the velocity of slow
+motors. Furthermore, the peak at high velocities is located at slightly smaller velocities than the fast motor velocity.
+
+\bild{results/first-bimodal-vel-distribution}{8cm}{Bimodal velocity distribution obtained for the parameters given in Table \ref{t.bimodal-parameters}. Velocity of slow motors (vertical dashed green line), fast motors (vertical dashed blue line) and zero velocity (vertical dashed black line) are marked.}{Bimodal velocity distribution obtained by the explicit model}
+
+By means of Figure \ref{img.first-bimodal-transport-properties}, one can explain, how the bimodal velocity distribution can be achieved. Taking a look at the motor distributions
+\ref{img.results/first-bimodal-vel-distribution} (A-B) reveals, that there is a high probability of having only one team or one team paired with only one motor of the other team attached to the cargo.
+Together with the fact that the probability of having no motors under force is high, this indicates that the teams are actually able to pull the cargo without any hindering forces, resulting in
+transport at the speed of slow or fast single motor velocities, respectively. In the case of having only one team attached to the cargo, it is also possible that the motors within one team
+hinder each other, according to the probabilities of having only motors of one kind under force, which leads to lowered velocities. For all configurations in between the maxima of the distribution
+(e. g. \mbox{$n_s = 2$} and \mbox{$n_f = 2$}) there are slightly lower but non vanishing probabilities. These configurations are mainly responsible for all different velocities between the two
+peaks of the velocity distribution. Important to note, though, is the fact that configurations with high numbers of both motors attached to the microtubule are highly improbable with the chosen
+set of parameters. \\
+Diagrams (C-D) in Figure \ref{img.first-bimodal-transport-properties}, which represent the next-neighbors distances of motors within one team (the alignment of motors) and the cargo-motor
+distances, are exemplary shown for this distribution. They help to understand certain effects occurring in the motor-cargo system. Note, however, that the alignment of motors does not differ much
+from the alignment shown in Figure \ref{img.motor-alignment-li-params}, especially the probability to have small next-neighbors distances is not substantially higher. Therefore, it is concluded,
+that having small next-neighbors distances is not necessarily needed, in order to obtain bimodal velocity distributions, as it was the idea in section \ref{s.comparison-with-li-et-al}.
+
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}
+\centering
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.35\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/first-bimodal-am.eps}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/first-bimodal-muf.eps}
+%  \label{}
+\end{subfigure}\\
+\begin{subfigure}{0.5\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/first-bimodal-alignment.eps}
+%  \label{}
+\end{subfigure}\\
+\begin{subfigure}{0.6\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/first-bimodal-mc-distance.eps}
+%  \label{}
+\end{subfigure}
+\caption[Diagrams of different transport characteristics for the bimodal velocity distribution]{Different transport characteristics that belong to the same set of parameters, for which the bimodal velocity distribution could be obtained. (A) Distribution of all attached motors. (B) Distribution of all attached motors under force. (C) Motor alignment. (D) Distribution of motor-cargo distances.}
+\label{img.first-bimodal-transport-properties}
+\end{figure}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+
+From the above considerations one can assume that having many motors of one team and few motors of the other team attached, is necessary, to achieve a bimodal velocity distribution. For this,
+motors need to be able to detach fairly easy from the microtubule. This means the detachment rate $\kappa_d\left(F\right)$, to a certain degree, needs to be larger than the attachment rate
+$\kappa_a$. If motors are too firmly bound to the microtubule and the attachment rate is relatively high, then high numbers of motors will be attached at any time and configurations of having only
+one team attached, paired with few motors of the other team, become unlikely.
+
+The parameters that affect the ratio between detachment and attachment rate, are the attachment rate $\kappa_a$ itself, the force free detachment rate $\kappa_d^0$, as well as the detachment
+forces $F_{ds}$ and $F_{df}$. Since the detachment rate scales exponentially with the load force and typical load forces depend on the stall forces $F_{ss}$ and $F_{sf}$, the stall forces need to
+be considered as factors as well.
+
+In the following analysis of the mentioned parameters, only the considered parameter will be altered, whereas the other parameters keep the values given in Table \ref{t.bimodal-parameters}. 
+Furthermore, if not declared particularly, parameters were altered for both slow and fast motors.
+
+\subsection{Attachment rate $\kappa_a$}\label{ss.attachment-rate}
+At first, the influence of the attachment rate $\kappa_a$ is examined. To understand the diagrams shown in Figure \ref{img.bimodal-ar-comparison}, one needs to reconsider equation
+\eqref{e.event-time} for the time $\delta t$, that passes in between two events, and the fact, that the event with the shortest time $\delta t$ is executed during the Gillespie algorithm. This time
+$\delta t$ is inversely proportional to the event rates. Therefore, low attachment rates lead to long average times $\delta t$, whereas high rates lead to short times $\delta t$. \\
+In diagram \ref{img.bimodal-ar-comparison} (a) the attachment rate is so low, that attachment events are highly unlikely until all motors have detached. Only then, since the only possible next
+event is an attachment event, motors will attach to the microtubule. Therefore, the measured velocities result from cargo transport by only one motor for $90\%$ of the time, with equal
+probabilities for slow and fast motors (data not shown). As a consequence, the peaks in the velocity distribution are more centered around the respective slow and fast single motor velocities than for the other
+three attachment rates. Furthermore, since the times $\delta t$ that pass until an attachment event occurs are long (the sum of all those ``attachment'' times $\delta t$ makes up almost $50\%$ of
+the total simulation time) and the cargo does not start to move directly after an attachment event, the cargo actually stalls for most of the time, which results in the high weight of zero
+velocity. \\
+By increasing the attachment rate in diagrams \ref{img.bimodal-ar-comparison} (b) and (c), having more motors attached to the microtubule becomes more likely (data not shown). Therefore, the cargo is more often transported by more than one motor,
+which results in higher weights for intermediate velocities. \\
+For very high attachment rates as in diagram \ref{img.bimodal-ar-comparison} (d), attachment events are pretty common compared to detachment events. As a consequence, most of the time there are all motors attached to the
+microtubule (data not shown), which results in an unimodal velocity distribution. \\
+To summarize the above considerations, one can say that increasing the attachment rate $\kappa_a$ led to vanishing bimodal characteristics, as too many motors were able to attach and participate
+into the transport at the same time. Decreasing the attachment rate maintained the bimodal characteristic, however, by decreasing it too much, the transport actually starts stalling and in the
+extreme case of having no attachment rate at all, there would be no transport anymore, as all motors will be detached at some point.
+
+% \renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}
+\centering
+% \captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-ar01.eps}
+ \subcaption{$\kappa_a =$ \SI{0.1}{\per\second}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-ar10.eps}
+ \subcaption{$\kappa_a =$ \SI{1.0}{\per\second}}
+%  \label{}
+\end{subfigure}\\
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-ar100.eps}
+ \subcaption{$\kappa_a =$ \SI{10.0}{\per\second}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-ar1000.eps}
+ \subcaption{$\kappa_a =$ \SI{100.0}{\per\second}}
+%  \label{}
+\end{subfigure}
+\caption[Influence of attachment rate $\kappa_a$ on bimodal velocity distribution]{Velocity distributions for varying values of $\kappa_a$ and parameters from Table \ref{t.bimodal-parameters}. In diagrams (a) and (b) the distributions show a dominating large peak at $v =$ \SI[per-mode=fraction]{0}{\nano\metre\per\second} with weights $\approx 0.57$ and $\approx 0.12$, respectively. These peaks have been cut off for reasons of visibility. Velocity of slow motors (vertical dashed green line), fast motors (vertical dashed blue line) and zero velocity (vertical dashed black line) are marked.} 
+\label{img.bimodal-ar-comparison}
+\end{figure}
+% \renewcommand{\thesubfigure}{\alph{subfigure}}
+
+
+\subsection{Force free detachment rate $\kappa_d^0$}\label{ss.loadfree-detachment-rate}
+The influence of the force free detachment rate $\kappa_d^0$ is not as simple, as it determines, together with the detachment force, under how small or large load forces the exponential
+characteristic of the detachment rate $\kappa_d\left(F\right)$ kicks in. \\
+At first, analogously to above considerations, increasing the detachment rate should benefit bimodal velocity distributions, while
+decreasing it should have the opposite effect. However, for the tested value \mbox{$\kappa_d^0 = $ \SI{10}{\per\second}} the peak at high velocities turned into a plateau that merged with the peak
+at low velocities and there is no bimodal velocity distribution anymore (Figure \ref{img.bimodal-ffdr-comparison} (d)). This is a consequence of the mentioned exponential characteristic: As long as
+there are more than two motors attached to the microtubule and one motor pulls ahead, which is a fast motor most of the time, this leading motor will experience the largest force among all motors
+and a higher detachment rate as for lower values $\kappa_d^0$. Therefore, it is unlikely for fast motors to team up in order to pull the cargo and configurations that lead to fast transport
+velocities are uncommon. This effect is increased for even higher force free detachment rates. \\
+For lower force free detachment rate values, \mbox{$\kappa_d^0 = $ \SI{0.1}{\per\second}} for instance, teaming up of fast motors is preferred. In this case, motors that pull ahead experience
+lower detachment rates $\kappa_d\left(F\right)$ and, as they slow down under force, give other motors the chance to catch up. As slow motors tend to lag behind in such scenarios, their distance
+to the cargo is higher than that of the fast motors in general (data not shown) and because of the exponential characteristic of the detachment rate, they are more likely to detach than the fast motors up front.
+Therefore, configurations with many fast motors and few or no slow motors are very probable (data not shown). This results in a velocity distribution with a large
+peak at high and a small peak at low velocities for the given $\kappa_d^0$ (Figure \ref{img.bimodal-ffdr-comparison} (a)). Decreasing the force free detachment rate even further leads to an unimodal velocity distribution centered around a
+velocity close to the single fast motor velocity (data not shown). \\
+Above analysis revealed that, in order to keep the bimodal velocity distribution, the force free detachment rate must not be altered by much. Because of the exponential part of the detachment rate
+$\kappa_d\left(F\right)$, the velocity distribution is much more sensitive to changes to the force free detachment rate than to the attachment rate. Indeed, simulations with the given parameters have
+shown, that values between \mbox{$\kappa_d^0 \approx $ \SI{0.1}{\per\second}} and \mbox{$\kappa_d^0 \approx $ \SI{5.0}{\per\second}} lead to bimodal velocity distributions, where both peaks have
+approximately the same height at \mbox{$\kappa_d^0 \approx $ \SI{0.5}{\per\second}} (Figure \ref{img.bimodal-ffdr-comparison}). \\
+An even higher sensitivity to changes to the detachment forces $F_{ds}$ and $F_{df}$ is expected, as those are part of the argument of the exponential term.
+
+
+\subsection{Detachment forces $F_{ds}$ and $F_{df}$}\label{ss.detachment-forces}
+To check for this expectation, both detachment forces are firstly altered by a factor of ten. As expected, the velocity distributions for \mbox{$F_{d} = $ \SI{0.1}{\pico\newton}} and 
+\mbox{$F_{d} = $ \SI{10}{\pico\newton}} are not bimodal anymore. However, unlike for the force free detachment rate $\kappa_d^0$, by shifting the detachment forces in both directions, velocity
+distributions with peaks at low velocities are obtained (data not shown). \\
+For higher effective detachment rates, because of smaller detachment forces \mbox{$F_{d} = $ \SI{0.1}{\pico\newton}}, the effect is the same as for increased force free detachment rates $\kappa_d^0$. The
+effect is even enhanced, as the smaller denominator in the exponential argument leads to increasingly higher detachment rates for load forces larger than \SI{0.25}{\pico\newton}, which corresponds
+to a motor-cargo distance of \SI{12.5}{\nano\metre}. Therefore, even small steps out of the force free area lead to higher detachment rates than in the case of an increased force free detachment
+rate $\kappa_d^0$. The motor-cargo distances distribution confirms this, as it shows that for the given detachment force, large distances between motors and cargo are less probable (data not
+shown). \\
+In the case of lower effective detachment rates, caused by larger detachment forces \mbox{$F_{d} = $ \SI{10}{\pico\newton}}, fast motors are able to team up to pull the cargo. Unlike in the case of smaller
+force free detachment rates $\kappa_d^0$, however, lagging slow motors are much more resistant to load. For a load force of the size of the stall force \mbox{$F_{s} = $ \SI{5}{\pico\newton}}
+for instance, the detachment rate is approximately smaller by a factor of ten. Therefore, slow motors are able to build up large distances to the cargo, thus exerting large backward forces on the
+cargo, while fast motors are limited to smaller distances, since they stop stepping forward for load forces larger or equal to the stall force. The motor-cargo distance distribution confirms, that slow
+motors have much higher distances to the cargo, while the motor distributions show maxima for configurations with many motors participating in the transport (data not shown). Hence, slow motors are
+able to slow down the transport substantially and the velocity distribution is unimodal with a peak at low velocities. \\
+By altering the detachment forces only slightly, the explained effects have less impact and therefore, the bimodal properties are maintained. While for slightly lower detachment forces the velocity
+distribution shows a larger peak at low velocities and a smaller peak at high velocities (data not shown), which is in agreement with the above considerations, the effect for increased detachment forces is more
+complex. For detachment forces up to \mbox{$F_{d} = $ \SI{2}{\pico\newton}} the relative weight between the two peaks is shifted towards the peak at high velocities, as for this parameter interval
+teaming up of the fast motors is preferential, while slow motors are yet not too resistant to detaching. For even larger detachment forces \mbox{$F_{d} > $ \SI{2}{\pico\newton}} the peaks become
+smaller and wider, with the peak at high velocities shifting to lower velocities. This is a consequence of the ability of slow motors, to withstand higher load forces with increasing detachment
+force (see Figure \ref{img.bimodal-dF-comparison} (a-c)). \\
+One last interesting aspect of the detachment force is the influence of having slightly unequal detachment forces for slow and fast motors. Therefore, the detachment force of either slow or fast
+motors has been kept at \mbox{$F_{d} = $ \SI{1}{\pico\newton}}, while the other one has been varied from \mbox{$F_{d} = $ \SI{0.8}{\pico\newton}} to \mbox{$F_{d} = $ \SI{1.2}{\pico\newton}} in 
+\SI{0.1}{\pico\newton} steps. In these cases, the obtained results were intuitive. The motors with the larger detachment force are more firmly bound to the microtubule and thus dominate the
+transport, which means the respective peak in the velocity distribution grows in size, while the peak of the weaker motor shrinks (see Figure \ref{img.bimodal-dF-comparison} (d-e) for an exemplary
+representation). \\
+% \renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}
+\centering
+% \captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-dF15.eps}
+ \subcaption{$F_{ds} = F_{df} =$ \SI{1.5}{\pico\newton}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-dF30.eps}
+ \subcaption{$F_{ds} = F_{df} =$ \SI{3}{\pico\newton}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-dF50.eps}
+ \subcaption{$F_{ds} = F_{df} =$ \SI{5}{\pico\newton}}
+%  \label{}
+\end{subfigure}\\
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-dFs10dFf08.eps}
+ \subcaption{$F_{ds} =$ \SI{1}{\pico\newton}, $F_{df} =$ \SI{0.8}{\pico\newton}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-dFs10dFf12.eps}
+ \subcaption{$F_{ds} =$ \SI{1}{\pico\newton}, $F_{df} =$ \SI{1.2}{\pico\newton}}
+%  \label{}
+\end{subfigure}
+\caption[Influence of selected detachment force $F_{d}$ combinations on bimodal velocity distribution]{Velocity distributions for varying values of $F_{ds}$ and $F_{df}$ and parameters from Table \ref{t.bimodal-parameters}. (a-c) Equal detachment forces for slow and fast motors. (d-e) Slightly unequal detachment forces for slow and fast motors. Velocity of slow motors (vertical dashed green line), fast motors (vertical dashed blue line) and zero velocity (vertical dashed black line) are marked.} 
+\label{img.bimodal-dF-comparison}
+\end{figure}
+% \renewcommand{\thesubfigure}{\alph{subfigure}}
+As a consequence, if the gap between both detachment forces becomes too large, the stronger motors will dominate the transport in such a way, that it actually belongs to their respective regime,
+losing the bimodal properties, which is displayed by an unimodal velocity distribution with a maximum at either low or high velocities, depending on the stronger motor (data not shown). For a gap of the size of
+\SI{1}{\pico\newton} (one detachment force being at \mbox{$F_{d} = $ \SI{1}{\pico\newton}} while the other is at \mbox{$F_{d} = $ \SI{2}{\pico\newton}}), the velocity distributions are already in
+the fast or slow regime, respectively.
+
+The analysis of the detachment rate $\kappa_d\left(F\right)$ showed that its influence on the velocity distribution is not as simple and intuitive as that of the attachment rate $\kappa_a$. The
+velocity distribution of the cargo transport is very sensitive to changes to both the force free detachment rate $\kappa_d^0$ as well as the detachment forces $F_{ds}$ and $F_{df}$. Altering those
+in small intervals will keep the bimodal characteristic of the transport, while changing them too much, leads to fast or slow unimodal transport, as it has been shown.
+
+
+\subsection{Stall forces $F_{ss}$ and $F_{sf}$}\label{ss.stall-forces}
+The considerations of the detachment forces $F_{d}$ implicitly give rise to the assumption, that the stall forces $F_{s}$ need to be larger than the detachment forces. If this is not given, then
+typical load forces will be smaller than the detachment force and therefore a similar effect happens, as in the case of large equal detachment forces: fast motors will be able to team up, but since
+slow motors are able to withstand the forces, they will slow down the transport velocity. Indeed, all kinds of simulations with \mbox{$F_{s} \leq F_{d}$} belonged to the slow transport regime, as
+too many motors are involved into transport at any time. \\
+For increasing stall forces, the bimodal velocity distribution is maintained but the weight of the peak at fast velocities shrinks, while the peak at slow velocities grows. This happens due to the
+fact, that motors (mostly fast ones) have higher stepping rates than for lower stall forces and therefore tend to walk further away from the cargo. Hence, they are more likely to detach and
+configurations that lead to fast velocities become less probable (data not shown). Since the detachment rate $\kappa_d\left(F\right)$ is only indirectly affected by this and there is an upper limit for the stepping
+rate, no matter how large stall forces become, the bimodal properties are not lost even for huge (\mbox{$F_{s} \geq$ \SI{1000}{\pico\newton}}) stall forces (Figure \ref{img.bimodal-sff-comparison} (d)). \\
+Altering both stall forces $F_{s}$ at the same time, thus only leads to different weights and slightly different positions for the two peaks at slow and fast velocities. By increasing the stall
+force from values \mbox{$F_{s} =$ \SI{1}{\pico\newton}} (which is the size of the detachment forces \mbox{$F_{d} =$ \SI{1}{\pico\newton}}) up to \mbox{$F_{s} \approx$ \SI{3}{\pico\newton}}, the
+peak at high velocities is growing, by further increasing the stall force it is then shrinking again. Therefore, this value is the point, where fast motors are strongest, in dependence on the
+stall force $F_{s}$ and the given set of parameters (data not shown). \\
+By fixing only the stall force of fast motors \mbox{$F_{sf} =$ \SI{5}{\pico\newton}} and varying the stall force of slow ones between \mbox{$F_{ss} =$ \SI{0.1}{\pico\newton}} and
+\mbox{$F_{ss} =$ \SI{1000}{\pico\newton}}, the velocity distribution did not change at all (data not shown). By considering equation \eqref{e.motor-stepping-rate} this is not surprising, as the stall force only
+affects motors that have positive forces acting on them, which means they need to be ahead of the cargo. The motor-cargo distance distributions, however, reveal that the probability to have slow
+motors ahead of the cargo is non vanishing (data not shown). Nevertheless, such configurations are uncommon and therefore, since the stall force is not as impactful to the detachment rate anyways, as was shown by
+altering both stall forces, they do not alter the bimodal velocity distribution. Hence, to obtain bimodal velocity distributions, the impact of the stall force of slow motors $F_{ss}$ is
+vanishing. \\
+As a consequence, the results obtained by analogously fixing the  stall force of slow motors \mbox{$F_{sf} =$ \SI{5}{\pico\newton}} and varying the stall force of fast motors between
+\mbox{$F_{ss} =$ \SI{0.1}{\pico\newton}} and \mbox{$F_{ss} =$ \SI{1000}{\pico\newton}}, were the same as for the simulations for which both stall forces were varied (Figure \ref{img.bimodal-sff-comparison}). \\
+Thus, only the stall force of fast motors $F_{sf}$ affects bimodal transport. Its influence is minor, however, and as long as \mbox{$F_{sf} \geq F_{d}$} bimodal velocity distributions are obtained
+(with the set of parameters given in Table \ref{t.bimodal-parameters}).
+
+
+\subsection{Slow and fast velocities $v_s$ and $v_f$}\label{ss.slow-and-fast-velocities}
+As different molecular motors usually have different velocities and the slow and fast forward velocities influence the stepping rates, these were investigated as well. Therefore, the forward
+velocity of fast motors was fixed at \mbox{$v_f =$ \SI[per-mode=fraction]{2000}{\nano\metre\per\second}}, while the forward velocity of slow motors was varied between 
+\mbox{$v_f =$ \SI[per-mode=fraction]{100}{\nano\metre\per\second}} and \mbox{$v_f =$ \SI[per-mode=fraction]{2000}{\nano\metre\per\second}} (Figure \ref{img.bimodal-velslow-comparison}). \\
+First of all, the peak at low velocities is shifted towards higher velocities as the slow velocity is increased, obviously. Therefore the two peaks overlap more and more and finally merge to be
+one. However, this is not the only effect that is observed. \\
+As the velocity (that is their stepping rate) of slow motors is increased, the probability for these motors to take a step naturally increases as well. Therefore, two things happen: firstly, slow
+motors have relatively higher probabilities to take a step compared to the probabilities to detach and secondly, they are more likely to follow the steps of the fast motors and do not lag behind as
+much as for lower velocities. This is confirmed by the times $\delta t$ that pass previously to detaching and attaching events, where in the case of
+\mbox{$v_f =$ \SI[per-mode=fraction]{100}{\nano\metre\per\second}} approximately \mbox{$19\%$} of the total simulation time was spent as time that passed before attaching and detaching events,
+whereas in the case of \mbox{$v_f =$ \SI[per-mode=fraction]{1500}{\nano\metre\per\second}} it was only approximately \mbox{$4\%$}. \\
+Additionally, the motor-cargo distances distributions show smaller distances for higher velocities of slow motors, which confirms the second fact (data not shown). Hence, all effects that were caused by lagging slow
+motors are weakened. The motor distributions reveal that the bimodal distribution observed for \mbox{$v_f =$ \SI[per-mode=fraction]{100}{\nano\metre\per\second}} (as shown in Figure
+\ref{img.first-bimodal-transport-properties}) vanishes for maxima on the diagonal for increasing velocities of slow motors (data not shown). Thus, motor configurations that lead to slow or fast transport become
+less likely and since the gap between the velocities of slow and fast motors is smaller as well, intermediate velocities are closer to slow and fast single motor velocities, which leads to
+less distinctness of the peaks. \\
+The bimodal velocity distribution can not be maintained by increasing the velocity of slow motors. Additional simulations have shown that the smaller the gap between the velocities of slow and fast
+motors, the harder it is to find parameter regimes, for which bimodal velocity distributions can be obtained (data not shown). Further on, for higher velocities of slow and fast motors (resulting in larger stepping rates) bimodal
+velocity distributions become less likely as well (data not shown). This is a consequence of the fact, that for increasing stepping rates, stepping becomes relatively more probable than detaching.
+
+% \renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}
+\centering
+% \captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-velslow250.eps}
+ \subcaption{$v_s =$ \SI[per-mode=fraction]{250}{\nano\metre\per\second}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-velslow500.eps}
+ \subcaption{$v_s =$ \SI[per-mode=fraction]{500}{\nano\metre\per\second}}
+%  \label{}
+\end{subfigure}\\
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-velslow1000.eps}
+ \subcaption{$v_s =$ \SI[per-mode=fraction]{1000}{\nano\metre\per\second}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-velslow1500.eps}
+ \subcaption{$v_s =$ \SI[per-mode=fraction]{1500}{\nano\metre\per\second}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-velslow2000.eps}
+ \subcaption{$v_s =$ \SI[per-mode=fraction]{2000}{\nano\metre\per\second}}
+%  \label{}
+\end{subfigure}
+
+\caption[Influence of velocity of slow motors $v_s$ on bimodal velocity distribution]{Velocity distributions for varying values of $v_s$ and parameters from Table \ref{t.bimodal-parameters}. (a-b) Bimodal velocity distribution. (c-e) Unimodal velocity distribution. Velocity of slow motors (vertical dashed green line), fast motors (vertical dashed blue line) and zero velocity (vertical dashed black line) are marked.} 
+\label{img.bimodal-velslow-comparison}
+\end{figure}
+% \renewcommand{\thesubfigure}{\alph{subfigure}}
+
+
+Summarizing the analysis of the parameters leads to following rough conditions, that are necessary for bimodal velocity distributions (for the given parameters):
+\begin{enumerate}
+ \item The stall force of fast motors $F_{sf}$ needs to be larger than the detachment forces $F_{ds}$ and $F_{df}$.
+ \item Only few motors must participate in cargo transport, which is achieved by relatively high detachment rates $\kappa_d\left(F\right)$ compared to the attachment rate $\kappa_a$.
+ \item Detachment rates $F_{ds}$ and $F_{df}$ need to be of approximately equal size and must not be too large, as this can only be compensated by small attachment rates $\kappa_a$ or large force free detachment rates $\kappa_d^0$, for which
+ transport ultimately comes to a stop.
+ \item There needs to be a considerable gap between slow and fast motor's velocities.
+\end{enumerate}
+
+
+\section{A brief glance at bidirectional transport}\label{s.bidirectional-transport}
+In order to obtain bidirectional transport, one needs two opposedly directed teams of motors, which could be teams of kinesin and dynein for instance. \\
+Müller \textit{et al.} \cite{pnas105} used the same mean-field assumptions, as have been used by Li \textit{et al.} \cite{li}, in order to explain bidirectional transport processes in a theoretical
+work \cite{pnas105}. By doing so, they found bimodal (peaks around the single motor velocities) and even trimodal (additional peak around zero velocity) velocity distributions, which are coupled to
+bimodal and trimodal motor distributions \cite{pnas105}. \\
+By introducing an explicit position based model, which is similar to the one described in chapter \ref{c.explicit-model}, Klein \textit{et al.} \cite{sklein} checked the results found by
+\cite{pnas105} and came to the conclusion, that these bimodal states cannot be reproduced by the explicit model. Only under an additional assumption of strong mutual motor-motor activation and the
+biological improbable case of having high motor numbers $N_-$ and $N_+$, where $N_-$ and $N_+$ are the number of available minus-/plus-end directed motors respectively, they obtain bimodal motor
+and velocity distributions \cite{sklein}. Furthermore, Klein \textit{et al.} \cite{sklein} particularize, that the non-existence of bimodal states is rather robust and does not depend on the chosen
+set of parameters \cite{sklein}. The set of parameters, that was used by \cite{sklein} and \cite{pnas105} for both minus- and plus-end directed motors, in order to obtain bimodal velocity
+distributions, is given in Table \ref{t.sklein-parameters}.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h]
+\centering
+\caption[Simulation parameters used by Klein \textit{et al.} for the bidirectional explicit model]{Simulation parameters used by Klein \textit{et al.} \cite{sklein}.}
+\label{t.sklein-parameters}
+\begin{tabular}{|l||c|} \hline
+\multicolumn{2}{|c|}{\textbf{Motor parameters}} \\
+Parameter & Value \\ \hline \hline
+Available number of motors N & 4 \\ \hline
+Velocity forward $v^F$ & \SI[per-mode=fraction]{1000}{\nano\metre\per\second} \\ \hline
+Velocity backward $v^B$ & \SI[per-mode=fraction]{6}{\nano\metre\per\second} \\ \hline
+Stall force $F_s$ & \SI{6}{\pico\newton} \\ \hline
+Detachment force $F_d$ & \SI{3}{\pico\newton} \\ \hline
+Force free detachment rate $\kappa_d^0$ & \SI{1}{\per\second} \\ \hline
+Attachment rate $\kappa_a$ & \SI{5}{\per\second} \\ \hline
+Stiffness constant $\alpha$ & \SI[per-mode=fraction]{0.1}{\pico\newton\per\nano\meter} \\ \hline
+Stalk length $L_0$ & \SI{110}{\nano\metre} \\ \hline
+Stepsize $d$ & \SI{8}{\nano\metre} \\ \hline
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+As the model introduced in chapter \ref{c.explicit-model} is based on the model used by \cite{sklein}, the question arises, whether the newly found knowledge about the transport processes from the
+preceding section can help in order to obtain bimodal velocity distributions in the case of opposedly directed teams of motors. \\ 
+Therefore, slow motors are replaced by motors that walk towards the minus end. At first, a simulation for the parameter set from Table \ref{t.sklein-parameters} was performed. The obtained results
+conform with those found by \cite{sklein}: there is no bimodal velocity nor motor distribution, which is not surprising, as the detachment forces seem to be too large, according to the insights of
+section \ref{s.analysing-the-transport-process}. \\
+As the set of parameters from Table \ref{t.bimodal-parameters} was able to create bimodal distributions in the case of unidirectional transport, these parameters were tested for the bidirectional
+model as well. Therefore, the velocity of minus-end directed motors was chosen to be \mbox{$v_-^F =$ \SI{2000}{\nano\metre\per\second}}, whereas all other parameters were the same for minus- and
+plus-end directed motors. \\
+Indeed, the obtained results reveal bimodal velocity and motor distributions, which can be seen in Figure \ref{img.bimodal-bidirectional-vel-and-motor-distri-for-standard-params}. For the motor
+distribution the same properties are observed as for the unidirectional case. Just as before, by not having all motors attached to the microtubule, both teams are able to take over transport by 
+detaching all of the opposing team's motors. \\
+However, the bimodal motor distributions obtained by the explicit model differ from the ones obtained by using the mean-field model \cite{pnas105}. Here, the distribution peaks for configurations,
+that have three motors of one and none of the other team attached. In \cite{pnas105}, the peaks are obtained for configurations with all available motors of one and none of the other team attached.
+The motor distribution that only counts motors, which are under force, reveals that most of the time no motors experience force, which corresponds to fast transport by only one team. The local
+maxima for configurations \mbox{$\left(2, 0\right)$} and \mbox{$\left(0, 2\right)$} show that it is certainly possible for motors within one team to hinder each other, just like in the
+unidirectional case. This contradicts the mean-field model as well.
+
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}
+\centering
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.40\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/bidirectional-vel-distri.eps}
+%  \label{}
+\end{subfigure}\\
+\begin{subfigure}{0.35\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/bidirectional-am.eps}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/bidirectional-muf.eps}
+%  \label{}
+\end{subfigure}
+\caption[Bimodal velocity and motor distributions for bidirectional transport]{(A) Velocity and (B-C) motor distributions for the parameters from Table \ref{t.bimodal-parameters} and forward velocity \mbox{$v_-^F =$ \SI{2000}{\nano\metre\per\second}} for minus-end directed motors. All three show the same bimodal properties, which have been observed for the unidirectional case. (B) All attached motors counted. (C) Only motors under force counted. In (A) velocity of minus-end directed motors (vertical dashed green line), plus-end directed motors (vertical dashed blue line) and zero velocity (vertical dashed black line) are marked.} 
+\label{img.bimodal-bidirectional-vel-and-motor-distri-for-standard-params}
+\end{figure}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+
+Furthermore, the velocity distributions obtained by \cite{pnas105} are extremely sharp, with vanishing probabilities for intermediate or zero velocity, whereas the peaks in Figure
+\ref{img.bimodal-bidirectional-vel-and-motor-distri-for-standard-params} are much wider and intermediate velocities are probable. This is a consequence of the fact that, in contrast to the
+mean-field model, the cargo velocity is not uniquely determined by the numbers of attached motors and the motor distributions are not as sharply peaked. \\
+Therefore it is assumed, that the sharply peaked bimodal distributions, obtained by \cite{pnas105}, are merely an artifact of the mean-field assumptions. However, by choosing a different set of
+parameters bimodal distributions can be achieved.
+
+As it would go beyond the scope of this work to analyze bidirectional transport and the impact of most parameters to the extent it was done in the unidirectional case, only the effect of the
+force free detachment rate $\kappa_d^0$ is examined. \\
+By investigating the influence of the force free detachment rate $\kappa_d^0$ even trimodal states have been found. Figure \ref{img.bimodal-bidirectional-vel-and-motor-distri-for-trimodal-params}
+shows the obtained results for a value of \mbox{$\kappa_d^0 =$ \SI{0.01}{\per\second}}. The distribution of all attached motors reveals that configurations for which all motors of one team are 
+attached are highly probable for this set of parameters, which is similar to the result for the motor distribution obtained by \cite{pnas105}. However, the motor distribution that only counts
+motors that experience a force differs significantly to the mean-field motor distribution. Peaks in the mean-field model are obtained for configurations of having all motors of one team and none
+of the other team attached to the cargo. Such configurations are local minima in diagram \ref{img.bimodal-bidirectional-vel-and-motor-distri-for-trimodal-params} (C). There, maxima are obtained for
+configurations \mbox{$\left(4, 1\right)$}, \mbox{$\left(5, 1\right)$}, \mbox{$\left(5, 2\right)$} and \mbox{$\left(1, 4\right)$},
+\mbox{$\left(1, 5\right)$}, \mbox{$\left(2, 5\right)$}. Furthermore, the distributions are not as sharply peaked as the distributions obtained by the mean-field model. \\
+As a consequence of smaller probabilities for configurations for which equal numbers of motors of both teams are pulling on the cargo the peak at zero velocity is the smallest one. \\
+In the end, even though the explicit model could reproduce bimodal and trimodal velocity distributions, which have been obtained by the mean-field model for different parameters, there are
+significant differences in how these distributions were obtained. Therefore, not only the results obtained by the unidirectional mean-field model, but also those of the bidirectional mean-field
+model, can not be reproduced in their entirety (and especially not for the parameter regimes that were used in the mean-field simulations) by the explicit model, which was introduced in chapter
+\ref{c.explicit-model}.
+
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}
+\centering
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.4\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/bidirectional-vel-distri-trimodal.eps}
+%  \label{}
+\end{subfigure}\\
+\begin{subfigure}{0.35\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/bidirectional-am-trimodal.eps}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \subcaption{}
+ \includegraphics[width=\textwidth]{images/results/bidirectional-muf-trimodal.eps}
+%  \label{}
+\end{subfigure}
+\caption[Trimodal velocity distribution and corresponding motor distributions for bidirectional transport]{(A) Velocity and (B-C) motor distributions for \mbox{$\kappa_d^0 =$ \SI{0.01}{\per\second}}. (B) All attached motors are counted. (C) Only motors under force counted. In (A) velocity of minus-end directed motors (vertical dashed green line), plus-end directed motors (vertical dashed blue line) and zero velocity (vertical dashed black line) are marked.} 
+\label{img.bimodal-bidirectional-vel-and-motor-distri-for-trimodal-params}
+\end{figure}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+
+One further question that arises in the context of bidirectional transport is whether it is effective. Fast stochastical switching of the direction of transport is comparable to
+\textit{diffusive} motion, which is considered to be ineffective, whereas long time intervals, in which the direction of transport is maintained, count as \textit{superdiffusive} motion, which is
+effective. One tool to investigate the transport on its effectiveness is the \textit{mean square displacement (MSD)}. Therefore, the MSD of the cargo position has been examined for differing values
+of the force free detachment rate $\kappa_d^0$. The dependence of the MSD on the time,
+\begin{equation}\label{e.msd}
+ \left\langle x^2\left(t\right)\right\rangle \propto t^\gamma,
+\end{equation}
+with an exponent \mbox{$\gamma = 1$} indicates diffusive, whereas exponents \mbox{$0 < \gamma < 1$} and \mbox{$1 < \gamma < 2$} hint at subdiffusive and superdiffusive motion, respectively. Figure
+\ref{img.results/msd} shows the obtained results.
+
+\bild{results/msd}{13cm}{Mean square displacement of the cargo position for different parameters $\kappa_d^0$. The displayed fits are of the form \mbox{$f\left(x\right) = ax^\gamma$} and belong to the green parameter set. For all three parameter sets, a transition from superdiffusive to diffusive motion is observed. Black lines mark the MSD for a timescale of $\Delta \tau =$ \SI{0.4}{\second}}{Mean square displacement for bidirectional cargo trajectory}
+
+For all three values of the force free detachment rate, the motion becomes more diffusive for larger time scales, whereas for smaller timescales it is superdiffusive.
+The higher the force free detachment rate, the lower the exponent $\gamma$ for the superdiffusive motion. Furthermore, the transition to diffusive motion starts earlier for higher force free
+detachment rates. Table
+\ref{t.diff-exponents} gives an overview over the obtained results and shows, at what timescales the transition from superdiffusive to diffusive motion takes place.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h]
+\centering
+\caption[Diffusion exponents and timescales of motion transition]{Diffusion exponents and timescales, at which the transition from superdiffusive to diffusive motion takes place, for different parameters $\kappa_d^0$.}
+\label{t.diff-exponents}
+\begin{tabular}{|c|c|c|c|} \hline
+\multirow{2}*{Force free} & \multirow{2}*{Diffusion exponent $\gamma$} & \multirow{2}*{Timescale of} & \multirow{2}*{Diffusion exponent $\gamma$} \\
+ detachment rate $\kappa_d^0$ &  before transition & transition $\Delta \tau$ &  after transition \\ \hline \hline
+\SI{0.01}{\per\second} & 1.9 & $\approx$ \SI{2}{\second} & 1\\ \hline
+\SI{1}{\per\second} & 1.7 & $\approx$ \SI{0.4}{\second} & 1 \\ \hline
+\SI{10}{\per\second} & 1.4 & $\approx$ \SI{0.2}{\second} & 1 \\ \hline
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+For the black lines in Figure \ref{img.results/msd}, which indicate the starting point of the transition to diffusive motion for a force free detachment rate of
+\mbox{$\kappa_d^0 =$ \SI{1}{\per\second}}, the MSD reveals that the cargo can travel as far as approximately \SI{500}{\nano\metre} under superdiffusive motion.
+
+This effect explains, what happens within the motor teams. For small values of the force free detachment rate $\kappa_d^0$, the motors can team up and therefore, create a long correlation time, as
+the transition from superdiffusion to diffusion occurs at longer time scales. This long correlation time explains the bimodal velocity distribution, as one team is in the lead for quite a while. 
+
+\chapter{Summary and outlook}\label{c.summary}
+In the course of this work, the focus lied on the modeling of intracellular cargo transport, which is realized by one team of slow and one team of fast kinesins acting on the same cargo.\\
+In order to analyze this unidirectional transport, Li \textit{et al.} \cite{li} presented a mean-field model, which uses the strong assumptions of force balance between the two teams, equal force
+sharing among the motors of one team and equal velocities of all motors. By doing so, they find three distinct motility states. The first being slow transport, which is characterized by an
+unimodal velocity distribution with a peak close to the velocity of a single slow motor. Analogously fast transport, with a peak close to the velocity of a single fast motor and the third
+being bimodal transport, which is characterized by a bimodal velocity distribution with two peaks close to the velocity of single slow and fast motors. For this work, the last regime was of
+utmost importance.\\
+Müller \textit{et al.} \cite{pnas105} have used a similar mean-field model for the case of bidirectional transport and in their work they also found transport with bimodal and even trimodal velocity
+distributions. However, evidence has been provided by Klein \textit{et al.} \cite{sklein} that these bimodal results cannot be reproduced by a model that does not make above assumptions. \\
+Therefore, the question arose, whether the results obtained by the unidirectional mean-field model can still be obtained without the mentioned assumptions. \\
+In chapter \ref{c.explicit-model} of this work, an explicit model was introduced, which is based on the model used by Klein \textit{et al.} \cite{sklein} and takes explicitly the motor
+positions into account. Simulations for the same set of motor parameters, which have been used by Li \textit{et al.} in order to produce the bimodal velocity distribution, were performed and
+no bimodal velocity distribution could be obtained. \\
+However, by using different parameters, which were of the order of the ones used by Li \textit{et al.}, bimodal velocity distributions were retained. The further analysis of this 
+particular set of parameters yielded new insight into the dependence of the motility on motor parameters and transport characteristics, such as the motor distributions, typical distances between
+motor and cargo, and distances between motors of one team. \\
+The motility of the cargo-motor system was found to be very sensitive to changes to the detachment rate $\kappa_d$ and thus to the force free detachment rate $\kappa_d^0$ and the 
+detachment forces of slow and fast motors $F_{ds}$ and $F_{df}$. Especially small changes to the detachment forces could mean a change from bimodal to slow or fast transport, as it has
+been shown in chapter \ref{c.results}. Furthermore, four conditions were given in section \ref{s.analysing-the-transport-process}, which were assumed to be necessary in order to obtain
+bimodal motility. However, there was not enough time in the scope of this work to fully test these conditions for a broader range of parameters. \\
+Further on, the explicit model from chapter \ref{c.explicit-model} was modified to simulate bidirectional cargo transport in order to check the results found by Klein \textit{et al.}
+\cite{sklein} and Müller \textit{et al.} \cite{pnas105}. Indeed, the results that were found within this work confirmed the assumption of \cite{sklein} that no bimodal velocity distribution
+can be obtained for the given set of parameters in \cite{pnas105}. Nevertheless, for the same set of parameters, as has been used in the unidirectional case, the bidirectional explicit model
+from this work could produce bimodal and even trimodal velocity distributions, which were once again sensitive to changes to the force free detachment rate $\kappa_d^0$. The influence of other
+parameters on the bidirectional results could not be investigated, as this would have gone beyond the scope of this work as well.
+
+In future works, one could consider, whether a different modeling approach for the detachment rate $\kappa_d$ would be favorable, as the exponential modeling is the reason for its strong influence
+on the state of the transport. Maybe an additional probability to detach during stepping would be favorable as well, as the motors detach one of their heads during a step and therefore, the
+acting force applies only to the attached head of the motor. This would be a different approach of increasing the detachment probability, as one of the conditions given in section
+\ref{s.analysing-the-transport-process} for bimodal transport was the ability of motors to detach easily.\\
+Furthermore, instead of instantaneously moving the cargo (using the bisection method from section \ref{s.implementation}) the explicit model could be extended by introducing an explicit
+equation of motion, in order to propagate the cargo-motor system.
+
+
+% Appendix
+\appendix
+\chapter{Appendix}
+\section{Influence of force free detachment rate $\kappa_d^0$}
+% \renewcommand{\thesubfigure}{\Alph{subfigure}}
+\begin{figure}[!h]
+\centering
+% \captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.35\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-ffdr1.eps}
+  \subcaption{$\kappa_d^0 =$\SI{0.1}{\per\second}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-ffdr5.eps}
+   \subcaption{$\kappa_d^0 =$\SI{0.5}{\per\second}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-ffdr50.eps}
+   \subcaption{$\kappa_d^0 =$\SI{5}{\per\second}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-ffdr100.eps}
+   \subcaption{$\kappa_d^0 =$\SI{10}{\per\second}}
+%  \label{}
+\end{subfigure}
+\caption[Influence of force free detachment rate $\kappa_d^0$ on bimodal velocity distribution]{Velocity distributions for varying values of $\kappa_d^0$ and parameters from Table \ref{t.bimodal-parameters}. Velocity of slow motors (vertical dashed green line), fast motors (vertical dashed blue line) and zero velocity (vertical dashed black line) are marked.} 
+\label{img.bimodal-ffdr-comparison}
+\end{figure}
+% \renewcommand{\thesubfigure}{\alph{subfigure}}
+\newpage
+\section{Influence of stall force of fast motors $F_{sf}$}
+\begin{figure}[h]
+\centering
+% \captionsetup[subfigure]{justification=justified,singlelinecheck=false,labelformat=simple}
+\begin{subfigure}{0.35\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-sff01.eps}
+  \subcaption{$F_{sf} =$\SI{0.1}{\pico\newton} and $F_{ss} =$\SI{5}{\pico\newton}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-sff10.eps}
+   \subcaption{$F_{sf} =$\SI{10}{\pico\newton} and $F_{ss} =$\SI{5}{\pico\newton}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-sff100.eps}
+   \subcaption{$F_{sf} =$\SI{100}{\pico\newton} and $F_{ss} =$\SI{5}{\pico\newton}}
+%  \label{}
+\end{subfigure}
+\begin{subfigure}{0.35\textwidth}
+ \includegraphics[width=\textwidth]{images/results/bistable-vel-sff1000.eps}
+   \subcaption{$F_{sf} =$\SI{1000}{\pico\newton} and $F_{ss} =$\SI{5}{\pico\newton}}
+%  \label{}
+\end{subfigure}
+\caption[Influence of stall force of fast motors $F_{sf}$ on bimodal velocity distribution]{Velocity distributions for varying values of $F_{sf}$ and parameters from Table \ref{t.bimodal-parameters}. Velocity of slow motors (vertical dashed green line), fast motors (vertical dashed blue line) and zero velocity (vertical dashed black line) are marked.} 
+\label{img.bimodal-sff-comparison}
+\end{figure}
+% \renewcommand{\thesubfigure}{\alph{subfigure}}
+
+
+
+% \bibliographystyle{alphadin_martin}
+\bibliographystyle{ieeetr}
+\bibliography{bibliographie}
+
+\end{document}
