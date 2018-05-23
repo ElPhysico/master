@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.4.30)  17 MAY 2018 13:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.4.30)  23 MAY 2018 11:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -385,18 +385,18 @@ Package caption Info: KOMA-Script document class.
 ) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -448,11 +448,11 @@ LaTeX Font Info:    ... okay on input line 23.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 25.
+LaTeX Font Info:    Try loading font information for U+msa on input line 27.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 25.
+LaTeX Font Info:    Try loading font information for U+msb on input line 27.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -460,107 +460,134 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-<./fig/sysL/fpt.png, id=1, 752.8125pt x 602.25pt>
-File: ./fig/sysL/fpt.png Graphic file (type png)
-<use ./fig/sysL/fpt.png>
-Package pdftex.def Info: ./fig/sysL/fpt.png  used on input line 46.
-(pdftex.def)             Requested size: 364.19667pt x 291.36491pt.
-<./fig/sysL/p_opt.png, id=2, 752.8125pt x 602.25pt>
-File: ./fig/sysL/p_opt.png Graphic file (type png)
-<use ./fig/sysL/p_opt.png>
-Package pdftex.def Info: ./fig/sysL/p_opt.png  used on input line 54.
-(pdftex.def)             Requested size: 364.19667pt x 291.36491pt.
+<./fig/cont/prep/angleDistribution.png, id=1, 602.25pt x 602.25pt>
+File: ./fig/cont/prep/angleDistribution.png Graphic file (type png)
+<use ./fig/cont/prep/angleDistribution.png>
+Package pdftex.def Info: ./fig/cont/prep/angleDistribution.png  used on input l
+ine 59.
+(pdftex.def)             Requested size: 364.19667pt x 364.21074pt.
+<./fig/cont/prep/msd-nruns=2000-nsteps=1000.png, id=2, 1355.0625pt x 1053.9375p
+t>
+File: ./fig/cont/prep/msd-nruns=2000-nsteps=1000.png Graphic file (type png)
+<use ./fig/cont/prep/msd-nruns=2000-nsteps=1000.png>
+Package pdftex.def Info: ./fig/cont/prep/msd-nruns=2000-nsteps=1000.png  used o
+n input line 68.
+(pdftex.def)             Requested size: 364.19667pt x 283.2643pt.
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fig/sysL/fpt.png>]
-<./fig/sysL/p_opt_logx.png, id=13, 752.8125pt x 602.25pt>
-File: ./fig/sysL/p_opt_logx.png Graphic file (type png)
-<use ./fig/sysL/p_opt_logx.png>
-Package pdftex.def Info: ./fig/sysL/p_opt_logx.png  used on input line 65.
-(pdftex.def)             Requested size: 159.33821pt x 127.4687pt.
-<./fig/sysL/p_opt_logxy.png, id=14, 752.8125pt x 602.25pt>
-File: ./fig/sysL/p_opt_logxy.png Graphic file (type png)
-<use ./fig/sysL/p_opt_logxy.png>
-Package pdftex.def Info: ./fig/sysL/p_opt_logxy.png  used on input line 70.
-(pdftex.def)             Requested size: 159.33821pt x 127.4687pt.
-<./fig/sysL/p_opt_logy.png, id=15, 752.8125pt x 602.25pt>
-File: ./fig/sysL/p_opt_logy.png Graphic file (type png)
-<use ./fig/sysL/p_opt_logy.png>
-Package pdftex.def Info: ./fig/sysL/p_opt_logy.png  used on input line 75.
-(pdftex.def)             Requested size: 159.33821pt x 127.4687pt.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-[2 <./fig/sysL/p_opt.png> <./fig/sysL/p_opt_logx.png> <./fig/sysL/p_opt_logxy.p
-ng> <./fig/sysL/p_opt_logy.png>]
-<./fig/detecR/fpt.png, id=23, 752.8125pt x 602.25pt>
-File: ./fig/detecR/fpt.png Graphic file (type png)
-<use ./fig/detecR/fpt.png>
-Package pdftex.def Info: ./fig/detecR/fpt.png  used on input line 91.
+LaTeX Warning: Text page 2 contains only floats.
+
+[2 <./fig/cont/prep/angleDistribution.png> <./fig/cont/prep/msd-nruns=2000-nste
+ps=1000.png>] [3]
+<./fig/latt/L/fpt.png, id=26, 752.8125pt x 602.25pt>
+File: ./fig/latt/L/fpt.png Graphic file (type png)
+<use ./fig/latt/L/fpt.png>
+Package pdftex.def Info: ./fig/latt/L/fpt.png  used on input line 123.
 (pdftex.def)             Requested size: 364.19667pt x 291.36491pt.
-<./fig/detecR/p_opt.png, id=24, 752.8125pt x 602.25pt>
-File: ./fig/detecR/p_opt.png Graphic file (type png)
-<use ./fig/detecR/p_opt.png>
-Package pdftex.def Info: ./fig/detecR/p_opt.png  used on input line 99.
+<./fig/latt/L/p_opt.png, id=27, 752.8125pt x 602.25pt>
+File: ./fig/latt/L/p_opt.png Graphic file (type png)
+<use ./fig/latt/L/p_opt.png>
+Package pdftex.def Info: ./fig/latt/L/p_opt.png  used on input line 131.
 (pdftex.def)             Requested size: 364.19667pt x 291.36491pt.
-<./fig/alpha/L=20/fpt.png, id=25, 752.8125pt x 602.25pt>
-File: ./fig/alpha/L=20/fpt.png Graphic file (type png)
-<use ./fig/alpha/L=20/fpt.png>
-Package pdftex.def Info: ./fig/alpha/L=20/fpt.png  used on input line 114.
+<./fig/latt/L/p_opt_logx.png, id=28, 752.8125pt x 602.25pt>
+File: ./fig/latt/L/p_opt_logx.png Graphic file (type png)
+<use ./fig/latt/L/p_opt_logx.png>
+Package pdftex.def Info: ./fig/latt/L/p_opt_logx.png  used on input line 142.
+(pdftex.def)             Requested size: 159.33821pt x 127.4687pt.
+<./fig/latt/L/p_opt_logxy.png, id=29, 752.8125pt x 602.25pt>
+File: ./fig/latt/L/p_opt_logxy.png Graphic file (type png)
+<use ./fig/latt/L/p_opt_logxy.png>
+Package pdftex.def Info: ./fig/latt/L/p_opt_logxy.png  used on input line 147.
+(pdftex.def)             Requested size: 159.33821pt x 127.4687pt.
+<./fig/latt/L/p_opt_logy.png, id=30, 752.8125pt x 602.25pt>
+File: ./fig/latt/L/p_opt_logy.png Graphic file (type png)
+<use ./fig/latt/L/p_opt_logy.png>
+Package pdftex.def Info: ./fig/latt/L/p_opt_logy.png  used on input line 152.
+(pdftex.def)             Requested size: 159.33821pt x 127.4687pt.
+<./fig/latt/D/fpt.png, id=31, 752.8125pt x 602.25pt>
+File: ./fig/latt/D/fpt.png Graphic file (type png)
+<use ./fig/latt/D/fpt.png>
+Package pdftex.def Info: ./fig/latt/D/fpt.png  used on input line 168.
+(pdftex.def)             Requested size: 364.19667pt x 291.36491pt.
+<./fig/latt/D/p_opt.png, id=32, 752.8125pt x 602.25pt>
+File: ./fig/latt/D/p_opt.png Graphic file (type png)
+<use ./fig/latt/D/p_opt.png>
+Package pdftex.def Info: ./fig/latt/D/p_opt.png  used on input line 176.
+(pdftex.def)             Requested size: 364.19667pt x 291.36491pt.
+ [4 <./fig/latt/L/fpt.png>]
+<./fig/latt/alpha/L=20/fpt.png, id=37, 752.8125pt x 602.25pt>
+File: ./fig/latt/alpha/L=20/fpt.png Graphic file (type png)
+<use ./fig/latt/alpha/L=20/fpt.png>
+Package pdftex.def Info: ./fig/latt/alpha/L=20/fpt.png  used on input line 191.
+
 (pdftex.def)             Requested size: 204.85846pt x 163.88702pt.
-<./fig/alpha/L=20/fpt2.png, id=26, 752.8125pt x 602.25pt>
-File: ./fig/alpha/L=20/fpt2.png Graphic file (type png)
-<use ./fig/alpha/L=20/fpt2.png>
-Package pdftex.def Info: ./fig/alpha/L=20/fpt2.png  used on input line 119.
+<./fig/latt/alpha/L=20/fpt2.png, id=38, 752.8125pt x 602.25pt>
+File: ./fig/latt/alpha/L=20/fpt2.png Graphic file (type png)
+<use ./fig/latt/alpha/L=20/fpt2.png>
+Package pdftex.def Info: ./fig/latt/alpha/L=20/fpt2.png  used on input line 196
+.
 (pdftex.def)             Requested size: 204.85846pt x 163.88702pt.
-<./fig/alpha/L=200/fpt.png, id=27, 752.8125pt x 602.25pt>
-File: ./fig/alpha/L=200/fpt.png Graphic file (type png)
-<use ./fig/alpha/L=200/fpt.png>
-Package pdftex.def Info: ./fig/alpha/L=200/fpt.png  used on input line 131.
+ [5 <./fig/latt/L/p_opt.png> <./fig/latt/L/p_opt_logx.png> <./fig/latt/L/p_opt_
+logxy.png> <./fig/latt/L/p_opt_logy.png>]
+<./fig/latt/alpha/L=200/fpt.png, id=46, 752.8125pt x 602.25pt>
+File: ./fig/latt/alpha/L=200/fpt.png Graphic file (type png)
+<use ./fig/latt/alpha/L=200/fpt.png>
+Package pdftex.def Info: ./fig/latt/alpha/L=200/fpt.png  used on input line 208
+.
 (pdftex.def)             Requested size: 204.85846pt x 163.88702pt.
-<./fig/alpha/L=200/fpt2.png, id=28, 752.8125pt x 602.25pt>
-File: ./fig/alpha/L=200/fpt2.png Graphic file (type png)
-<use ./fig/alpha/L=200/fpt2.png>
-Package pdftex.def Info: ./fig/alpha/L=200/fpt2.png  used on input line 136.
+<./fig/latt/alpha/L=200/fpt2.png, id=47, 752.8125pt x 602.25pt>
+File: ./fig/latt/alpha/L=200/fpt2.png Graphic file (type png)
+<use ./fig/latt/alpha/L=200/fpt2.png>
+Package pdftex.def Info: ./fig/latt/alpha/L=200/fpt2.png  used on input line 21
+3.
 (pdftex.def)             Requested size: 204.85846pt x 163.88702pt.
-<./fig/alpha/wallFreq/WF-alpha=01-rel.png, id=29, 752.8125pt x 602.25pt>
-File: ./fig/alpha/wallFreq/WF-alpha=01-rel.png Graphic file (type png)
-<use ./fig/alpha/wallFreq/WF-alpha=01-rel.png>
-Package pdftex.def Info: ./fig/alpha/wallFreq/WF-alpha=01-rel.png  used on inpu
-t line 150.
+ [6 <./fig/latt/D/fpt.png> <./fig/latt/D/p_opt.png>]
+<./fig/latt/alpha/wallFreq/WF-alpha=01-rel.png, id=53, 752.8125pt x 602.25pt>
+File: ./fig/latt/alpha/wallFreq/WF-alpha=01-rel.png Graphic file (type png)
+<use ./fig/latt/alpha/wallFreq/WF-alpha=01-rel.png>
+Package pdftex.def Info: ./fig/latt/alpha/wallFreq/WF-alpha=01-rel.png  used on
+ input line 227.
 (pdftex.def)             Requested size: 204.85846pt x 163.88702pt.
-<./fig/alpha/wallFreq/WF-alpha=05-rel.png, id=30, 752.8125pt x 602.25pt>
-File: ./fig/alpha/wallFreq/WF-alpha=05-rel.png Graphic file (type png)
-<use ./fig/alpha/wallFreq/WF-alpha=05-rel.png>
-Package pdftex.def Info: ./fig/alpha/wallFreq/WF-alpha=05-rel.png  used on inpu
-t line 155.
+<./fig/latt/alpha/wallFreq/WF-alpha=05-rel.png, id=54, 752.8125pt x 602.25pt>
+File: ./fig/latt/alpha/wallFreq/WF-alpha=05-rel.png Graphic file (type png)
+<use ./fig/latt/alpha/wallFreq/WF-alpha=05-rel.png>
+Package pdftex.def Info: ./fig/latt/alpha/wallFreq/WF-alpha=05-rel.png  used on
+ input line 232.
 (pdftex.def)             Requested size: 204.85846pt x 163.88702pt.
-<./fig/alpha/wallFreq/WF-alpha=1-rel.png, id=31, 752.8125pt x 602.25pt>
-File: ./fig/alpha/wallFreq/WF-alpha=1-rel.png Graphic file (type png)
-<use ./fig/alpha/wallFreq/WF-alpha=1-rel.png>
-Package pdftex.def Info: ./fig/alpha/wallFreq/WF-alpha=1-rel.png  used on input
- line 160.
+<./fig/latt/alpha/wallFreq/WF-alpha=1-rel.png, id=55, 752.8125pt x 602.25pt>
+File: ./fig/latt/alpha/wallFreq/WF-alpha=1-rel.png Graphic file (type png)
+<use ./fig/latt/alpha/wallFreq/WF-alpha=1-rel.png>
+Package pdftex.def Info: ./fig/latt/alpha/wallFreq/WF-alpha=1-rel.png  used on 
+input line 237.
 (pdftex.def)             Requested size: 204.85846pt x 163.88702pt.
- [3 <./fig/detecR/fpt.png>] [4 <./fig/detecR/p_opt.png> <./fig/alpha/L=20/fpt.p
-ng> <./fig/alpha/L=20/fpt2.png>] [5 <./fig/alpha/L=200/fpt.png> <./fig/alpha/L=
-200/fpt2.png> <./fig/alpha/wallFreq/WF-alpha=01-rel.png> <./fig/alpha/wallFreq/
-WF-alpha=05-rel.png> <./fig/alpha/wallFreq/WF-alpha=1-rel.png>] (./report.aux) 
-) 
+ [7 <./fig/latt/alpha/L=20/fpt.png> <./fig/latt/alpha/L=20/fpt2.png> <./fig/lat
+t/alpha/L=200/fpt.png> <./fig/latt/alpha/L=200/fpt2.png>] [8 <./fig/latt/alpha/
+wallFreq/WF-alpha=01-rel.png> <./fig/latt/alpha/wallFreq/WF-alpha=05-rel.png> <
+./fig/latt/alpha/wallFreq/WF-alpha=1-rel.png>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 7542 strings out of 492982
- 121918 string characters out of 6138579
- 303516 words of memory out of 5000000
- 10975 multiletter control sequences out of 15000+600000
+ 7565 strings out of 492982
+ 122810 string characters out of 6138579
+ 302516 words of memory out of 5000000
+ 10995 multiletter control sequences out of 15000+600000
  13013 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,8n,52p,8817b,535s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmssbx10.pfb>
-Output written on report.pdf (5 pages, 154283 bytes).
+</usr/share/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on report.pdf (8 pages, 254951 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

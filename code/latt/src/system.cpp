@@ -8,6 +8,7 @@ gsl_rng *gen;
 
 
 /* Functions */
+/* Setting up random number generator gen. */
 void setupGSL()
 {
         gsl_rng_env_setup();
@@ -16,6 +17,7 @@ void setupGSL()
         gsl_rng_set(gen, seed);
 }
 
+/* Reads command line parameters. */
 void ReadCommandLine(int argc, char const *argv[],
 	 		double &p,
 			int &N,
@@ -37,6 +39,7 @@ void ReadCommandLine(int argc, char const *argv[],
 	}
 }
 
+/* Setup of environment, different settings and parameters. */
 void setupEnv()
 {
         cout.unsetf(ios::floatfield);
@@ -44,6 +47,7 @@ void setupEnv()
         setupGSL();
 }
 
+/* Initializes position of target. */
 void initTarget()
 {
         switch (svar.bc) {

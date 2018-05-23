@@ -6,6 +6,7 @@ Walker walker;
 
 
 /* Functions */
+/* Sets up walker with new persistency and according parameters. */
 void Walker::setup(double newpf)
 {
         if (newpf < 0.0) {
@@ -24,6 +25,7 @@ void Walker::setup(double newpf)
         po = 1.0 - pf - pb;
 }
 
+/* Initializes walker at starting position and direction. */
 void Walker::init()
 {
         pos.x = gsl_rng_uniform_int(gen, svar.L);
@@ -32,6 +34,7 @@ void Walker::init()
 
         oldpos = pos;
 
+        /* Check if walker is already in detection range */
         if (targetFound())
                 init();
         if (svar.bc == 2) {
@@ -86,6 +89,7 @@ int Walker::getDirection()
         return direction;
 }
 
+/* Returns true if walker stepped out of boundaries in last step. */
 bool Walker::outOfBound()
 {
         if (pos.x < 0 || pos.x >= svar.L)
@@ -96,6 +100,7 @@ bool Walker::outOfBound()
                 return false;
 }
 
+/* Corrects the position of the walker depending on the boundary conditions. */
 void Walker::correctPos()
 {
         switch (svar.bc) {

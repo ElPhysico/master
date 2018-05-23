@@ -2,10 +2,10 @@
 
 
 /* Functions */
+/* Returns fpt+error averaged over N using parameter p for the walker. */
 pair<double, double> mfpt(double pf)
 {
         cout << "\n ==> p = " << pf << "...";
-        cout << "\n";
         double totalSteps = 0.0;
         double totalSqSteps = 0.0;
         for (int run = 0; run < svar.N; run++) {
@@ -24,10 +24,11 @@ pair<double, double> mfpt(double pf)
         double fpt2 = totalSqSteps / (1.0 * svar.N);
 
         double stDev = sqrt(fpt2 - fpt * fpt);
-        cout << "-> finished!";
+        cout << "\n-> finished!";
         return make_pair(fpt, stDev / sqrt(svar.N));
 }
 
+/* Writes header of fpt file. */
 void headerMFPT(string &file)
 {
         if (!fileExists(file)) {
@@ -45,6 +46,7 @@ void headerMFPT(string &file)
         }
 }
 
+/* Prints the fpt data to the file in file. */
 void printMFPT(string &file, double p, pair<double, double> data)
 {
         FILE *outf;
@@ -56,6 +58,7 @@ void printMFPT(string &file, double p, pair<double, double> data)
 	fclose(outf);
 }
 
+/* Starts mfpt simulation */
 void MFPT(string &file, double p)
 {
         headerMFPT(file);
