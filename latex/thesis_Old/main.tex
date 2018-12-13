@@ -1,0 +1,24 @@
+\input{./tex/praeambel.tex}
+
+\begin{document}
+\pagenumbering{Roman} % Seitenummerierung mit großen römischen Zahlen 
+\pagestyle{empty} % kein Kopf- oder Fußzeilen auf den ersten Seiten
+
+\input{./tex/title}
+
+\newpage 
+\thispagestyle{empty}
+\quad  %\addtocounter{page}{-1}
+\newpage
+
+\input{./tex/erklaerung}
+
+\newpage
+\pagestyle{useheadings} % normale Kopf- und Fußzeilen für den Rest
+
+\input{./tex/contents}
+
+\input{./tex/introduction}
+
+
+\end{document}

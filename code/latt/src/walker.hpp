@@ -20,6 +20,7 @@ public:
         int absorbCounter, wallHits;
 
         void setup(double newp);
+        double returnP();
         void init();
         // int getDirection();
         void step();

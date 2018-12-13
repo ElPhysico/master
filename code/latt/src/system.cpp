@@ -23,7 +23,10 @@ void ReadCommandLine(int argc, char const *argv[],
 			int &N,
 			int &L,
                         int &D,
-                        double &alpha)
+                        double &alpha,
+                        int &ch,
+                        double &p_min,
+                        double &p_max)
 {
 	for (int i = 1; i < argc; i++) {
 		if (strstr(argv[i], "-p="))
@@ -36,6 +39,12 @@ void ReadCommandLine(int argc, char const *argv[],
                         D = atoi(argv[i] + 3);
                 if (strstr(argv[i], "-alpha="))
                         alpha = atof(argv[i] + 7);
+                if (strstr(argv[i], "-ch="))
+                        ch = atoi(argv[i] + 4);
+                if (strstr(argv[i], "-pmin="))
+                	p_min = atof(argv[i] + 6);
+                if (strstr(argv[i], "-pmax="))
+                	p_max = atof(argv[i] + 6);
 	}
 }
 

@@ -3,6 +3,7 @@
 //#include "img.hpp"
 #include "fpt.hpp"
 #include "functions.hpp"
+#include "img.hpp"
 #include <sstream>
 
 using namespace std;
@@ -55,24 +56,38 @@ int main(int argc, char const *argv[])
 	walker.stepL = stepL;
 
 	// /* This serves as example of the graphical output functions */
-	// /* This is not functional anymore but can be used with few effort */
-	// cout << "\nGraphical output: ";
-	// if (graOut) {
-	// 	cout << "yes";
-	// 	walker.setup(p);
-	// 	initTarget();
-	// 	walker.init();
-	// 	string imgfile = "./png/trajectories/p=";
-	// 	imgfile += toString(p).substr(0, 4);
-	// 	initPNG(imgfile);	/* Initialize png img */
-	// 	while (!walker.targetFound()) {
-	// 		walker.step();
-	// 		updatePNG();	/* Update png img with new position */
-	// 	}
-	// 	drawPNG();	/* Draw img to file and destroy img */
-	// } else {
-	// 	cout << "no";
-	// }
+	cout << "\nGraphical output: ";
+	if (true) {
+		cout << "yes";
+		walker.setup(p);
+		initTarget();
+		walker.init();
+		string imgfile = "./graphs/tra/p=";
+		imgfile += toString(p).substr(0, 4);
+		imgfile += ".png";
+		initPNG(imgfile);	/* Initialize png img */
+		int counter = 0;
+		while (/*!walker.targetFound()*/counter < 100) {
+			// double d;
+			// d = (walker.pos.x - svar.tarPos.x);
+			// d *= d;
+			// d += (walker.pos.y - svar.tarPos.y) * (walker.pos.y - svar.tarPos.y);
+			// d = sqrt(d);
+			// p = (d - svar.L / (2 * sqrt(2)));
+                        // p *= (2 * sqrt(2) / svar.L);
+			// double p_max = 1.0;
+			// double p_min = 0.9;
+                        // p *= -(p_max - p_min) * p;
+                        // p += p_max;
+			// walker.setup(p);
+			walker.step();
+			counter++;
+			updatePNG();	/* Update png img with new position */
+		}
+		drawPNG();	/* Draw img to file and destroy img */
+	} else {
+		cout << "no";
+	}
 	// /* END graphics example */
 
 
@@ -82,11 +97,11 @@ int main(int argc, char const *argv[])
 	 * "/localdisk/kklein/Masterarbeit/data/....."
 	 */
 	// string file = "./data/prep/mfpt-N=";
-	string file = "/localdisk/kklein/masterthesis/cont/data/deter/";
-	file += "MFPT-D=";
-	file += toString(svar.D);
-	file += ".dat";
-	MFPT(file, p);
+	// string file = "/localdisk/kklein/masterthesis/cont/data/deter/";
+	// file += "MFPT-L=";
+	// file += toString(svar.L);
+	// file += ".dat";
+	// MFPT(file, p);
 	//walker.turningAngleDistribution(file, p);
 
 	cout << "\n\n:: Finishing program...";

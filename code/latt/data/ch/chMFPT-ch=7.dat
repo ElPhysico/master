@@ -1,0 +1,13 @@
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 1000000
+#ch=7: p(d) = 1 - d^4 * (sqrt2/L)^4
+
+<fpt>	delta
+16396.436172	16.446403
+#-----------------------------------
+
+
+

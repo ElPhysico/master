@@ -1,0 +1,16 @@
+%************************************************
+\chapter{Random Search Strategies}\label{ch:randomSearchStrategies}
+%************************************************
+In \autoref{ch:activeMotion} \emph{search problems} and the term \emph{search time} have been mentioned as important concerns of this work. In order to model a search problem, in the first place we needed a method of modeling motion as motion is a prerequisite for exploring space. This has been done in \autoref{ch:modelingActiveMotion}. Now the last component of a simple complete search problem is the search time.
+
+\graffito{The problem of determining the search time in the scope of a model in which the searcher performs a random walk to find the target is often called a \textit{random search} problem.}
+In random walk models like the two dimensional lattice one introduced in \autoref{sec:a2D-latticeModel}, the time it takes to find the target is often referred to as \textit{\ac{FPT}} (the time it takes to first visit and pass the target site). However, in most cases it is more meaningful to consider the average search time, which is accordingly called \textit{\ac{MFPT}}. Depending on the complexity of the search problem, the \acs{MFPT} can be derived analitically or numerical methods are needed.
+
+Consider, for example, a \acs{SRW} on a constrained one dimensional lattice of length $L=4$. For the four sites $i\in\left[0,3\right]$ one can easily write down the transition probabilities $P_l\left(i\right)$ and $P_r\left(i\right)$ to the neighbouring sites (see \todotext{create figure and refer here}). The boundaries shall be reflective, which means that for the outer sites the probabilities are \graffito{\reza{Should I list the probabilities for better visibility here or leave them in plain text?}} $P_l\left(0\right)=0$ and $P_r\left(0\right)=1$ (analogously for site $i=3$). For the two inner sites it is $P_l\left(1\right)=1/2$ and $P_r\left(1\right)=1/2$ (analogously for site $i=2$). Now the question could be, \emph{What is the average time it takes to move from site $i=0$ to site $i=3$?}, which could be compared to a very simple random search problem in which the target is located at the right side of the confinement while the searcher starts its search on the left side. In this simple case, using backward equations, one can quickly derive the average number of steps it takes the walker to reach site $i=4$, here namely nine steps.
+
+
+%*****************************************
+%*****************************************
+%*****************************************
+%*****************************************
+%*****************************************

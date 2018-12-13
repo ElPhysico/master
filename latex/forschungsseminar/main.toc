@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Migration and Random Walks}{3}{0}{1}
+\beamer@sectionintoc {2}{Mean First-Passage Times}{9}{0}{2}
+\beamer@sectionintoc {3}{Results of a Minimal 2D Model}{12}{0}{3}
+\beamer@sectionintoc {4}{Non-trivial Search Strategies}{15}{0}{4}
+\beamer@sectionintoc {5}{Preliminary Results}{21}{0}{5}
+\beamer@sectionintoc {6}{Outlook and Summary}{24}{0}{6}

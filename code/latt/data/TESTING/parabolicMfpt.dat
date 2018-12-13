@@ -1,0 +1,10 @@
+#Parabolic search strategy:
+#p(d) = p_max - (p_max - p_min) * (d - 200 / 2sqrt2)^2 * (2sqrt2 / 200)^2
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 1
+
+#p_min	p_max	<fpt>	<delta>
+0.700	1.000	78986.000000	0.000000

@@ -1,0 +1,13 @@
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 1000000
+#ch=4: p(d) = 1 - (2sqrt2/L)^2 * (d-L/(2sqrt2))^2
+
+<fpt>	delta
+100828.414866	101.053831
+#-----------------------------------
+
+
+

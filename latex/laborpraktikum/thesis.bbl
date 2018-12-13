@@ -1,0 +1,2230 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{amit:1989}{book}{}
+    \name{author}{1}{}{%
+      {{hash=ADJ}{%
+         family={Amit},
+         familyi={A\bibinitperiod},
+         given={Daniel\bibnamedelima J.},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{ADJ1}
+    \strng{fullhash}{ADJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Modeling Brain Function: The World of Attractor Neural
+  Networks}
+    \field{year}{1989}
+  \endentry
+
+  \entry{andersson:1981}{article}{}
+    \name{author}{1}{}{%
+      {{hash=AM}{%
+         family={Andersson},
+         familyi={A\bibinitperiod},
+         given={Malte},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier Inc.}%
+    }
+    \strng{namehash}{AM1}
+    \strng{fullhash}{AM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    Search tactics are explored for animals hunting randomly distributed prey
+  in two-dimensional habitats. The predator chooses between two modes of
+  search: continuous travel and alternating pause-travel. A model based on
+  renewal processes is derived for the predator's net rate of energy intake.
+  The model is used to explore the optimal mode of search, search height, pause
+  duration (“giving-up time”) and move length. Energy expenditure for
+  search is assumed to increase from perchtravel over continuous travel to
+  hover-travel. Prey detectability is assumed to be higher for the pausing than
+  for the travelling predator. The following predictions emerge: The relative
+  merits of the different search modes are mainly determined by the relative
+  magnitudes of energy consumption rates and prey detection efficiencies at
+  pausing and travelling. The energetically cheaper among two search modes
+  reaches its highest relative merit at low prey density and detectability. As
+  either increases, a more expensive search tactic may become superior. If the
+  rate of energy expenditure increases considerably at locomotion, pause-travel
+  tactics may be superior to continuous travel. This requires that the search
+  can be performed from sufficient height, because net energy gain decreases
+  rapidly below the optimum search height. It is greater for pause-travel than
+  for continuous travel, and it increases slightly with decreasing prey
+  density, and markedly with increasing prey detectability. With perch-travel
+  or hover-travel tactics, the optimal giving-up time decreases with increasing
+  prey density and detectability. The optimal move length increases with
+  detectability. Empirical evidence coincides qualitatively with several
+  predictions. Possibilities for further tests of the model are discussed, as
+  are observed behavioural and morphological features on which the search model
+  may shed light.%
+    }
+    \verb{doi}
+    \verb 10.1016/0040-5809(81)90035-6
+    \endverb
+    \field{issue}{1}
+    \field{pages}{58\bibrangedash 86}
+    \field{title}{On optimal predator search}
+    \verb{url}
+    \verb https://doi.org/10.1016/0040-5809(81)90035-6
+    \endverb
+    \field{volume}{19}
+    \field{journaltitle}{Theoretical Population Biology}
+    \field{year}{1981}
+  \endentry
+
+  \entry{bechinger:2016}{article}{}
+    \name{author}{6}{}{%
+      {{hash=BC}{%
+         family={Bechinger},
+         familyi={B\bibinitperiod},
+         given={Clemens},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DLR}{%
+         family={Di\bibnamedelima Leonardo},
+         familyi={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+         given={Roberto},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Löwen},
+         familyi={L\bibinitperiod},
+         given={Hartmut},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Reichhardt},
+         familyi={R\bibinitperiod},
+         given={Charles},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=VG}{%
+         family={Volpe},
+         familyi={V\bibinitperiod},
+         given={Giorgio},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=VG}{%
+         family={Volpe},
+         familyi={V\bibinitperiod},
+         given={Giovanni},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{BC+1}
+    \strng{fullhash}{BCDLRLHRCVGVG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1103/RevModPhys.88.045006
+    \endverb
+    \field{number}{4}
+    \field{pages}{045006}
+    \field{title}{{A}ctive {p}articles in {c}omplex and {c}rowded
+  {e}nvironments}
+    \verb{url}
+    \verb http://dx.doi.org/10.1103/RevModPhys.88.045006
+    \endverb
+    \field{volume}{88}
+    \field{journaltitle}{Reviews of Modern Physics}
+    \field{year}{2016}
+  \endentry
+
+  \entry{benichou:2011}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BO}{%
+         family={B\'enichou},
+         familyi={B\bibinitperiod},
+         given={O.},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Loverdo},
+         familyi={L\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Moreau},
+         familyi={M\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Voituriez},
+         familyi={V\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{BO+1}
+    \strng{fullhash}{BOLCMMVR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1103/RevModPhys.83.81
+    \endverb
+    \field{issue}{1}
+    \field{pages}{81\bibrangedash 129}
+    \field{title}{Intermittent search strategies}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/RevModPhys.83.81
+    \endverb
+    \field{volume}{83}
+    \field{journaltitle}{Rev. Mod. Phys.}
+    \field{year}{2011}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{breed:2010}{book}{}
+    \name{author}{2}{}{%
+      {{hash=BMD}{%
+         family={Breed},
+         familyi={B\bibinitperiod},
+         given={Michael\bibnamedelima D.},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Moore},
+         familyi={M\bibinitperiod},
+         given={Janice},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{BMDMJ1}
+    \strng{fullhash}{BMDMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    The Encyclopedia of Animal Behavior has engaged with great success the
+  efforts of many of the best behavioral biologists of the 21st century.
+  Section editors drawn from the most accomplished behavioral scientists of
+  their generation have enrolled an international cast of highly respected
+  thinkers and writers all of whom have taken great care and joy in
+  illuminating every imaginable corner of animal behavior. This comprehensive
+  work covers not only the usual topics such as communication, learning, sexual
+  selection, navigation, and the history of the field, but also emerging topics
+  in cognition, animal welfare, conservation, and applications of animal
+  behavior. The large section on animal cognition brings together many of the
+  world's experts on the subject to provide a comprehensive overview of this
+  rapidly developing area. Chapters relating to animal welfare give a full view
+  of behavioral interactions of humans with companion animals, farm animals,
+  and animals in the wild. The key role of animal behavior in conservation
+  biology receives broad attention, including chapters on topics such as the
+  effects of noise pollution, captive breeding, and how the behavioral effects
+  of parasites interacts with conservation issues. Animal behavior in
+  environmental biology is highlighted in chapters on the effects of endocrine
+  disruptors on behavior and a large number of chapters on key species, such as
+  wolves, chimpanzees, hyenas and sharks. Clear, accessible writing complements
+  a wealth of information for undergraduate college students about the
+  essential concepts of animal behavior and the application of those concepts
+  across the field. In-depth coverage of concepts, methods, and exemplar
+  organisms serves the needs of graduate students and professionals in the
+  field. From the use of behavior in assessing the welfare of pigs to the
+  social behavior of insects, from animal empathy to bat brains, this
+  authoritative reference, with its in-depth introductory articles, rich array
+  of illustrations, interactive cross-referenced links, and numerous suggested
+  readings, can guide the student or the professional to an expanded
+  appreciation of the far-flung world of animal behavior. An invaluable tool
+  for teaching and a source of enrichment and detail for any topic covered in
+  an animal behavior course, the Encyclopedia of Animal Behavior is the
+  definitive reference work in its field and will be for years to come.%
+    }
+    \field{title}{Encyclopedia of Animal Behavior}
+    \verb{url}
+    \verb https://www.sciencedirect.com/referencework/9780080453378/encyclopedi
+    \verb a-of-animal-behavior
+    \endverb
+    \field{year}{2010}
+  \endentry
+
+  \entry{breed:2012}{book}{}
+    \name{author}{2}{}{%
+      {{hash=BMD}{%
+         family={Breed},
+         familyi={B\bibinitperiod},
+         given={Michael\bibnamedelima D.},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Moore},
+         familyi={M\bibinitperiod},
+         given={Janice},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{BMDMJ1}
+    \strng{fullhash}{BMDMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    Animal Behavior covers the broad sweep of animal behavior from its
+  neurological underpinnings to the importance of behavior in conservation. The
+  authors, Michael D. Breed and Janice Moore, bring almost 60 years of combined
+  experience as university professors to this textbook, much of that teaching
+  animal behavior. An entire chapter is devoted to the vibrant new field of
+  behavior and conservation, including topics such as social behavior and the
+  relationship between parasites, pathogens, and behavior. Thoughtful coverage
+  has also been given to foraging behavior, mating and parenting behavior,
+  anti-predator behavior and learning. This text addresses the physiological
+  foundations of behavior in a way that is both accessible and inviting. Each
+  chapter begins with learning objectives and concludes with thought-provoking
+  questions. Additionally, special terms and definitions are highlighted
+  throughout. The book provides a rich resource for students (and professors)
+  from a wide range of life science disciplines.%
+    }
+    \verb{doi}
+    \verb 10.1016/C2009-0-01531-1
+    \endverb
+    \field{title}{{A}nimal {B}ehavior}
+    \verb{url}
+    \verb https://doi.org/10.1016/C2009-0-01531-1
+    \endverb
+    \field{year}{2012}
+  \endentry
+
+  \entry{brown:1828}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BR}{%
+         family={Brown},
+         familyi={B\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BR1}
+    \strng{fullhash}{BR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{161\bibrangedash 173}
+    \field{title}{A brief account of microscopical observations made in the
+  months of June, July and August, 1827, on the particles contained in the
+  pollen of plants; and the general existence of active molecules in organic
+  and inorganic bodies}
+    \field{volume}{4}
+    \field{journaltitle}{Philosophical Magazine}
+    \field{year}{1828}
+  \endentry
+
+  \entry{chase:1986}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=CWG}{%
+         family={Chase},
+         familyi={C\bibinitperiod},
+         given={W.\bibnamedelima G.},
+         giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=BKR}{%
+         family={Boff},
+         familyi={B\bibinitperiod},
+         given={Kenneth\bibnamedelima R.},
+         giveni={K\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=KL}{%
+         family={Kaufman},
+         familyi={K\bibinitperiod},
+         given={Lloyd},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=TJP}{%
+         family={Thomas},
+         familyi={T\bibinitperiod},
+         given={James\bibnamedelima Peringer},
+         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley}%
+    }
+    \strng{namehash}{CWG1}
+    \strng{fullhash}{CWG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Handbook of Perception and Human Performance, V, II:
+  Sensory Processes and Information}
+    \field{pages}{21\bibrangedash 36}
+    \field{title}{Visual information processing}
+    \field{year}{1986}
+  \endentry
+
+  \entry{codling:2008}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CEA}{%
+         family={Codling},
+         familyi={C\bibinitperiod},
+         given={Edward\bibnamedelima A.},
+         giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=PMJ}{%
+         family={Plank},
+         familyi={P\bibinitperiod},
+         given={Michael\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Benhamou},
+         familyi={B\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The Royal Society}%
+    }
+    \strng{namehash}{CEAPMJBS1}
+    \strng{fullhash}{CEAPMJBS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    Mathematical modelling of the movement of animals, micro-organisms and
+  cells is of great relevance in the fields of biology, ecology and medicine.
+  Movement models can take many different forms, but the most widely used are
+  based on the extensions of simple random walk processes. In this review
+  paper, our aim is twofold: to introduce the mathematics behind random walks
+  in a straightforward manner and to explain how such models can be used to aid
+  our understanding of biological processes. We introduce the mathematical
+  theory behind the simple random walk and explain how this relates to Brownian
+  motion and diffusive processes in general. We demonstrate how these simple
+  models can be extended to include drift and waiting times or be used to
+  calculate first passage times. We discuss biased random walks and show how
+  hyperbolic models can be used to generate correlated random walks. We cover
+  two main applications of the random walk model. Firstly, we review models and
+  results relating to the movement, dispersal and population redistribution of
+  animals and micro-organisms. This includes direct calculation of mean squared
+  displacement, mean dispersal distance, tortuosity measures, as well as
+  possible limitations of these model approaches. Secondly, oriented movement
+  and chemotaxis models are reviewed. General hyperbolic models based on the
+  linear transport equation are introduced and we show how a reinforced random
+  walk can be used to model movement where the individual changes its
+  environment. We discuss the applications of these models in the context of
+  cell migration leading to blood vessel growth (angiogenesis). Finally, we
+  discuss how the various random walk models and approaches are related and the
+  connections that underpin many of the key processes involved.%
+    }
+    \verb{doi}
+    \verb 10.1098/rsif.2008.0014
+    \endverb
+    \field{number}{25}
+    \field{pages}{813\bibrangedash 834}
+    \field{title}{Random walk models in biology}
+    \verb{url}
+    \verb http://rsif.royalsocietypublishing.org/content/5/25/813
+    \endverb
+    \field{volume}{5}
+    \field{journaltitle}{Journal of The Royal Society Interface}
+    \field{year}{2008}
+  \endentry
+
+  \entry{coskun:2011}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CH}{%
+         family={Coskun},
+         familyi={C\bibinitperiod},
+         given={Hasan},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Coskun},
+         familyi={C\bibinitperiod},
+         given={Huseyin},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CHCH1}
+    \strng{fullhash}{CHCH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    Cell motility is an essential phenomenon in almost all living organisms. It
+  is natural to think that behavioral or shape changes of a cell bear
+  information about the underlying mechanisms that generate these changes.
+  Reading cell motion, namely, understanding the underlying biophysical and
+  mechanochemical processes, is of paramount importance. The mathematical model
+  developed in this paper determines some physical features and material
+  properties of the cells locally through analysis of live cell image sequences
+  and uses this information to make further inferences about the molecular
+  structures, dynamics, and processes within the cells, such as the actin
+  network, microdomains, chemotaxis, adhesion, and retrograde flow. The
+  generality of the principals used in formation of the model ensures its wide
+  applicability to different phenomena at various levels. Based on the model
+  outcomes, we hypothesize a novel biological model for collective
+  biomechanical and molecular mechanism of cell motion.%
+    }
+    \verb{doi}
+    \verb 10.1007/s11538-010-9580-x
+    \endverb
+    \field{issn}{1522-9602}
+    \field{number}{3}
+    \field{pages}{658\bibrangedash 682}
+    \field{title}{Cell Physician: Reading Cell Motion}
+    \verb{url}
+    \verb https://doi.org/10.1007/s11538-010-9580-x
+    \endverb
+    \field{volume}{73}
+    \field{journaltitle}{Bulletin of Mathematical Biology}
+    \field{year}{2011}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{evans:1988}{article}{}
+    \name{author}{2}{}{%
+      {{hash=EBI}{%
+         family={Evans},
+         familyi={E\bibinitperiod},
+         given={Barbara\bibnamedelima I.},
+         giveni={B\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=OWJ}{%
+         family={O'Brien},
+         familyi={O\bibinitperiod},
+         given={W.\bibnamedelima John},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EBIOWJ1}
+    \strng{fullhash}{EBIOWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{pages}{187\bibrangedash 92}
+    \field{title}{A re-analysis of the search cycle of a planktivorous
+  salmonid}
+    \field{volume}{45}
+    \field{journaltitle}{Canadian Journal of Fisheries and Aquatic Sciences}
+    \field{year}{1988}
+  \endentry
+
+  \entry{flores:2007}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FJC}{%
+         family={Flores},
+         familyi={F\bibinitperiod},
+         given={J.\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {EDP Sciences, IOP Publishing, Italian Physical Society}%
+    }
+    \strng{namehash}{FJC1}
+    \strng{fullhash}{FJC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1209/0295-5075/79/18004
+    \endverb
+    \field{number}{1}
+    \field{pages}{18004}
+    \field{title}{{D}ispersal {t}ime for {a}ncient {h}uman {m}igrations:
+  {A}mericas and {E}urope {c}olonization}
+    \verb{url}
+    \verb https://doi.org/10.1209/0295-5075/79/18004
+    \endverb
+    \field{volume}{79}
+    \field{journaltitle}{EPL (Europhysics Letters)}
+    \field{year}{2007}
+  \endentry
+
+  \entry{greene:1983}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GCH}{%
+         family={Greene},
+         familyi={G\bibinitperiod},
+         given={Charles\bibnamedelima H.},
+         giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \keyw{zooplankton, selective predation, life history adaptations}
+    \strng{namehash}{GCH1}
+    \strng{fullhash}{GCH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    Abstract The impact of selective predation in freshwater zooplankton
+  communities is examined with special emphasis on the ecological and
+  evolutionary consequences for the prey. The behavioral interactions between
+  predators and prey are reviewed, and the general patterns in age- and
+  size-selective predation are derived in a semi-quantitative model. The final
+  section explores the life history adaptations that zooplankton have evolved
+  in response to these different patterns of selective predation.%
+    }
+    \verb{doi}
+    \verb 10.1002/iroh.19830680302
+    \endverb
+    \verb{eprint}
+    \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/iroh.19830680302
+    \endverb
+    \field{number}{3}
+    \field{pages}{297\bibrangedash 315}
+    \field{title}{Selective Predation in Freshwater Zooplankton Communities}
+    \verb{url}
+    \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/iroh.19830680302
+    \endverb
+    \field{volume}{68}
+    \field{journaltitle}{Internationale Revue der gesamten Hydrobiologie und
+  Hydrographie}
+  \endentry
+
+  \entry{harkes:1992}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HG}{%
+         family={Harkes},
+         familyi={H\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Dankert},
+         familyi={D\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Feijen},
+         familyi={F\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Society for Microbiology}%
+    }
+    \strng{namehash}{HGDJFJ1}
+    \strng{fullhash}{HGDJFJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    An in vitro system was developed to study the migration of uropathogenic
+  Escherichia coli strains. In this system an aqueous agar gel is placed
+  against a solid surface, allowing the bacteria to migrate along the gel/solid
+  surface interface. Bacterial strains as well as solid surfaces were
+  characterized by means of water contact angle and zeta potential
+  measurements. When glass was used as the solid surface, significantly
+  different migration times for the strains investigated were observed.
+  Relationships among the observed migration times of six strains, their
+  contact angles, and their zeta potentials were found. Relatively hydrophobic
+  strains exhibited migration times shorter than those of hydrophilic strains.
+  For highly negatively charged strains shorter migration times were found than
+  were found for less negatively charged strains. When the fastest-migrating
+  strain with respect to glass was allowed to migrate along solid surfaces
+  differing in hydrophobicity and charge, no differences in migration times
+  were found. Our findings indicate that strategies to prevent
+  catheter-associated bacteriuria should be based on inhibition of bacterial
+  growth rather than on modifying the physicochemical character of the catheter
+  surface.%
+    }
+    \field{number}{5}
+    \field{pages}{1500\bibrangedash 1505}
+    \field{title}{Bacterial Migration along Solid Surfaces}
+    \verb{url}
+    \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC195632/
+    \endverb
+    \field{volume}{58}
+    \field{journaltitle}{Applied and Environmental Microbiology}
+    \field{year}{1992}
+  \endentry
+
+  \entry{hill:2000}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HS}{%
+         family={Hill},
+         familyi={H\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BMT}{%
+         family={Burrows},
+         familyi={B\bibinitperiod},
+         given={M.\bibnamedelima T.},
+         giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=HRN}{%
+         family={Hughes},
+         familyi={H\bibinitperiod},
+         given={R.\bibnamedelima N.},
+         giveni={R\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \keyw{area-restricted search, pause-travel search, klinokinesis,
+  Pleuronectes platessa, foraging, intertidal}
+    \strng{namehash}{HSBMTHRN1}
+    \strng{fullhash}{HSBMTHRN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    During searching, discovery of a prey patch by juvenile plaice Pleuronectes
+  platessa was associated with a change from extensive to intensive search
+  behaviour several moves before an attack on a prey. Intensive search
+  behaviour was characterized by reduced distance of moves, a greater rate of
+  turning per unit distance and shorter pauses between moves. The increase in
+  turn rate was associated with area-restricted seaching, while a decrease in
+  distances moved suggests that plaice search more efficiently for prey when
+  stationary than while moving. The klinokinetic mechanism that appears to
+  regulate search behaviour in juvenile plaice should allow efficient
+  exploitation of a range of prey distribution patterns based on localized cues
+  alone. Such a mechanism is especially useful to a migratory predator, like
+  plaice, whose foraging is subject to time constraints imposed by tidally
+  available feeding areas.%
+    }
+    \verb{doi}
+    \verb 10.1111/j.1095-8649.2000.tb02160.x
+    \endverb
+    \verb{eprint}
+    \verb https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1095-8649.2000.tb02
+    \verb 160.x
+    \endverb
+    \field{number}{6}
+    \field{pages}{1497\bibrangedash 1508}
+    \field{title}{Increased turning per unit distance as an area-restricted
+  search mechanism in a pause-travel predator, juvenile plaice, foraging for
+  buried bivalves}
+    \verb{url}
+    \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1095-8649.2000.tb02
+    \verb 160.x
+    \endverb
+    \field{volume}{56}
+    \field{journaltitle}{Journal of Fish Biology}
+  \endentry
+
+  \entry{horwitz:1999}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HAR}{%
+         family={Horwitz},
+         familyi={H\bibinitperiod},
+         given={Alan\bibnamedelima Rick},
+         giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=PJT}{%
+         family={Parsons},
+         familyi={P\bibinitperiod},
+         given={J.\bibnamedelima Thomas},
+         giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Association for the Advancement of Science}%
+    }
+    \strng{namehash}{HARPJT1}
+    \strng{fullhash}{HARPJT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    Cell movement is an elegant orchestration of different cellular processes
+  that include microtubule dynamics, contraction of actin and myosin filaments,
+  and the formation and turnover of integrin-rich adhesion complexes that serve
+  as traction points over which the cell moves. In a comprehensive overview
+  Perspective, Horwitz and Parsons discuss the mechanisms that regulate the
+  dynamics of contractile forces and adhesion. New findings suggest the
+  existence of a molecular `clutch' that regulates the balance of these
+  processes ( Smilenov et al.).%
+    }
+    \verb{doi}
+    \verb 10.1126/science.286.5442.1102
+    \endverb
+    \verb{eprint}
+    \verb http://science.sciencemag.org/content/286/5442/1102
+    \endverb
+    \field{issn}{0036-8075}
+    \field{number}{5442}
+    \field{pages}{1102\bibrangedash 1103}
+    \field{title}{Cell Migration--Movin{\textquoteright} On}
+    \verb{url}
+    \verb http://science.sciencemag.org/content/286/5442/1102
+    \endverb
+    \field{volume}{286}
+    \field{journaltitle}{Science}
+    \field{year}{1999}
+  \endentry
+
+  \entry{horwitz:2003}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HR}{%
+         family={Horwitz},
+         familyi={H\bibinitperiod},
+         given={Rick},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WD}{%
+         family={Webb},
+         familyi={W\bibinitperiod},
+         given={Donna},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{HRWD1}
+    \strng{fullhash}{HRWD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1016/j.cub.2003.09.014
+    \endverb
+    \field{issue}{19}
+    \field{pages}{756\bibrangedash 759}
+    \field{title}{Cell migration}
+    \verb{url}
+    \verb https://doi.org/10.1016/j.cub.2003.09.014
+    \endverb
+    \field{volume}{13}
+    \field{journaltitle}{Current Biology}
+    \field{year}{2003}
+  \endentry
+
+  \entry{huey:1968}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HEB}{%
+         family={Huey},
+         familyi={H\bibinitperiod},
+         given={Edmund\bibnamedelima Burke},
+         giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge [Mass.] M.I.T. Press}%
+    }
+    \strng{namehash}{HEB1}
+    \strng{fullhash}{HEB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{The psychology and pedagogy of reading}
+    \field{year}{1968}
+  \endentry
+
+  \entry{jackson:1992}{article}{}
+    \name{author}{2}{}{%
+      {{hash=JRR}{%
+         family={Jackson},
+         familyi={J\bibinitperiod},
+         given={R.\bibnamedelima R.},
+         giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=VOA}{%
+         family={Van\bibnamedelima Olphen},
+         familyi={V\bibinitperiod\bibinitdelim O\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{JRRVOA1}
+    \strng{fullhash}{JRRVOA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{abstract}{%
+    The predatory behaviour of Chrysilla lauta and Sliersemiglaucus from Sri
+  Lanka, and four species of Natta from Kenya, was studied in the laboratory
+  for the first time. These salticids eat ants, a prey most salticids avoid.
+  These species' specialized behaviour for catching ants is described and
+  compared to their behaviour for catching other insects. Three different types
+  of tests of prey preference were carried out and, in each type, ants were
+  taken in preference to other insects. Preference for ants, and
+  prey‐specific predatory behaviour did not depend on prior experience with
+  ants. Results from this study are discussed in relation to recent findings on
+  other ant‐eating salticids.%
+    }
+    \verb{doi}
+    \verb 10.1111/j.1469-7998.1992.tb04351.x
+    \endverb
+    \field{issue}{1}
+    \field{pages}{163\bibrangedash 170}
+    \field{title}{Prey‐capture techniques and prey preferences of Chrysilla,
+  Natta and Siler, ant‐eating jumping spiders (Araneae, Salticidae) from
+  Kenya and Sri Lanka}
+    \verb{url}
+    \verb https://doi.org/10.1111/j.1469-7998.1992.tb04351.x
+    \endverb
+    \field{volume}{227}
+    \field{journaltitle}{Journal of Zoology}
+    \field{year}{1992}
+  \endentry
+
+  \entry{obrien:1990}{article}{}
+    \name{author}{3}{}{%
+      {{hash=JOW}{%
+         family={John\bibnamedelima O'Brien},
+         familyi={J\bibinitperiod\bibinitdelim O\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=BHI}{%
+         family={Browman},
+         familyi={B\bibinitperiod},
+         given={Howard\bibnamedelima I.},
+         giveni={H\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=EBI}{%
+         family={Evans},
+         familyi={E\bibinitperiod},
+         given={Barbara\bibnamedelima I.},
+         giveni={B\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Sigma Xi, The Scientific Research Honor Society}%
+    }
+    \strng{namehash}{JOWBHIEBI1}
+    \strng{fullhash}{JOWBHIEBI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{number}{2}
+    \field{pages}{152\bibrangedash 160}
+    \field{title}{{S}earch {S}trategies of {F}oraging {A}nimals}
+    \verb{url}
+    \verb https://www.jstor.org/stable/29773945
+    \endverb
+    \field{volume}{78}
+    \field{journaltitle}{American Scientist}
+    \field{year}{1990}
+  \endentry
+
+  \entry{obrien:1989}{article}{}
+    \name{author}{3}{}{%
+      {{hash=JOW}{%
+         family={John\bibnamedelima O'Brien},
+         familyi={J\bibinitperiod\bibinitdelim O\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=EBI}{%
+         family={Evans},
+         familyi={E\bibinitperiod},
+         given={Barbara\bibnamedelima I.},
+         giveni={B\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=BHI}{%
+         family={Browman},
+         familyi={B\bibinitperiod},
+         given={Howard\bibnamedelima I.},
+         giveni={H\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JOWEBIBHI1}
+    \strng{fullhash}{JOWEBIBHI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{abstract}{%
+    Foraging is one of the most important endeavors undertaken by animals, and
+  it has been studied intensively from both mechanistic-empirical and optimal
+  foraging perspectives. Planktivorous fish make excellent study organisms for
+  foraging studies because they feed frequently and in a relatively simple
+  environment. Most optimal foraging studies of planktivorous fish have
+  focused, either on diet choice or habitat selection and have assumed that
+  these animals used a cruise search foraging strategy. We have recently
+  recognized that white crappie do not use a cruise search strategy (swimming
+  continuously and searching constantly) while foraging on zooplankton but move
+  in a stop and go pattern, searching only while paused. We have termed
+  thissaltatory search. Many other animals move in a stop and go pattern while
+  foraging, but none have been shown to search only while paused. Not only do
+  white crappie search in a saltatory manner but the components of the search
+  cycle change when feeding on prey of different size. When feeding on large
+  prey these fish move further and faster after an unsuccessful search than
+  when feeding on small prey. The fish also pause for a shorter period to
+  search when feeding on large prey. To evaluate the efficiency of these
+  alterations in the search cycle, a net energy gain simulation model was
+  developed. The model computes the likelihood of locating 1 or 2 different
+  size classes of zooplankton prey as a function of the volume of water
+  scanned. The volume of new water searched is dependent upon the dimensions of
+  the search volume and the length of the run. Energy costs for each component
+  of the search cycle, and energy gained from the different sized prey, were
+  assessed. The model predicts that short runs produce maximum net energy gains
+  when crappie feed on small prey but predicts net energy gains will be
+  maximized with longer runs when crappie feed on large prey or a mixed
+  assemblage of large and small prey. There is an optimal run length due to
+  high energy costs of unsuccessful search when runs are short and reveal
+  little new water, and high energy costs of long runs when runs are lengthy.
+  The model predicts that if the greater search times observed when crappie
+  feed on small prey are assessed when they feed on a mixed diet of small and
+  large prey, net energy gained is less than if small prey are deleted from the
+  diet. We believe the model has considerable generality. Many animals are
+  observed to move in a saltatory manner while foraging and some are thought to
+  search only while stationary. Some birds and lizards are, known to modify the
+  search cycle in a manner similar to white crappie.%
+    }
+    \verb{doi}
+    \verb 10.1007/BF00789938
+    \endverb
+    \field{issn}{1432-1939}
+    \field{number}{1}
+    \field{pages}{100\bibrangedash 110}
+    \field{title}{Flexible search tactics and efficient foraging in saltatory
+  searching animals}
+    \verb{url}
+    \verb https://doi.org/10.1007/BF00789938
+    \endverb
+    \field{volume}{80}
+    \field{journaltitle}{Oecologia}
+    \field{year}{1989}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{kennedy:1983}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KJS}{%
+         family={Kennedy},
+         familyi={K\bibinitperiod},
+         given={J.\bibnamedelima S.},
+         giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \keyw{Sex pheromone, flight, orientation, behaviour, moths, cockroaches,
+  chemotaxis, anemotaxis, wind, odour, attractant}
+    \strng{namehash}{KJS1}
+    \strng{fullhash}{KJS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    ABSTRACT. ‘Counterturning’ (meaning here the execution of a succession
+  of alternating left and right turns) is the common feature in upwind
+  zigzagging and cross-wind casting by flying insects manoeuvring towards a
+  small source of wind-borne odour. Recent progress in understanding its
+  control and function is discussed. Counterturning is internally controlled
+  (‘self-steered’) in the limited sense that, once initiated by a chemical
+  stimulus, it continues without further changes in the chemical input both in
+  clean air and in a homogeneous cloud of odour. As a reaction it appears to be
+  the kind of chemotaxis distinguished as longitudinal klinotaxis, for which
+  the stimulus is a difference of chemical concentration detected over time
+  along the insect's path, not across it. The new directions taken in response
+  to the stimulus, being self-steered in the above sense, have no necessary
+  relation to the direction of the chemical gradient that provided the stimulus
+  but are influenced by the visual cues generated by wind drift. In wind, the
+  counterturning programme is modulated by changes in the chemical input and
+  simultaneously integrated with anemotaxis, but it can then continue in
+  similar form after the wind has ceased. Unambiguous evidence for these
+  conclusions is so far available only for certain flying male moths responding
+  to sex pheromone. The primary function of counterturning, of all amplitudes
+  and in both zigzagging and casting, appears to be the regaining of contact
+  with an elusive scent.%
+    }
+    \verb{doi}
+    \verb 10.1111/j.1365-3032.1983.tb00340.x
+    \endverb
+    \verb{eprint}
+    \verb https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1365-3032.1983.tb00
+    \verb 340.x
+    \endverb
+    \field{number}{2}
+    \field{pages}{109\bibrangedash 120}
+    \field{title}{Zigzagging and casting as a programmed response to wind-borne
+  odour: a review}
+    \verb{url}
+    \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-3032.1983.tb00
+    \verb 340.x
+    \endverb
+    \field{volume}{8}
+    \field{journaltitle}{Physiological Entomology}
+    \field{year}{1983}
+  \endentry
+
+  \entry{kramer:2001}{article}{}
+    \name{author}{2}{}{%
+      {{hash=KDL}{%
+         family={Kramer},
+         familyi={K\bibinitperiod},
+         given={Donald\bibnamedelima L.},
+         giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=MRL}{%
+         family={McLaughlin},
+         familyi={M\bibinitperiod},
+         given={Robert\bibnamedelima L.},
+         giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press}%
+    }
+    \strng{namehash}{KDLMRL1}
+    \strng{fullhash}{KDLMRL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.1093/icb/41.2.137
+    \endverb
+    \field{issue}{2}
+    \field{pages}{137\bibrangedash 153}
+    \field{title}{{T}he {B}ehavioral {E}cology of {I}ntermittent {L}ocomotion}
+    \verb{url}
+    \verb https://doi.org/10.1093/icb/41.2.137
+    \endverb
+    \field{volume}{41}
+    \field{journaltitle}{Integrative and Comparative Biology}
+    \field{year}{2001}
+  \endentry
+
+  \entry{krapivsky:2010}{book}{}
+    \name{author}{3}{}{%
+      {{hash=KPL}{%
+         family={Krapivsky},
+         familyi={K\bibinitperiod},
+         given={Pavel\bibnamedelima L.},
+         giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Redner},
+         familyi={R\bibinitperiod},
+         given={Sidney},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BNE}{%
+         family={Ben-Naim},
+         familyi={B\bibinitperiod-N\bibinitperiod},
+         given={Eli},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{KPLRSBNE1}
+    \strng{fullhash}{KPLRSBNE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{A Kinetic View of Statistical Physics}
+    \verb{url}
+    \verb www.cambridge.org/9780521851039
+    \endverb
+    \field{year}{2010}
+  \endentry
+
+  \entry{lauffenburger:1996}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LDA}{%
+         family={Lauffenburger},
+         familyi={L\bibinitperiod},
+         given={Douglas\bibnamedelima A.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=HAF}{%
+         family={Horwitz},
+         familyi={H\bibinitperiod},
+         given={Alan\bibnamedelima F.},
+         giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cell Press}%
+    }
+    \strng{namehash}{LDAHAF1}
+    \strng{fullhash}{LDAHAF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1016/S0092-8674(00)81280-5
+    \endverb
+    \field{pages}{359\bibrangedash 369}
+    \field{title}{Cell Migration: A Physically Integrated Molecular Process}
+    \verb{url}
+    \verb https://doi.org/10.1016/S0092-8674(00)81280-5
+    \endverb
+    \field{volume}{84}
+    \field{journaltitle}{Cell}
+    \field{year}{1996}
+  \endentry
+
+  \entry{lock:1979}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LA}{%
+         family={Lock},
+         familyi={L\bibinitperiod},
+         given={Alison},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CT}{%
+         family={Collett},
+         familyi={C\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LACT1}
+    \strng{fullhash}{LACT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{abstract}{%
+    1. The path taken by a toad to reach its prey has been examined both when a
+  chasm or barrier impedes its approach and when nothing is in its way. In both
+  situations the toad plans its route before starting out, and consequently its
+  path must reveal something of its perception of the three dimensional
+  arrangement of objects in its environment. 2. In the absence of obstacles the
+  toad directs its approach to the position of the prey just before the toad
+  starts to move. Prey velocity has no influence on approach direction (Fig. 1)
+  and the toad does not correct its course to allow for movements of the prey
+  that occur while the toad is walking (Fig. 2). The distance the toad walks in
+  a single bout depends on the initial separation between toad and prey and it
+  does not alter should the prey vanish or move during the toad's approach
+  (Figs. 3 and 4). Both the distance and the direction of an approach are thus
+  preprogrammed and are not corrected by visual feedback until the toad pauses
+  at the end of a movement. 3. If a chasm is placed between the toad and its
+  prey, the toad either leaps across the chasm, steps down into it, or turns
+  away. Its choice of behaviour pattern is dictated by both the depth and the
+  width of the chasm, indicating that it measures both parameters (Figs. 6 and
+  7). When the chasm is deep but not too wide, the toad leaps across, when the
+  chasm is shallow it steps down into it, and when the chasm is both wide and
+  deep it turns away. 4. If there is a paling fence between toad and prey, the
+  toad either detours round the fence or attempts to reach the prey directly
+  (Fig. 8). The toad's choice depends on the distance between fence and prey
+  (Fig. 11). If this is more than 10 to 15 cm the toad tends to detour; if it
+  is less the toad approaches directly. The switch-over point is unaffected by
+  the distance between the starting point of the toad and the fence (over the
+  range 10 to 30 cm), implying that the toad can measure the distance between
+  two objects regardless of its distance from them. The toad thus displays
+  depth constancy. 5. Detours are aimed accurately at gaps in the fence (Figs.
+  8 and 9) and if there is no gap through which the toad can pass, it attempts
+  to reach the worm directly. Toads will make for gaps which are formed by two
+  overlapping barriers placed at different depths (Fig. 12). Such gaps can only
+  be detected if toads can measure the distance between two barriers. 6. A
+  toad's decision to make a detour thus depends on its appreciation of the
+  relative positions of several objects in its environment. This suggests that
+  the toad constructs an internal representation of its three dimensional world
+  and that its depth vision is not only used in the direct control of motor
+  programmes.%
+    }
+    \verb{doi}
+    \verb 10.1007/BF00619078
+    \endverb
+    \field{issn}{1432-1351}
+    \field{number}{2}
+    \field{pages}{179\bibrangedash 189}
+    \field{title}{A toad's devious approach to its prey: A study of some
+  complex uses of depth vision}
+    \verb{url}
+    \verb https://doi.org/10.1007/BF00619078
+    \endverb
+    \field{volume}{131}
+    \field{journaltitle}{Journal of comparative physiology}
+    \field{year}{1979}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{maiuri:2015}{article}{}
+    \name{author}{19}{}{%
+      {{hash=MP}{%
+         family={Maiuri},
+         familyi={M\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RJF}{%
+         family={Rupprecht},
+         familyi={R\bibinitperiod},
+         given={Jean-Francois},
+         giveni={J\bibinitperiod-F\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Wieser},
+         familyi={W\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RV}{%
+         family={Ruprecht},
+         familyi={R\bibinitperiod},
+         given={Verena},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=BO}{%
+         family={Bénichou},
+         familyi={B\bibinitperiod},
+         given={Olivier},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=CN}{%
+         family={Carpi},
+         familyi={C\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=CM}{%
+         family={Coppey},
+         familyi={C\bibinitperiod},
+         given={Mathieu},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DBS}{%
+         family={De\bibnamedelima Beco},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GN}{%
+         family={Gov},
+         familyi={G\bibinitperiod},
+         given={Nir},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HCP}{%
+         family={Heisenberg},
+         familyi={H\bibinitperiod},
+         given={Carl-Philipp},
+         giveni={C\bibinitperiod-P\bibinitperiod},
+      }}%
+      {{hash=LCC}{%
+         family={Lage\bibnamedelima Crespo},
+         familyi={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+         given={Carolina},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LF}{%
+         family={Lautenschlaeger},
+         familyi={L\bibinitperiod},
+         given={Franziska},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LBM}{%
+         family={Le\bibnamedelima Berre},
+         familyi={L\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Mael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LDAM}{%
+         family={Lennon-Dumenil},
+         familyi={L\bibinitperiod-D\bibinitperiod},
+         given={Ana-Maria},
+         giveni={A\bibinitperiod-M\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Raab},
+         familyi={R\bibinitperiod},
+         given={Matthew},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=THR}{%
+         family={Thiam},
+         familyi={T\bibinitperiod},
+         given={Hawa-Racine},
+         giveni={H\bibinitperiod-R\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Piel},
+         familyi={P\bibinitperiod},
+         given={Matthieu},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sixt},
+         familyi={S\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Voituriez},
+         familyi={V\bibinitperiod},
+         given={Raphael},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{MP+1}
+    \strng{fullhash}{MPRJFWSRVBOCNCMDBSGNHCPLCCLFLBMLDAMRMTHRPMSMVR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Cell movement has essential functions in develop-ment, immunity, and
+  cancer. Various cell migration patterns have been reported, but no general
+  rule has emerged so far. Here, we show on the basis of experimental data in
+  vitro and in vivo that cell persis-tence, which quantifies the straightness
+  of trajec-tories, is robustly coupled to cell migration speed. We suggest
+  that this universal coupling constitutes a generic law of cell migration,
+  which originates in the advection of polarity cues by an actin cytoskel-eton
+  undergoing flows at the cellular scale. Our anal-ysis relies on a theoretical
+  model that we validate by measuring the persistence of cells upon modulation
+  of actin flow speeds and upon optogenetic manipula-tion of the binding of an
+  actin regulator to actin fila-ments. Beyond the quantitative prediction of
+  the coupling, the model yields a generic phase diagram of cellular
+  trajectories, which recapitulates the full range of observed migration
+  patterns.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.cell.2015.01.056
+    \endverb
+    \field{issue}{2}
+    \field{pages}{374\bibrangedash 386}
+    \field{title}{Actin Flows Mediate a Universal Coupling between Cell Speed
+  and Cell Persistence}
+    \verb{url}
+    \verb https://doi.org/10.1016/j.cell.2015.01.056
+    \endverb
+    \field{volume}{161}
+    \field{journaltitle}{Cell}
+    \field{year}{2015}
+  \endentry
+
+  \entry{mak:2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MM}{%
+         family={Mak},
+         familyi={M\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Spill},
+         familyi={S\bibinitperiod},
+         given={Fabian},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=KRD}{%
+         family={Kamm},
+         familyi={K\bibinitperiod},
+         given={Roger\bibnamedelima D.},
+         giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=ZMH}{%
+         family={Zaman},
+         familyi={Z\bibinitperiod},
+         given={Muhammad\bibnamedelima H.},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Society Of Mechanical Engineers}%
+    }
+    \strng{namehash}{MM+1}
+    \strng{fullhash}{MMSFKRDZMH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Cells are highly dynamic and mechanical automata powered by molecular
+  motors that respond to external cues. Intracellular signaling pathways,
+  either chemical or mechanical, can be activated and spatially coordinated to
+  induce polarized cell states and directional migration. Physiologically,
+  cells navigate through complex microenvironments, typically in
+  three-dimensional (3D) fibrillar networks. In diseases, such as metastatic
+  cancer, they invade across physiological barriers and remodel their local
+  environments through force, matrix degradation, synthesis, and
+  reorganization. Important external factors such as dimensionality,
+  confinement, topographical cues, stiffness, and flow impact the behavior of
+  migrating cells and can each regulate motility. Here, we review recent
+  progress in our understanding of single-cell migration in complex
+  microenvironments.%
+    }
+    \verb{doi}
+    \verb 10.1115/1.4032188
+    \endverb
+    \field{issue}{2}
+    \field{pages}{021004}
+    \field{title}{Single-Cell Migration in Complex Microenvironments: Mechanics
+  and Signaling Dynamics}
+    \verb{url}
+    \verb https://doi.org/10.1115/1.4032188
+    \endverb
+    \field{volume}{138}
+    \field{journaltitle}{Journal of Biomechanical Engineering}
+    \field{year}{2016}
+  \endentry
+
+  \entry{mitchison:1996}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MTJ}{%
+         family={Mitchison},
+         familyi={M\bibinitperiod},
+         given={T.\bibnamedelima J.},
+         giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=CLP}{%
+         family={Cramer},
+         familyi={C\bibinitperiod},
+         given={L.\bibnamedelima P.},
+         giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{MTJCLP1}
+    \strng{fullhash}{MTJCLP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Most animal cell types possess the capacity to move over or through a
+  substrate, and cell locomotion plays a key role in both normal physiology and
+  disease. Certain cell types are specialized for locomotion, e.g., neutrophils
+  and free living amoebae. In many tissue cells, the capacity for locomotion is
+  normally repressed, but can be activated by wounding or oncogenic
+  transformation. The mechanism of amoeboid (or crawling, or gliding) cell
+  motility has been the subject of scientific scrutiny since the advent of
+  optical microscopy, and many models have been discussed (for the most recent
+  comprehensive review, seeGrebecki 1994 ). It is now widely accepted that the
+  basic engine for gliding or crawling locomotion is the actin cytoskeleton. An
+  alternative view, that directed lipid flow generates force, has been
+  extensively considered, and rejected, in several recent reviews and we will
+  not discuss it here (e.g.,Grebecki 1994 ). We will also avoid microtubules,
+  despite their importance for polarity and motility (Vasiliev 1991 ). Rapidly
+  moving cells can often move over the substrate without microtubules
+  (keratocytes, neutrophils), but crawling motility always requires actin. The
+  only known exception is nematode sperm cells in which polymers of major sperm
+  protein appear to play the roles of actin filaments (29 , 53 ). For the most
+  part, the actin and tubulin cytoskeletal systems function independently;
+  although intercommunication does occur, this would be the subject of an
+  article in itself. Cell locomotion is undoubtedly complex, requiring
+  coordinated activity of cytoskeletal, membrane, and adhesion systems. Actin
+  filaments themselves are likely to be involved in multiple force-generating
+  mechanisms. To begin a molecular analysis, we need to dissect locomotion into
+  subtypes of motility. A conventional breakdown along spatial/mechanical lines
+  is shown in Figure 1, for a single cell moving over a two-dimensional
+  substrate. Forward motility of the membrane at the front of the cell is
+  called protrusion. It has been intensively studied over the past few years
+  and is probably the aspect of locomotion for which we are closest to
+  uncovering the molecular basis of force generation. Adhesion is required for
+  protrusion to be converted into movement along the substrate. The process
+  leading to forward movement of the nucleus and cell body we have termed
+  traction. This is arguably the most important type of motility for generating
+  overall locomotion, and also the least well understood in either mechanical
+  or molecular terms. The last step in locomotion is comprised of two
+  mechanistically distinct processes: deadhesion and tail retraction. Whether
+  this step is actively motile depends on the cell type. Neuronal growth cones
+  lack tail retraction, instead spinning out an axon as they move, but
+  deadhesion occurs since the axon is more weakly substrate bound than the
+  front of the growth cones (Bray 1979 ). Strongly adhesive cells such as
+  cultured fibroblasts tend to have a strongly adherent, extended tail and
+  leave behind a trail of cytoplasmic fragments as they move. Deadhesion/tail
+  retraction may limit movement rate in such cells. In weakly adhesive, fast
+  moving cells such as amoebae and white blood cells, the tail is more rounded
+  and this step is more efficient. Adhesion and its reversal are a major focus
+  of the accompanying review by Lauffenburger and Horwitz (1996 [this issue of
+  Cell]), and tail retraction has been discussed elsewhere (Grebecki 1994 ). In
+  this review, we will focus on the different structures and potential
+  mechanisms of force generation for protrusion, other leading edge motility,
+  and traction. We will then discuss the relative contribution of each type of
+  motile force to locomotion of the whole cell.%
+    }
+    \verb{doi}
+    \verb 10.1016/S0092-8674(00)81281-7
+    \endverb
+    \field{issue}{3}
+    \field{pages}{371\bibrangedash 379}
+    \field{title}{Actin-Based Cell Motility and Cell Locomotion}
+    \verb{url}
+    \verb https://doi.org/10.1016/S0092-8674(00)81281-7
+    \endverb
+    \field{volume}{84}
+    \field{journaltitle}{Cell}
+    \field{year}{1996}
+  \endentry
+
+  \entry{najafi:2018}{article}{}
+    \name{author}{6}{}{%
+      {{hash=NJ}{%
+         family={Najafi},
+         familyi={N\bibinitperiod},
+         given={Javad},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SMR}{%
+         family={Shaebani},
+         familyi={S\bibinitperiod},
+         given={Mohammad\bibnamedelima Reza},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=JT}{%
+         family={John},
+         familyi={J\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=AF}{%
+         family={Altegoer},
+         familyi={A\bibinitperiod},
+         given={Florian},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Bange},
+         familyi={B\bibinitperiod},
+         given={Gert},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Wagner},
+         familyi={W\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Association for the Advancement of Science}%
+    }
+    \strng{namehash}{NJ+1}
+    \strng{fullhash}{NJSMRJTAFBGWC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{abstract}{%
+    Peritrichous bacteria synchronize and bundle their flagella to actively
+  swim, while disruption of the bundle leads to a slow motility phase with a
+  weak propulsion. It is still not known whether the number of flagella
+  represents an evolutionary adaptation toward optimizing bacterial navigation.
+  We study the swimming dynamics of differentially flagellated Bacillus
+  subtilis strains in a quasi{\textendash}two-dimensional system. We find that
+  decreasing the number of flagella Nf reduces the average turning angle
+  between two successive run phases and enhances the run time and the
+  directional persistence of the run phase. As a result, having fewer flagella
+  is beneficial for long-distance transport and fast spreading, while having a
+  lot of flagella is advantageous for the processes that require a slower
+  spreading, such as biofilm formation. We develop a two-state random walk
+  model that incorporates spontaneous switchings between the states and yields
+  exact analytical expressions for transport properties, in remarkable
+  agreement with experiments. The results of numerical simulations based on our
+  two-state model suggest that the efficiency of searching and exploring the
+  environment is optimized at intermediate values of Nf. The optimal choice of
+  Nf, for which the search time is minimized, decreases with increasing the
+  size of the environment in which the bacteria swim.%
+    }
+    \verb{doi}
+    \verb 10.1126/sciadv.aar6425
+    \endverb
+    \verb{eprint}
+    \verb http://advances.sciencemag.org/content/4/9/eaar6425.full.pdf
+    \endverb
+    \field{number}{9}
+    \field{title}{Flagellar number governs bacterial spreading and transport
+  efficiency}
+    \verb{url}
+    \verb http://advances.sciencemag.org/content/4/9/eaar6425
+    \endverb
+    \field{volume}{4}
+    \field{journaltitle}{Science Advances}
+    \field{year}{2018}
+  \endentry
+
+  \entry{parent:1999}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PCA}{%
+         family={Parent},
+         familyi={P\bibinitperiod},
+         given={Carole\bibnamedelima A.},
+         giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=DPN}{%
+         family={Devreotes},
+         familyi={D\bibinitperiod},
+         given={Peter\bibnamedelima N.},
+         giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Association for the Advancement of Science}%
+    }
+    \strng{namehash}{PCADPN1}
+    \strng{fullhash}{PCADPN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{abstract}{%
+    In eukaryotic cells directional sensing is mediated by heterotrimeric
+  guanine nucleotide–binding protein (G protein)–linked signaling pathways.
+  In Dictyostelium discoideum amoebae and mammalian leukocytes, the receptors
+  and G-protein subunits are uniformly distributed around the cell perimeter.
+  Chemoattractants induce the transient appearance of binding sites for several
+  pleckstrin homology domain–containing proteins on the inner face of the
+  membrane. In gradients of attractant these sites are persistently present on
+  the side of the cell facing the higher concentration, even in the absence of
+  a functional actin cytoskeleton or cell movement. Thus, the cell senses
+  direction by spatially regulating the activity of the signal transduction
+  pathway.%
+    }
+    \verb{doi}
+    \verb 10.1126/science.284.5415.765
+    \endverb
+    \field{issue}{5415}
+    \field{pages}{765\bibrangedash 770}
+    \field{title}{A Cell's Sense of Direction}
+    \verb{url}
+    \verb https://doi.org/10.1126/science.284.5415.765
+    \endverb
+    \field{volume}{284}
+    \field{journaltitle}{Science}
+    \field{year}{1999}
+  \endentry
+
+  \entry{petrie:2009}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PRJ}{%
+         family={Petrie},
+         familyi={P\bibinitperiod},
+         given={Ryan\bibnamedelima J.},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=DAD}{%
+         family={Doyle},
+         familyi={D\bibinitperiod},
+         given={Andrew\bibnamedelima D.},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=YKM}{%
+         family={Yamada},
+         familyi={Y\bibinitperiod},
+         given={Kenneth\bibnamedelima M.},
+         giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PRJDADYKM1}
+    \strng{fullhash}{PRJDADYKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1038/nrm2729
+    \endverb
+    \field{pages}{538\bibrangedash 549}
+    \field{title}{Random versus directionally persistent cell migration}
+    \verb{url}
+    \verb https://doi.org/10.1038/nrm2729
+    \endverb
+    \field{volume}{10}
+    \field{journaltitle}{Nature Reviews Molecular Cell Biology}
+    \field{year}{2009}
+  \endentry
+
+  \entry{pittman:2003}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PSJ}{%
+         family={Pittman},
+         familyi={P\bibinitperiod},
+         given={S.\bibnamedelima J.},
+         giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=MCA}{%
+         family={McAlpine},
+         familyi={M\bibinitperiod},
+         given={C.\bibnamedelima A.},
+         giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{PSJMCA1}
+    \strng{fullhash}{PSJMCA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1016/S0065-2881(03)44004-2
+    \endverb
+    \field{pages}{205\bibrangedash 294}
+    \field{title}{Movements of Marine Fish and Decapod Crustaceans: Process,
+  Theory and Application}
+    \verb{url}
+    \verb https://doi.org/10.1016/S0065-2881(03)44004-2
+    \endverb
+    \field{volume}{44}
+    \field{journaltitle}{Advances in Marine Biology}
+    \field{year}{2003}
+  \endentry
+
+  \entry{reynolds:2006}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RAM}{%
+         family={Reynolds},
+         familyi={R\bibinitperiod},
+         given={A.\bibnamedelima M.},
+         giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RAM1}
+    \strng{fullhash}{RAM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    Many foragers adopt an intermittent searching behaviour in which active
+  local search phases randomly alternate with relocation phases. The average
+  duration of the searching phases has a power-law dependency upon the average
+  duration of the relocation phases. Here it is shown that this observed
+  power-law scaling can be understood within the context of an optimal
+  scale-free (Lévy-flight) searching strategy.%
+    }
+    \field{number}{4}
+    \field{pages}{517}
+    \field{title}{{O}n the {i}ntermittent {b}ehaviour of {f}oraging {a}nimals}
+    \verb{url}
+    \verb http://stacks.iop.org/0295-5075/75/i=4/a=517
+    \endverb
+    \field{volume}{75}
+    \field{journaltitle}{EPL (Europhysics Letters)}
+    \field{year}{2006}
+  \endentry
+
+  \entry{reynolds:2018}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RAM}{%
+         family={Reynolds},
+         familyi={R\bibinitperiod},
+         given={Andy\bibnamedelima M.},
+         giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The Company of Biologists Ltd}%
+    }
+    \strng{namehash}{RAM2}
+    \strng{fullhash}{RAM2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    L{\'e}vy walks are a mathematical construction useful for describing random
+  patterns of movement with bizarre fractal properties that seem to have no
+  place in biology. Nonetheless, movement patterns resembling L{\'e}vy walks
+  have been observed at scales ranging from the microscopic to the ecological.
+  They have been seen in the molecular machinery operating within cells during
+  intracellular trafficking, in the movement patterns of T cells within the
+  brain, in DNA, in some molluscs, insects, fish, birds and mammals, in the
+  airborne flights of spores and seeds, and in the collective movements of some
+  animal groups. L{\'e}vy walks are also evident in trace fossils
+  (ichnofossils) {\textendash} the preserved form of tracks made by organisms
+  that occupied ancient sea beds about 252-66 million years ago. And they are
+  utilised by algae that originated around two billion years ago, and still
+  exist today. In September of 2017, leading researchers from across the life
+  sciences, along with mathematicians and physicists, got together at a Company
+  of Biologists{\textquoteright} Workshop to discuss the origins and biological
+  significance of these movement patterns. In this Review the essence of the
+  technical and sometimes heated discussions is distilled and made accessible
+  for all. In just a few pages, the reader is taken from a gentle introduction
+  to the frontiers of a very active field of scientific enquiry. What emerges
+  is a fascinating story of a truly inter-disciplinary scientific endeavour
+  that is seeking to better understand movement patterns occurring across all
+  biological scales.%
+    }
+    \verb{doi}
+    \verb 10.1242/bio.030106
+    \endverb
+    \verb{eprint}
+    \verb http://bio.biologists.org/content/7/1/bio030106.full.pdf
+    \endverb
+    \field{number}{1}
+    \field{title}{Current status and future directions of L{\'e}vy walk
+  research}
+    \verb{url}
+    \verb http://bio.biologists.org/content/7/1/bio030106
+    \endverb
+    \field{volume}{7}
+    \field{journaltitle}{Biology Open}
+    \field{year}{2018}
+  \endentry
+
+  \entry{sadjadi:2015}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SZ}{%
+         family={Sadjadi},
+         familyi={S\bibinitperiod},
+         given={Zeinab},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=SMR}{%
+         family={Shaebani},
+         familyi={S\bibinitperiod},
+         given={M.\bibnamedelima Reza},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=RH}{%
+         family={Rieger},
+         familyi={R\bibinitperiod},
+         given={Heiko},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Santen},
+         familyi={S\bibinitperiod},
+         given={Ludger},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{SZ+1}
+    \strng{fullhash}{SZSMRRHSL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1103/PhysRevE.91.062715
+    \endverb
+    \field{issue}{6}
+    \field{pages}{062715}
+    \field{title}{Persistent-random-walk approach to anomalous transport of
+  self-propelled particles}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/PhysRevE.91.062715
+    \endverb
+    \field{volume}{91}
+    \field{journaltitle}{Phys. Rev. E}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{shaebani:2014}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SMR}{%
+         family={Shaebani},
+         familyi={S\bibinitperiod},
+         given={M.\bibnamedelima Reza},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=SZ}{%
+         family={Sadjadi},
+         familyi={S\bibinitperiod},
+         given={Zeinab},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=SIM}{%
+         family={Sokolov},
+         familyi={S\bibinitperiod},
+         given={Igor\bibnamedelima M.},
+         giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=RH}{%
+         family={Rieger},
+         familyi={R\bibinitperiod},
+         given={Heiko},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Santen},
+         familyi={S\bibinitperiod},
+         given={Ludger},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{SMR+1}
+    \strng{fullhash}{SMRSZSIMRHSL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1103/PhysRevE.90.030701
+    \endverb
+    \field{issue}{3}
+    \field{pages}{030701}
+    \field{title}{Anomalous diffusion of self-propelled particles in directed
+  random environments}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/PhysRevE.90.030701
+    \endverb
+    \field{volume}{90}
+    \field{journaltitle}{Phys. Rev. E}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{spector:2015}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SM}{%
+         family={Spector},
+         familyi={S\bibinitperiod},
+         given={Mario},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PL}{%
+         family={Peretti},
+         familyi={P\bibinitperiod},
+         given={Leandro},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=VF}{%
+         family={Vincitorio},
+         familyi={V\bibinitperiod},
+         given={Favio},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=IL}{%
+         family={Iglesias},
+         familyi={I\bibinitperiod},
+         given={Luciano},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{SM+1}
+    \strng{fullhash}{SMPLVFIL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Infected prostheses are usually removed from patients when this infection
+  is difficult or impossible to treat. In this context, an unprecedented
+  physical phenomenon, “bacterial cell migration”, by which bacteria from
+  an infected plate is migrated to a clean one has been observed and studied at
+  the UTN FRP Materials Laboratory. This transference is obtained when two
+  facing plates with definite chemical and metallurgic properties, one
+  colonized with a microorganism and the other sterile, are faced to each other
+  in an electrically conductive liquid. For the purposes of the present study,
+  two different cultures have been used: yeast and Staphylococcus aureus, which
+  is one of the bacterium that causes most hospital infections. It is expected
+  that with the implementation of this method, infected prostheses in patients
+  can be completely cleaned in the near future.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.mspro.2015.04.083
+    \endverb
+    \field{pages}{346\bibrangedash 350}
+    \field{title}{Bacterial Migration Cell}
+    \verb{url}
+    \verb https://doi.org/10.1016/j.mspro.2015.04.083
+    \endverb
+    \field{volume}{8}
+    \field{journaltitle}{Procedia Materials Science}
+    \field{year}{2015}
+  \endentry
+
+  \entry{tejedor:2012}{article}{}
+    \name{author}{3}{}{%
+      {{hash=TV}{%
+         family={Tejedor},
+         familyi={T\bibinitperiod},
+         given={Vincent},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Voituriez},
+         familyi={V\bibinitperiod},
+         given={Raphael},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=BO}{%
+         family={B\'enichou},
+         familyi={B\bibinitperiod},
+         given={Olivier},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{TVVRBO1}
+    \strng{fullhash}{TVVRBO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.108.088103
+    \endverb
+    \field{issue}{8}
+    \field{pages}{088103}
+    \field{title}{Optimizing Persistent Random Searches}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/PhysRevLett.108.088103
+    \endverb
+    \field{volume}{108}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{2012}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{vanKampen:1997}{book}{}
+    \name{author}{1}{}{%
+      {{hash=VKNG}{%
+         family={Van\bibnamedelima Kampen},
+         familyi={V\bibinitperiod\bibinitdelim K\bibinitperiod},
+         given={N.\bibnamedelima G.},
+         giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{VKNG1}
+    \strng{fullhash}{VKNG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{title}{Stochastic Processes in Physics and Chemistry}
+    \field{year}{1997}
+  \endentry
+
+  \entry{wauters:1992}{article}{}
+    \name{author}{3}{}{%
+      {{hash=WL}{%
+         family={Wauters},
+         familyi={W\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Swinnen},
+         familyi={S\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=DAA}{%
+         family={Dhondt},
+         familyi={D\bibinitperiod},
+         given={A.\bibnamedelima A.},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{WLSCDAA1}
+    \strng{fullhash}{WLSCDAA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1111/j.1469-7998.1992.tb04345.x
+    \endverb
+    \field{issue}{1}
+    \field{pages}{71\bibrangedash 86}
+    \field{title}{{A}ctivity {b}udget and {f}oraging {b}ehaviour of {r}ed
+  {s}quirrels (Sciurus vulgaris) in {c}oniferous and {d}eciduous {h}abitats}
+    \verb{url}
+    \verb https://doi.org/10.1111/j.1469-7998.1992.tb04345.x
+    \endverb
+    \field{volume}{227}
+    \field{journaltitle}{Journal of Zoology}
+    \field{year}{1992}
+  \endentry
+
+  \entry{welch:2015}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WMD}{%
+         family={Welch},
+         familyi={W\bibinitperiod},
+         given={Matthew\bibnamedelima D.},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{WMD1}
+    \strng{fullhash}{WMD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1016/j.cell.2015.01.053
+    \endverb
+    \field{pages}{581\bibrangedash 582}
+    \field{title}{Cell Migration, Freshly Squeezed}
+    \verb{url}
+    \verb http://dx.doi.org/10.1016/j.cell.2015.01.053
+    \endverb
+    \field{volume}{160}
+    \field{journaltitle}{Cell}
+    \field{year}{2015}
+  \endentry
+\enddatalist
+\endinput

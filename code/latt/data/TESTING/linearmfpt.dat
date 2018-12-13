@@ -1,0 +1,13 @@
+#Linear search strategy:
+#p(d) = p_max - (p_max - p_min) * d * sqrt2 / L
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 100
+
+#p_min	p_max	<fpt>	<delta>
+0.000	1.000	23902.090000	2143.553886
+0.700	0.900	25342.510000	2223.217588
+0.800	1.000	13773.760000	1210.958576
+0.800	0.950	18703.500000	1711.315312

@@ -382,7 +382,7 @@ void Walker::turningAngleDistribution(string &file, double p)
 		tmp = ranAng();
 		int j = 0;
 		do {
-			if (tmp < -M_PI + (j+1) * d)
+			if (tmp < -M_PI + (j + 1) * d)
 				counter[j]++;
 			j++;
 		} while (tmp >= -M_PI + j * d);
@@ -394,12 +394,11 @@ void Walker::turningAngleDistribution(string &file, double p)
 	fprintf(outf, "\n#Number of sampled random angles: %i", samples);
 	fprintf(outf, "\n#Angle\tRelative weight");
 	double sum = 0.0;
-	for (int i = 0; i < intervals; i++) {
+	for (int i = 0; i <= intervals; i++) {
 		tmp = (1.0 * counter[i]) / (1.0 * samples);
 		sum += tmp;
 		fprintf(outf, "\n%.3f\t%f", -M_PI + i * d, tmp);
 	}
-	fprintf(outf, "\n%.3f\t%f", M_PI, 0.0);
 	fclose(outf);
 	delete[] counter;
 	cout << "\nSum: " << sum;

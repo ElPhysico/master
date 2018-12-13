@@ -26,6 +26,18 @@ struct sysVar {
                                  * 2 - Absorbing boundaries /wo lateral move
                                  * 3 - Absorbing boundaries /w lateral move
 				 */
+        int ch;                 /*
+                                 * Chemotaxis functionality
+                                 * 0 - p constant
+                                 * 1 - p linear decreasing - full range
+				 * 2 - p linear increasing - full range
+				 * 3 - p parabolic up - full range
+				 * 4 - p parabolic down - full range
+				 * 5 - p lin dec with limited range
+				 * 6 - p para down with limited range
+				 * 7 - Power law down
+				 * -1 - testing case
+                                 */
         double alpha;            /* Release probability in abs bound */
         position tarPos;
 };
@@ -42,7 +54,10 @@ void ReadCommandLine(int argc, char const *argv[],
 			int &N,
 			int &L,
                         int &D,
-                        double &alpha);
+                        double &alpha,
+                        int &ch,
+                        double &p_min,
+                        double &p_max);
 void setupEnv();
 void initTarget();
 

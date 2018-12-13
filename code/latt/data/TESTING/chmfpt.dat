@@ -1,0 +1,96 @@
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 10
+
+#constant-p = 0.900000
+p=f(d)	14487.800000	3347.982398
+#-----------------------------------
+
+
+
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 10
+
+#linear-decreasing-p	<fpt>	delta
+p=f(d)	21727.600000	4998.776047
+#-----------------------------------
+
+
+
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 10
+
+#linear-increasing-p	<fpt>	delta
+p=f(d)	218074.200000	108718.333703
+#-----------------------------------
+
+
+
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 100
+
+#linear-increasing-p	<fpt>	delta
+p=f(d)	157721.310000	16490.469507
+#-----------------------------------
+
+
+
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 100
+
+#linear-decreasing-p	<fpt>	delta
+p=f(d)	24447.510000	2529.352942
+#-----------------------------------
+
+
+
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 100
+
+#constant-p = 0.900000
+p=f(d)	25942.980000	2585.398431
+#-----------------------------------
+
+
+
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 1000
+
+#linear-decreasing-p	<fpt>	delta
+p=f(d)	21459.627000	695.939857
+#-----------------------------------
+
+
+
+#System variables:
+#Boundary type: 1
+#System Length: 200
+#Detection Radius: 1
+#Ensembles: 10000
+
+#linear-decreasing-p	<fpt>	delta
+p=f(d)	23305.853800	235.336572
+#-----------------------------------
+
+
+

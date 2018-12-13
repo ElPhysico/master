@@ -1,0 +1,164 @@
+% --- Preliminaries -------------------------------------------------------------------------------
+
+\documentclass[a4paper,11pt,DIV=10,fleqn,twoside,numbers=noenddot,listof=totoc,bibliography=totoc]{scrbook}
+%openright: f?ngt mit rechter Seite an
+%liststotoc: Abbildungsverzeichnis und so werden im Inhaltsverzeichnis angegeben
+%BCOR=5mm,
+
+\usepackage[bindingoffset=1.5cm,centering,headheight=15pt,includeheadfoot]{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+
+\usepackage{fancyhdr}	% Fuß- und Kopfzeilen
+\usepackage{amsthm} % theorem
+\usepackage{amssymb}	% mehr Mathesymbole
+\usepackage[intlimits]{amsmath} % Handling von Formeln
+\usepackage{amsfonts}	% Matheschriften
+\usepackage[toc]{appendix} % Für Anhang
+\usepackage{mathrsfs} % Noch mehr Mathekram
+\usepackage{cite}		% Referenzen sortieren
+\usepackage{palatino}  %skalierbare Schrift
+\usepackage{algorithmicx,algpseudocode} %Für Pseudocode
+\usepackage{algorithm} % algorithmus als float
+\usepackage{color} %Farbe
+
+
+\usepackage{eurosym} %eurozeichen
+\usepackage{enumerate} %Aufzählung
+
+\usepackage[bf]{caption}	% Bildunterschriften
+
+
+\usepackage[refpage,intoc,]{nomencl} % Für Nummerierung der Seiten im Abkürzuungsverzeichnis
+\makenomenclature
+\newtheorem{satz}{Theorem}
+\renewcommand*\pagedeclaration[1]{~\textit{ (p.\,#1)}} %Zeigt Seitenzahl des ersten Definierens an
+% Befehl umbenennen in abk
+\let\abk\nomenclature 
+% Punkte zw. Abk∏rzung und Erkl?rung
+%\setlength{\nomlabelwidth}{.2\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+% Zeilenabst?nde verkleinern
+\setlength{\nomitemsep}{-\parsep}
+\makenomenclature
+%%% Befehl f∏r Konsole: makeindex master.nlo -s nomencl.ist -o master.nls
+
+%
+\usepackage{units} % Für nicht-kursive Einheiten
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[pdftex,xdvi]{graphicx}	% Grafiken einbinden
+
+%\frenchspacing	% kein Extraabstand nach Satzzeichen
+\sloppy	% weniger Worttrennungen
+\usepackage{txfonts}
+\usepackage{blindtext}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+%Zeilenabstand
+%\renewcommand{\baselinestretch}{1.2}
+
+\usepackage[ngerman,english]{babel}
+\usepackage{multirow} 	% Für Tabelle
+\usepackage[onehalfspacing]{setspace} %nummerierte bildunterschrift a) ,b),... und zeilenabstand
+\usepackage{sidecap} % Caption in minipage
+\usepackage{subfig} %nummerierte bildunterschrift a) ,b),...
+\addto\captionsenglish{\renewcommand{\figurename}{Fig.}} %Fig. statt Figure
+\addto\captionsenglish{\renewcommand{\tablename}{Tab.}} %Tab. statt Table
+		
+
+\begin{document}
+\selectlanguage{english}
+
+\pagestyle{empty}
+\phantom{1}
+\cleardoublepage
+\allowdisplaybreaks[1]	% erlaubt underfull boxes
+\newpage
+\include{title}
+\include{eid}
+\cleardoublepage
+\tableofcontents
+\cleardoublepage
+
+\printnomenclature[2.5cm] % erzeugt ablürzungenverzeichnis uns setzt den abstand 2.5 cm
+
+\cleardoublepage
+
+% --- Headers and footers -------------------------------------------------------------------------
+
+
+
+\pagestyle{fancy}
+\fancyhf{}
+%%% \fancyhead[LE,RO]{\nouppercase{\rightmark}}
+%%% \fancyhead[LO,RE]{\nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark}}
+\fancyhead[LE]{\nouppercase{\leftmark}}
+\fancyfoot[RO,LE]{\thepage}
+\renewcommand{\headrulewidth}{0.1pt}
+\renewcommand{\footrulewidth}{0.1pt}
+
+\fancypagestyle{plain}{
+ \fancyhf{}
+  %% \fancyhead[LE,RO]{\nouppercase{\rightmark}}
+  %% \fancyhead[LO,RE]{\nouppercase{\leftmark}}
+ \fancyfoot[RO,LE]{\thepage}
+ \renewcommand{\headrulewidth}{0.1pt}
+ \renewcommand{\footrulewidth}{0.1pt}
+}
+
+
+%\pagenumbering{arabic}
+%\setcounter{page}{1}
+
+% --- Main part ----------------------------------------------------------------------------------
+ \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\newcommand{\nnn}{\nonumber\\}
+\newcommand{\vivo}{\textit{in vivo }}
+\newcommand{\vitro}{\textit{in vitro }}
+\newcommand{\Vivo}{\textit{In vivo }}
+\newcommand{\Vitro}{\textit{In vitro }}
+\newcommand{\etal}{\textit{et al.}}
+\newcommand{\erw}{\mathbb{E}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\cov}{\mathbb{C}\textnormal{ov}} 
+\newcommand{\cor}{\mathbb{C}\textnormal{or}}
+\newcommand{\var}{\mathbb{V}\textnormal{ar}}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\salg}{$\mathscr{F}$}
+\newcommand{\pglued}{p150\ensuremath{^\text{Glued}} }
+\renewcommand{\arraystretch}{1.4}
+\newtheorem{definition}{Definition\numberwithin{definition}{chapter}}
+
+%\chapter{Einleitung}
+
+\include{intro}
+\include{biol}
+\include{math}
+\include{mueller_model}
+\include{model_kurz}
+\include{update} 
+\include{results}
+\include{conclus}
+\include{appendix}
+
+% --- Bibliography --------------------------------------------------------------------------------
+
+\newpage
+\cleardoublepage
+\bibliographystyle{abbrv}
+\bibliography{sammlung_end.bib}
+
+
+% --- Dedication and disclaimer -------------------------------------------------------------------
+%\thispagestyle{e mpty}
+\cleardoublepage
+\thispagestyle{empty}
+{\color{white}ja}
+\thispagestyle{empty}
+\cleardoublepage
+\pagestyle{empty}
+\include{ackno}
+\thispagestyle{empty}
+\end{document}

@@ -25,6 +25,12 @@ void Walker::setup(double newpf)
         po = 1.0 - pf - pb;
 }
 
+/* Returns persistency parameter p. */
+double Walker::returnP()
+{
+        return pf;
+}
+
 /* Initializes walker at starting position and direction. */
 void Walker::init()
 {
